@@ -1,1 +1,2 @@
-TODO: vul in abstract.md een abstract in.
+Dit is een leven document met informatie over informatiemodellen binnen Geonovum.
+
