@@ -12,6 +12,8 @@
 | MIM            | Metamodel Informatie Modellering    |
 | NEN3610        | Basismodel geo-informatie           |
 | RO-Standaarden | Standaarden Ruimtelijke Ordening    |
+| IMKL           | Informatiemodel Kabel en Leidingen  |
+| INSPIRE        | INSPIRE                             |
 
 ## Welke modellen hebben we
 

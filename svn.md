@@ -1,34 +1,34 @@
 # welke modellen zitten in subversion?
 
-| Folder                                        |
-| --------------------------------------------- |
-| BHR-P conceptueel - MIM.xml'                  |
-| Bodemkaart tranche 4 (SGM).xml'               |
-| BRO                                           |
-| CIM-DSO                                       |
-| CIMOP-DSO                                     |
-| Datatypes                                     |
-| Domeinmodel BRO BHR-GT bmonderzoek.xml'       |
-| Geostandaarden                                |
-| Grondwaterproductiedossier (GPD) logisch.xml' |
-| IMEV                                          |
-| IMGeluid                                      |
-| IMGeo                                         |
-| IMGolf                                        |
-| IMKA                                          |
-| IMKL                                          |
-| IMKL-MIM                                      |
-| IMLE                                          |
-| IMMobiliteit                                  |
-| IMOW                                          |
-| IMROI                                         |
-| IMSOR                                         |
-| IMT3D                                         |
-| IMWOZ                                         |
-| INSPIRE                                       |
-| MIM                                           |
-| NEN3610                                       |
-| WaU                                           |
+| Folder / bestand                              | project  |
+| --------------------------------------------- | -------- |
+| BHR-P conceptueel - MIM.xml'                  | BRO      |
+| Bodemkaart tranche 4 (SGM).xml'               | BRO      |
+| BRO                                           | BRO      |
+| CIM-DSO                                       | DSO      |
+| CIMOP-DSO                                     | DSO      |
+| Datatypes                                     |          |
+| Domeinmodel BRO BHR-GT bmonderzoek.xml'       |          |
+| Geostandaarden                                |          |
+| Grondwaterproductiedossier (GPD) logisch.xml' |          |
+| IMEV                                          | IMEV     |
+| IMGeluid                                      | IMGeluid |
+| IMGeo                                         | BGT      |
+| IMGolf                                        |          |
+| IMKA                                          |          |
+| IMKL                                          | IMKL     |
+| IMKL-MIM                                      | IMKL     |
+| IMLE                                          |          |
+| IMMobiliteit                                  |          |
+| IMOW                                          | DSO      |
+| IMROI                                         |          |
+| IMSOR                                         |          |
+| IMT3D                                         |          |
+| IMWOZ                                         |          |
+| INSPIRE                                       | INSPIRE  |
+| MIM                                           | MIM      |
+| NEN3610                                       | NEN3610  |
+| WaU                                           |          |
 
 ## Opmerkingen en verbeterpunten
 
