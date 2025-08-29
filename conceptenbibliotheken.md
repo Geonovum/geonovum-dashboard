@@ -1,4 +1,4 @@
-# welke conceptembibliotheken hebben we?
+# overzicht conceptenbibliotheken
 
 | locatie    | informatiemodel | omschrijving                                                                                                       |
 | ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------ |
