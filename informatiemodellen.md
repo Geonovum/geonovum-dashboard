@@ -46,15 +46,25 @@
 | -              | IMKA     | Informatiemodel Klimaatadaptatie                                                |        |       |              |
 | -              | IMLE     | Informatiemodel Landschapselementen                                             |        |       |              |
 | DSO            | IMOW     | Informatiemodel Omgevingswet                                                    | 3.1    | 1.2   |              |
+| DSO            | CIM-OW   | Conceptueel informatiemodel Omgevingswet                                        |        |       |              |
+| DSO            | CIM-OP   | Conceptueel informatiemodel Officiële publicaties                                        |        |       |              |
+| DSO            | CIM-TR   | Conceptueel informatiemodel Toepasbare Regels                                        |        |       |              |
+| DSO            | CIM-AM   | Conceptueel informatiemodel Aanvragen en meldingen                                        |        |       |              |
+| DSO            | CIM-ORG   | Conceptueel informatiemodel organisaties                                        |        |       |              |
+| DSO            | CIM-SWF   | Conceptueel informatiemodel samenwerken                                        |        |       |              |
+| DSO            | CIM-PDC   | Conceptueel informatiemodel producten- en dienstencatalogus                                        |        |       |              |
+| DSO            | CIM-MAC   | Conceptueel informatiemodel machtigen                                        |        |       |              |
+| DSO            | CIM-HLP   | Conceptueel informatiemodel Help en ondersteuning                                        |        |       |              |
+| DSO            | CIM-OI   | Conceptueel informatiemodel omgevingsinformatie                                        |        |       |              |
 | -              | IMVG     | Informatiemodel Vastgoedgebruik                                                 |        |       |              |
 | IMKL           | IMKL     | Informatiemodel Kabels en Leidingen                                             |        |       |              |
 | -              | IMROI    | Informatiemodel Repressieve Object Informatie                                   |        |       |              |
 | -              | IMX-Geo  | Information model for cross-domain data queries – Geospatial                    |        |       |              |
 | BGT            | IMGeo    | Basisregistratie grootschalige topografie                                       | 2.2    |       | NEN3610:2011 |
 | -              | DiSGeo   | Dataspecificatie voor Doorontwikkeling in Samenhang van de Geobasisregistraties |        |       |              |
-| -              | IMSO     | nformatiemodel Samenhangende Objecten                                           |        |       |              |
-| NEN3610        | NEN3610  |                                                                                 |        |       |              |
-| -              | gIM-OOV  |                                                                                 |        |       |              |
+| -              | IMSO     | Informatiemodel Samenhangende Objecten                                           |        |       |              |
+| NEN3610        | NEN3610  | Basismodel geoinformatie                                                                               |        |       |              |
+| -              | gIM-OOV  | Informatiemodel openbare orde en veiligheid                                                              |        |       |              |
 | RO-Standaarden | IMRO     | Informatiemodel Ruimtelijke Ordening                                            |        |       |              |
 | -              | IMVG     | Informatiemodel Vastgoedgebruik                                                 |        |       |              |
 
@@ -63,7 +73,7 @@
 
 ## Opmerkingen
 
-- De lijst is tot stand gekomen door een scan op docs.geostandaarden.nl en handmatige toevoegingen.
+- Deze lijsten zijn met de hand samengesteld.
 - Hoe bepalen we eigenlijk welke modellen we beheren?
 - Is dit lijstje automatisch af te leiden? Nou nee. Misschien ten dele uit de UML.
 
