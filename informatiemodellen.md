@@ -56,6 +56,9 @@
 | DSO            | CIM-MAC   | Conceptueel informatiemodel machtigen                                        |        |       |              |
 | DSO            | CIM-HLP   | Conceptueel informatiemodel Help en ondersteuning                                        |        |       |              |
 | DSO            | CIM-OI   | Conceptueel informatiemodel omgevingsinformatie                                        |        |       |              |
+| Geonovum       | Interne Datatypen|  Interne datatypen|        |       |              |
+| MIM            | MIM Datatypen|  MIM datatypen|        |       |              |
+| NEN3610        | Nen 3610 Datatypen|  MIM datatypen|        |       |              |
 | -              | IMVG     | Informatiemodel Vastgoedgebruik                                                 |        |       |              |
 | IMKL           | IMKL     | Informatiemodel Kabels en Leidingen                                             |        |       |              |
 | -              | IMROI    | Informatiemodel Repressieve Object Informatie                                   |        |       |              |
@@ -67,6 +70,29 @@
 | -              | gIM-OOV  | Informatiemodel openbare orde en veiligheid                                                              |        |       |              |
 | RO-Standaarden | IMRO     | Informatiemodel Ruimtelijke Ordening                                            |        |       |              |
 | -              | IMVG     | Informatiemodel Vastgoedgebruik                                                 |        |       |              |
+
+
+## Afhankelijkheden
+
+```mermaid
+---
+title: Informatiemodellen
+
+config:
+    class:
+      hideEmptyMembersBox: true
+---
+graph TD;
+
+IMGeluid --> DatatypenIntern
+IMGeluid --> DatatypenMIM;
+IMGeluid --> DatatypenISO19107;
+IMGeluid --> NEN3610;
+CIM-DSO --> DatatypenMIM
+CIM-DSO --> DatatypenISO
+CIM-AM --> CIM-DSO
+CIM-BHKV --> CIM-DSO
+```
 
 
 
