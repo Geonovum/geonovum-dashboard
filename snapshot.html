@@ -95,6 +95,24 @@ img.license{float:left;padding-right:5px;background:0 0}
 <meta name="color-scheme" content="light">
 <meta name="description" content="Dit is een leven document met informatie over informatiemodellen binnen Geonovum.">
 <style>
+.hljs{--base:#fafafa;--mono-1:#383a42;--mono-2:#686b77;--mono-3:#717277;--hue-1:#0b76c5;--hue-2:#336ae3;--hue-3:#a626a4;--hue-4:#42803c;--hue-5:#ca4706;--hue-5-2:#c91243;--hue-6:#986801;--hue-6-2:#9a6a01}
+@media (prefers-color-scheme:dark){
+.hljs{--base:#282c34;--mono-1:#abb2bf;--mono-2:#818896;--mono-3:#5c6370;--hue-1:#56b6c2;--hue-2:#61aeee;--hue-3:#c678dd;--hue-4:#98c379;--hue-5:#e06c75;--hue-5-2:#be5046;--hue-6:#d19a66;--hue-6-2:#e6c07b}
+}
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;color:var(--mono-1,#383a42);background:#fafafa;background:var(--base,#fafafa)}
+.hljs-comment,.hljs-quote{color:#717277;color:var(--mono-3,#717277);font-style:italic}
+.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4;color:var(--hue-3,#a626a4)}
+.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;color:var(--hue-5,#ca4706);font-weight:700}
+.hljs-literal{color:#0b76c5;color:var(--hue-1,#0b76c5)}
+.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c;color:var(--hue-4,#42803c)}
+.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01;color:var(--hue-6-2,#9a6a01)}
+.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801;color:var(--hue-6,#986801)}
+.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3;color:var(--hue-2,#336ae3)}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:700}
+.hljs-link{text-decoration:underline}
+</style>
+<style>
 
   .sidelabel {
     position: fixed;
@@ -1340,7 +1358,7 @@ img.license{float:left;padding-right:5px;background:0 0}
     <h2>
       Geonovum Algemeen<br>
       Document
-      <time class="dt-published" datetime="2025-09-03">03 september 2025</time>
+      <time class="dt-published" datetime="2025-09-11">11 september 2025</time>
     </h2>
     <dl>
       
@@ -1380,7 +1398,7 @@ img.license{float:left;padding-right:5px;background:0 0}
   </div>
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit is een leven document met informatie over informatiemodellen binnen Geonovum.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een document zonder officiële status.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#overzicht-informatiemodellen"><bdi class="secno">1. </bdi>Overzicht informatiemodellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#in-welke-projecten-beheren-we-informatiemodellen"><bdi class="secno">1.1 </bdi>In welke projecten beheren we informatiemodellen</a></li><li class="tocline"><a class="tocxref" href="#welke-modellen-hebben-we"><bdi class="secno">1.2 </bdi>Welke modellen hebben we</a></li><li class="tocline"><a class="tocxref" href="#opmerkingen"><bdi class="secno">1.3 </bdi>Opmerkingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-conceptenbibliotheken"><bdi class="secno">2. </bdi>overzicht conceptenbibliotheken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opmerkingen-en-verbeterpunten"><bdi class="secno">2.1 </bdi>Opmerkingen en verbeterpunten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#welke-modellen-zitten-in-subversion"><bdi class="secno">3. </bdi>welke modellen zitten in subversion?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opmerkingen-en-verbeterpunten-0"><bdi class="secno">3.1 </bdi>Opmerkingen en verbeterpunten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#welke-versie-van-respec-zit-in-welk-repo"><bdi class="secno">4. </bdi>Welke versie van respec zit in welk repo</a></li><li class="tocline"><a class="tocxref" href="#overzicht-github-repos"><bdi class="secno">5. </bdi>Overzicht Github repos</a></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een document zonder officiële status.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#overzicht-informatiemodellen"><bdi class="secno">1. </bdi>Overzicht informatiemodellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#in-welke-projecten-beheren-we-informatiemodellen"><bdi class="secno">1.1 </bdi>In welke projecten beheren we informatiemodellen</a></li><li class="tocline"><a class="tocxref" href="#welke-modellen-hebben-we"><bdi class="secno">1.2 </bdi>Welke modellen hebben we</a></li><li class="tocline"><a class="tocxref" href="#afhankelijkheden"><bdi class="secno">1.3 </bdi>Afhankelijkheden</a></li><li class="tocline"><a class="tocxref" href="#opmerkingen"><bdi class="secno">1.4 </bdi>Opmerkingen</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-conceptenbibliotheken"><bdi class="secno">2. </bdi>overzicht conceptenbibliotheken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opmerkingen-en-verbeterpunten"><bdi class="secno">2.1 </bdi>Opmerkingen en verbeterpunten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#welke-modellen-zitten-in-subversion"><bdi class="secno">3. </bdi>welke modellen zitten in subversion?</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opmerkingen-en-verbeterpunten-0"><bdi class="secno">3.1 </bdi>Opmerkingen en verbeterpunten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#welke-versie-van-respec-zit-in-welk-repo"><bdi class="secno">4. </bdi>Welke versie van respec zit in welk repo</a></li><li class="tocline"><a class="tocxref" href="#overzicht-github-repos"><bdi class="secno">5. </bdi>Overzicht Github repos</a></li></ol></nav>
 
 <section id="overzicht-informatiemodellen"><div class="header-wrapper"><h2 id="x1-overzicht-informatiemodellen"><bdi class="secno">1. </bdi>Overzicht informatiemodellen</h2><a class="self-link" href="#overzicht-informatiemodellen" aria-label="Permalink for Section 1."></a></div>
 <section id="in-welke-projecten-beheren-we-informatiemodellen"><div class="header-wrapper"><h3 id="x1-1-in-welke-projecten-beheren-we-informatiemodellen"><bdi class="secno">1.1 </bdi>In welke projecten beheren we informatiemodellen</h3><a class="self-link" href="#in-welke-projecten-beheren-we-informatiemodellen" aria-label="Permalink for Section 1.1"></a></div>
@@ -1741,6 +1759,30 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td></td>
 </tr>
 <tr>
+<td>Geonovum</td>
+<td>Interne Datatypen</td>
+<td>Interne datatypen</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>MIM</td>
+<td>MIM Datatypen</td>
+<td>MIM datatypen</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NEN3610</td>
+<td>Nen 3610 Datatypen</td>
+<td>MIM datatypen</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>-</td>
 <td>IMVG</td>
 <td>Informatiemodel Vastgoedgebruik</td>
@@ -1829,7 +1871,26 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td></td>
 </tr>
 </tbody></table>
-</section><section id="opmerkingen"><div class="header-wrapper"><h3 id="x1-3-opmerkingen"><bdi class="secno">1.3 </bdi>Opmerkingen</h3><a class="self-link" href="#opmerkingen" aria-label="Permalink for Section 1.3"></a></div>
+</section><section id="afhankelijkheden"><div class="header-wrapper"><h3 id="x1-3-afhankelijkheden"><bdi class="secno">1.3 </bdi>Afhankelijkheden</h3><a class="self-link" href="#afhankelijkheden" aria-label="Permalink for Section 1.3"></a></div>
+<pre><code class="mermaid hljs" aria-busy="false">---
+title: Informatiemodellen
+
+config:
+&nbsp; &nbsp; class:
+&nbsp; &nbsp; &nbsp; hideEmptyMembersBox: true
+---
+graph TD;
+
+IMGeluid --&gt; DatatypenIntern
+IMGeluid --&gt; DatatypenMIM;
+IMGeluid --&gt; DatatypenISO19107;
+IMGeluid --&gt; NEN3610;
+CIM-DSO --&gt; DatatypenMIM
+CIM-DSO --&gt; DatatypenISO
+CIM-AM --&gt; CIM-DSO
+CIM-BHKV --&gt; CIM-DSO
+</code></pre>
+</section><section id="opmerkingen"><div class="header-wrapper"><h3 id="x1-4-opmerkingen"><bdi class="secno">1.4 </bdi>Opmerkingen</h3><a class="self-link" href="#opmerkingen" aria-label="Permalink for Section 1.4"></a></div>
 <ul>
 <li>Deze lijsten zijn met de hand samengesteld.</li>
 <li>Hoe bepalen we eigenlijk welke modellen we beheren?</li>
@@ -2209,11 +2270,11 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/Basisgeometrie-Werkomgeving/docs">https://github.com/Geonovum/Basisgeometrie-Werkomgeving/docs</a></td>
+<td><a href="https://github.com/Geonovum/Basisgeometrie-Werkomgeving/tree/master/docs">https://github.com/Geonovum/Basisgeometrie-Werkomgeving/tree/master/docs</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/bmgi/docs">https://github.com/Geonovum/bmgi/docs</a></td>
+<td><a href="https://github.com/Geonovum/bmgi/tree/master/docs">https://github.com/Geonovum/bmgi/tree/master/docs</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2221,7 +2282,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/brt-next-cv/wv2-vs-wv3">https://github.com/Geonovum/brt-next-cv/wv2-vs-wv3</a></td>
+<td><a href="https://github.com/Geonovum/brt-next-cv/tree/master/wv2-vs-wv3">https://github.com/Geonovum/brt-next-cv/tree/master/wv2-vs-wv3</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2273,19 +2334,19 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/disgeo-imsor/casus/imboom">https://github.com/Geonovum/disgeo-imsor/casus/imboom</a></td>
+<td><a href="https://github.com/Geonovum/disgeo-imsor/tree/master/casus/imboom">https://github.com/Geonovum/disgeo-imsor/tree/master/casus/imboom</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/disgeo-imsor/documentatie">https://github.com/Geonovum/disgeo-imsor/documentatie</a></td>
+<td><a href="https://github.com/Geonovum/disgeo-imsor/tree/master/documentatie">https://github.com/Geonovum/disgeo-imsor/tree/master/documentatie</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/disgeo-imsor/kwaliteitseisen">https://github.com/Geonovum/disgeo-imsor/kwaliteitseisen</a></td>
+<td><a href="https://github.com/Geonovum/disgeo-imsor/tree/master/kwaliteitseisen">https://github.com/Geonovum/disgeo-imsor/tree/master/kwaliteitseisen</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/disgeo-imsor/modelleerprincipes">https://github.com/Geonovum/disgeo-imsor/modelleerprincipes</a></td>
+<td><a href="https://github.com/Geonovum/disgeo-imsor/tree/master/modelleerprincipes">https://github.com/Geonovum/disgeo-imsor/tree/master/modelleerprincipes</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2297,11 +2358,11 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/disgeo-scope/bestuurlijkegebieden">https://github.com/Geonovum/disgeo-scope/bestuurlijkegebieden</a></td>
+<td><a href="https://github.com/Geonovum/disgeo-scope/tree/master/bestuurlijkegebieden">https://github.com/Geonovum/disgeo-scope/tree/master/bestuurlijkegebieden</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/DSGO/principes">https://github.com/Geonovum/DSGO/principes</a></td>
+<td><a href="https://github.com/Geonovum/DSGO/tree/master/principes">https://github.com/Geonovum/DSGO/tree/master/principes</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2365,15 +2426,15 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ds-template/dataspecificatie">https://github.com/Geonovum/ds-template/dataspecificatie</a></td>
+<td><a href="https://github.com/Geonovum/ds-template/tree/master/dataspecificatie">https://github.com/Geonovum/ds-template/tree/master/dataspecificatie</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/DTaaS-Testbed2/docs">https://github.com/Geonovum/DTaaS-Testbed2/docs</a></td>
+<td><a href="https://github.com/Geonovum/DTaaS-Testbed2/tree/master/docs">https://github.com/Geonovum/DTaaS-Testbed2/tree/master/docs</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/DTFL/Referentie">https://github.com/Geonovum/DTFL/Referentie</a> Architectuur</td>
+<td><a href="https://github.com/Geonovum/DTFL/tree/master/Referentie">https://github.com/Geonovum/DTFL/tree/master/Referentie</a> Architectuur</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2421,19 +2482,19 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/GeoBAG/documentatie/1.0.1">https://github.com/Geonovum/GeoBAG/documentatie/1.0.1</a></td>
+<td><a href="https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.0.1">https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.0.1</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/GeoBAG/documentatie/1.0.2">https://github.com/Geonovum/GeoBAG/documentatie/1.0.2</a></td>
+<td><a href="https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.0.2">https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.0.2</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/GeoBAG/documentatie/1.1.1">https://github.com/Geonovum/GeoBAG/documentatie/1.1.1</a></td>
+<td><a href="https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.1.1">https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.1.1</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/GeoBAG/documentatie/1.1">https://github.com/Geonovum/GeoBAG/documentatie/1.1</a></td>
+<td><a href="https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.1">https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.1</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2465,7 +2526,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/gpkg/apps/areaalgegevens">https://github.com/Geonovum/gpkg/apps/areaalgegevens</a></td>
+<td><a href="https://github.com/Geonovum/gpkg/tree/master/apps/areaalgegevens">https://github.com/Geonovum/gpkg/tree/master/apps/areaalgegevens</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
@@ -2525,31 +2586,31 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMG/cr">https://github.com/Geonovum/IMG/cr</a></td>
+<td><a href="https://github.com/Geonovum/IMG/tree/master/cr">https://github.com/Geonovum/IMG/tree/master/cr</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMG/END">https://github.com/Geonovum/IMG/END</a></td>
+<td><a href="https://github.com/Geonovum/IMG/tree/master/END">https://github.com/Geonovum/IMG/tree/master/END</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/berichtenverkeer/bgt">https://github.com/Geonovum/IMGeo/berichtenverkeer/bgt</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/berichtenverkeer/bgt">https://github.com/Geonovum/IMGeo/tree/master/berichtenverkeer/bgt</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/certificeren/bgt">https://github.com/Geonovum/IMGeo/certificeren/bgt</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/certificeren/bgt">https://github.com/Geonovum/IMGeo/tree/master/certificeren/bgt</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo-dev/catalogus/bgt">https://github.com/Geonovum/IMGeo-dev/catalogus/bgt</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo-dev/tree/master/catalogus/bgt">https://github.com/Geonovum/IMGeo-dev/tree/master/catalogus/bgt</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo-dev/catalogus/imgeo">https://github.com/Geonovum/IMGeo-dev/catalogus/imgeo</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo-dev/tree/master/catalogus/imgeo">https://github.com/Geonovum/IMGeo-dev/tree/master/catalogus/imgeo</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo-dev/implementatieplan">https://github.com/Geonovum/IMGeo-dev/implementatieplan</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo-dev/tree/master/implementatieplan">https://github.com/Geonovum/IMGeo-dev/tree/master/implementatieplan</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2557,15 +2618,15 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo-dev/overig/resultaten">https://github.com/Geonovum/IMGeo-dev/overig/resultaten</a> informele consultatie</td>
+<td><a href="https://github.com/Geonovum/IMGeo-dev/tree/master/overig/resultaten">https://github.com/Geonovum/IMGeo-dev/tree/master/overig/resultaten</a> informele consultatie</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo-dev/release">https://github.com/Geonovum/IMGeo-dev/release</a> notes/2.2</td>
+<td><a href="https://github.com/Geonovum/IMGeo-dev/tree/master/release">https://github.com/Geonovum/IMGeo-dev/tree/master/release</a> notes/2.2</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo-dev/wijzigingsvoorstel">https://github.com/Geonovum/IMGeo-dev/wijzigingsvoorstel</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo-dev/tree/master/wijzigingsvoorstel">https://github.com/Geonovum/IMGeo-dev/tree/master/wijzigingsvoorstel</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2573,27 +2634,27 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/praktijkrichtlijn/uitwisseling-imbor-geobor">https://github.com/Geonovum/IMGeo/praktijkrichtlijn/uitwisseling-imbor-geobor</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/praktijkrichtlijn/uitwisseling-imbor-geobor">https://github.com/Geonovum/IMGeo/tree/master/praktijkrichtlijn/uitwisseling-imbor-geobor</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/werkafspraken/bag">https://github.com/Geonovum/IMGeo/werkafspraken/bag</a> 2.0</td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/bag">https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/bag</a> 2.0</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/werkafspraken/bgt-berichtenverkeer">https://github.com/Geonovum/IMGeo/werkafspraken/bgt-berichtenverkeer</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/bgt-berichtenverkeer">https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/bgt-berichtenverkeer</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/werkafspraken/bgt-berichtenverkeer">https://github.com/Geonovum/IMGeo/werkafspraken/bgt-berichtenverkeer</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/bgt-berichtenverkeer">https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/bgt-berichtenverkeer</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/werkafspraken/codering">https://github.com/Geonovum/IMGeo/werkafspraken/codering</a> machtigingen</td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/codering">https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/codering</a> machtigingen</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMGeo/werkafspraken/tijdzone-berichtenverkeer-objecten">https://github.com/Geonovum/IMGeo/werkafspraken/tijdzone-berichtenverkeer-objecten</a></td>
+<td><a href="https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/tijdzone-berichtenverkeer-objecten">https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/tijdzone-berichtenverkeer-objecten</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2609,11 +2670,11 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/imkl2015-review/IMKL2.x/1-dataspecificatie">https://github.com/Geonovum/imkl2015-review/IMKL2.x/1-dataspecificatie</a></td>
+<td><a href="https://github.com/Geonovum/imkl2015-review/tree/master/IMKL2.x/1-dataspecificatie">https://github.com/Geonovum/imkl2015-review/tree/master/IMKL2.x/1-dataspecificatie</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/imkl2015-review/IMKL2.x/2-objectcatalogus">https://github.com/Geonovum/imkl2015-review/IMKL2.x/2-objectcatalogus</a></td>
+<td><a href="https://github.com/Geonovum/imkl2015-review/tree/master/IMKL2.x/2-objectcatalogus">https://github.com/Geonovum/imkl2015-review/tree/master/IMKL2.x/2-objectcatalogus</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2625,7 +2686,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/IMLE/scope">https://github.com/Geonovum/IMLE/scope</a></td>
+<td><a href="https://github.com/Geonovum/IMLE/tree/master/scope">https://github.com/Geonovum/IMLE/tree/master/scope</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2693,51 +2754,51 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-algemeen/Architectuur">https://github.com/Geonovum/KP-APIs/API-strategie-algemeen/Architectuur</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-algemeen/Architectuur">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-algemeen/Architectuur</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-algemeen/Gebruikerswensen">https://github.com/Geonovum/KP-APIs/API-strategie-algemeen/Gebruikerswensen</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-algemeen/Gebruikerswensen">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-algemeen/Gebruikerswensen</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-algemeen/Inleiding">https://github.com/Geonovum/KP-APIs/API-strategie-algemeen/Inleiding</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-algemeen/Inleiding">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-algemeen/Inleiding</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/access-control">https://github.com/Geonovum/KP-APIs/API-strategie-modules/access-control</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/access-control">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/access-control</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/batching">https://github.com/Geonovum/KP-APIs/API-strategie-modules/batching</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/batching">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/batching</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/encryption">https://github.com/Geonovum/KP-APIs/API-strategie-modules/encryption</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/encryption">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/encryption</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/_extensions_legacy">https://github.com/Geonovum/KP-APIs/API-strategie-modules/_extensions_legacy</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/_extensions_legacy">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/_extensions_legacy</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/hypermedia">https://github.com/Geonovum/KP-APIs/API-strategie-modules/hypermedia</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/hypermedia">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/hypermedia</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/naming-conventions">https://github.com/Geonovum/KP-APIs/API-strategie-modules/naming-conventions</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/naming-conventions">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/naming-conventions</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/orchestration">https://github.com/Geonovum/KP-APIs/API-strategie-modules/orchestration</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/orchestration">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/orchestration</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/signing-jades">https://github.com/Geonovum/KP-APIs/API-strategie-modules/signing-jades</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/signing-jades">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/signing-jades</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/KP-APIs/API-strategie-modules/_template">https://github.com/Geonovum/KP-APIs/API-strategie-modules/_template</a></td>
+<td><a href="https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/_template">https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/_template</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
@@ -2745,7 +2806,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/logboek_objecten_extensie">https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/logboek_objecten_extensie</a></td>
+<td><a href="https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/master/logboek_objecten_extensie">https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/master/logboek_objecten_extensie</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
@@ -2805,7 +2866,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/MIM-Werkomgeving/MIM-NEN2660">https://github.com/Geonovum/MIM-Werkomgeving/MIM-NEN2660</a></td>
+<td><a href="https://github.com/Geonovum/MIM-Werkomgeving/tree/master/MIM-NEN2660">https://github.com/Geonovum/MIM-Werkomgeving/tree/master/MIM-NEN2660</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2817,15 +2878,15 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/nen3610-werkomgeving/model/respec">https://github.com/Geonovum/nen3610-werkomgeving/model/respec</a></td>
+<td><a href="https://github.com/Geonovum/nen3610-werkomgeving/tree/master/model/respec">https://github.com/Geonovum/nen3610-werkomgeving/tree/master/model/respec</a></td>
 <td><a href="https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js">https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/nen3610-werkomgeving/model/respec">https://github.com/Geonovum/nen3610-werkomgeving/model/respec</a></td>
+<td><a href="https://github.com/Geonovum/nen3610-werkomgeving/tree/master/model/respec">https://github.com/Geonovum/nen3610-werkomgeving/tree/master/model/respec</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/NLDT-Architectuur/en">https://github.com/Geonovum/NLDT-Architectuur/en</a></td>
+<td><a href="https://github.com/Geonovum/NLDT-Architectuur/tree/master/en">https://github.com/Geonovum/NLDT-Architectuur/tree/master/en</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
@@ -2841,7 +2902,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/NL-SBB/bp">https://github.com/Geonovum/NL-SBB/bp</a></td>
+<td><a href="https://github.com/Geonovum/NL-SBB/tree/master/bp">https://github.com/Geonovum/NL-SBB/tree/master/bp</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
@@ -2849,7 +2910,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/NWB-BGT/docs">https://github.com/Geonovum/NWB-BGT/docs</a></td>
+<td><a href="https://github.com/Geonovum/NWB-BGT/tree/master/docs">https://github.com/Geonovum/NWB-BGT/tree/master/docs</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2885,7 +2946,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/respec/examples/md_example">https://github.com/Geonovum/respec/examples/md_example</a></td>
+<td><a href="https://github.com/Geonovum/respec/tree/master/examples/md_example">https://github.com/Geonovum/respec/tree/master/examples/md_example</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2893,11 +2954,11 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/respec/templates/new_respec_gn_doc_html">https://github.com/Geonovum/respec/templates/new_respec_gn_doc_html</a></td>
+<td><a href="https://github.com/Geonovum/respec/tree/master/templates/new_respec_gn_doc_html">https://github.com/Geonovum/respec/tree/master/templates/new_respec_gn_doc_html</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/respec/templates/new_respec_gn_doc">https://github.com/Geonovum/respec/templates/new_respec_gn_doc</a></td>
+<td><a href="https://github.com/Geonovum/respec/tree/master/templates/new_respec_gn_doc">https://github.com/Geonovum/respec/tree/master/templates/new_respec_gn_doc</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -2909,139 +2970,139 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/HRARP">https://github.com/Geonovum/ROST/HRARP</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/HRARP">https://github.com/Geonovum/ROST/tree/master/HRARP</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/HRDoO">https://github.com/Geonovum/ROST/HRDoO</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/HRDoO">https://github.com/Geonovum/ROST/tree/master/HRDoO</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/HRTAMomplan">https://github.com/Geonovum/ROST/HRTAMomplan</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/HRTAMomplan">https://github.com/Geonovum/ROST/tree/master/HRTAMomplan</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/HRTAMomver">https://github.com/Geonovum/ROST/HRTAMomver</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/HRTAMomver">https://github.com/Geonovum/ROST/tree/master/HRTAMomver</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/HRTAMpbesluit">https://github.com/Geonovum/ROST/HRTAMpbesluit</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/HRTAMpbesluit">https://github.com/Geonovum/ROST/tree/master/HRTAMpbesluit</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/HRWIJZPROT">https://github.com/Geonovum/ROST/HRWIJZPROT</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/HRWIJZPROT">https://github.com/Geonovum/ROST/tree/master/HRWIJZPROT</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRABPK">https://github.com/Geonovum/ROST/PRABPK</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRABPK">https://github.com/Geonovum/ROST/tree/master/PRABPK</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRAMvB">https://github.com/Geonovum/ROST/PRAMvB</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRAMvB">https://github.com/Geonovum/ROST/tree/master/PRAMvB</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRAMvB/PR">https://github.com/Geonovum/ROST/PRAMvB/PR</a> met png tabellen</td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRAMvB/PR">https://github.com/Geonovum/ROST/tree/master/PRAMvB/PR</a> met png tabellen</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRBP">https://github.com/Geonovum/ROST/PRBP</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRBP">https://github.com/Geonovum/ROST/tree/master/PRBP</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRBP/PR">https://github.com/Geonovum/ROST/PRBP/PR</a> met png tabellen</td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRBP/PR">https://github.com/Geonovum/ROST/tree/master/PRBP/PR</a> met png tabellen</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRGB">https://github.com/Geonovum/ROST/PRGB</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRGB">https://github.com/Geonovum/ROST/tree/master/PRGB</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRGB/PR">https://github.com/Geonovum/ROST/PRGB/PR</a> met png tabellen</td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRGB/PR">https://github.com/Geonovum/ROST/tree/master/PRGB/PR</a> met png tabellen</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRPCP">https://github.com/Geonovum/ROST/PRPCP</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRPCP">https://github.com/Geonovum/ROST/tree/master/PRPCP</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRPT">https://github.com/Geonovum/ROST/PRPT</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRPT">https://github.com/Geonovum/ROST/tree/master/PRPT</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRPT/PR">https://github.com/Geonovum/ROST/PRPT/PR</a> met png tabellen</td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRPT/PR">https://github.com/Geonovum/ROST/tree/master/PRPT/PR</a> met png tabellen</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRPV">https://github.com/Geonovum/ROST/PRPV</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRPV">https://github.com/Geonovum/ROST/tree/master/PRPV</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRPV/PR">https://github.com/Geonovum/ROST/PRPV/PR</a> met png tabellen</td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRPV/PR">https://github.com/Geonovum/ROST/tree/master/PRPV/PR</a> met png tabellen</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRSV">https://github.com/Geonovum/ROST/PRSV</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRSV">https://github.com/Geonovum/ROST/tree/master/PRSV</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRSV/PR">https://github.com/Geonovum/ROST/PRSV/PR</a> met png tabellen</td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRSV/PR">https://github.com/Geonovum/ROST/tree/master/PRSV/PR</a> met png tabellen</td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/PRTRI">https://github.com/Geonovum/ROST/PRTRI</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/PRTRI">https://github.com/Geonovum/ROST/tree/master/PRTRI</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/STRI2006">https://github.com/Geonovum/ROST/STRI2006</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/STRI2006">https://github.com/Geonovum/ROST/tree/master/STRI2006</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/SVBPfuntielijst">https://github.com/Geonovum/ROST/SVBPfuntielijst</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/SVBPfuntielijst">https://github.com/Geonovum/ROST/tree/master/SVBPfuntielijst</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waBEVRP">https://github.com/Geonovum/ROST/waBEVRP</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waBEVRP">https://github.com/Geonovum/ROST/tree/master/waBEVRP</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waCHWbp">https://github.com/Geonovum/ROST/waCHWbp</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waCHWbp">https://github.com/Geonovum/ROST/tree/master/waCHWbp</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waIMROPT">https://github.com/Geonovum/ROST/waIMROPT</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waIMROPT">https://github.com/Geonovum/ROST/tree/master/waIMROPT</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waSTRIIMRO">https://github.com/Geonovum/ROST/waSTRIIMRO</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waSTRIIMRO">https://github.com/Geonovum/ROST/tree/master/waSTRIIMRO</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waSTRIxml">https://github.com/Geonovum/ROST/waSTRIxml</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waSTRIxml">https://github.com/Geonovum/ROST/tree/master/waSTRIxml</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waTAMinstr">https://github.com/Geonovum/ROST/waTAMinstr</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waTAMinstr">https://github.com/Geonovum/ROST/tree/master/waTAMinstr</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waTAMomplan">https://github.com/Geonovum/ROST/waTAMomplan</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waTAMomplan">https://github.com/Geonovum/ROST/tree/master/waTAMomplan</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waTAMomver">https://github.com/Geonovum/ROST/waTAMomver</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waTAMomver">https://github.com/Geonovum/ROST/tree/master/waTAMomver</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waTAMpbesluit">https://github.com/Geonovum/ROST/waTAMpbesluit</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waTAMpbesluit">https://github.com/Geonovum/ROST/tree/master/waTAMpbesluit</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waTAMreaint">https://github.com/Geonovum/ROST/waTAMreaint</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waTAMreaint">https://github.com/Geonovum/ROST/tree/master/waTAMreaint</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/ROST/waTAMvbbesluit">https://github.com/Geonovum/ROST/waTAMvbbesluit</a></td>
+<td><a href="https://github.com/Geonovum/ROST/tree/master/waTAMvbbesluit">https://github.com/Geonovum/ROST/tree/master/waTAMvbbesluit</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -3049,75 +3110,75 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/GNM-Eigen">https://github.com/Geonovum/RSP-Vergelijk/GNM-Eigen</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/GNM-Eigen">https://github.com/Geonovum/RSP-Vergelijk/tree/master/GNM-Eigen</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/Logius-Eigen">https://github.com/Geonovum/RSP-Vergelijk/Logius-Eigen</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-Eigen">https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-Eigen</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/Logius-Eigen">https://github.com/Geonovum/RSP-Vergelijk/Logius-Eigen</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-Eigen">https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-Eigen</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/logius/respec-logius.js">https://tools.geostandaarden.nl/respec/vergelijk/logius/respec-logius.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/Logius-GNM">https://github.com/Geonovum/RSP-Vergelijk/Logius-GNM</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-GNM">https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-GNM</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/Logius-GNM">https://github.com/Geonovum/RSP-Vergelijk/Logius-GNM</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-GNM">https://github.com/Geonovum/RSP-Vergelijk/tree/master/Logius-GNM</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/logius/respec-logius.js">https://tools.geostandaarden.nl/respec/vergelijk/logius/respec-logius.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-IM">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-IM</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-IM">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-IM</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-IM">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-IM</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-IM">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-IM</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js">https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-MD">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-MD</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-MD">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-MD</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-MD">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-MD</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-MD">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-MD</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js">https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP/en">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP/en</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP/en">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP/en</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP/en">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP/en</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP/en">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP/en</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js">https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP">https://github.com/Geonovum/RSP-Vergelijk/NLGOV-WP</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP">https://github.com/Geonovum/RSP-Vergelijk/tree/master/NLGOV-WP</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js">https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/Origineel">https://github.com/Geonovum/RSP-Vergelijk/Origineel</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/Origineel">https://github.com/Geonovum/RSP-Vergelijk/tree/master/Origineel</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/W3C-Eigen">https://github.com/Geonovum/RSP-Vergelijk/W3C-Eigen</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-Eigen">https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-Eigen</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/W3C-Eigen">https://github.com/Geonovum/RSP-Vergelijk/W3C-Eigen</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-Eigen">https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-Eigen</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js">https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js</a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/W3C-GNM">https://github.com/Geonovum/RSP-Vergelijk/W3C-GNM</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-GNM">https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-GNM</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/RSP-Vergelijk/W3C-GNM">https://github.com/Geonovum/RSP-Vergelijk/W3C-GNM</a></td>
+<td><a href="https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-GNM">https://github.com/Geonovum/RSP-Vergelijk/tree/master/W3C-GNM</a></td>
 <td><a href="https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-geonovum.js">https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-geonovum.js</a></td>
 </tr>
 <tr>
@@ -3181,51 +3242,51 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/AMVBenMR">https://github.com/Geonovum/TPOD-RSP/AMVBenMR</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/AMVBenMR">https://github.com/Geonovum/TPOD-RSP/tree/master/AMVBenMR</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Instructie">https://github.com/Geonovum/TPOD-RSP/Instructie</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Instructie">https://github.com/Geonovum/TPOD-RSP/tree/master/Instructie</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/KennisgevingOmgevingsvergunningVoorBuitenplanseOmgevingsplanactiviteit">https://github.com/Geonovum/TPOD-RSP/KennisgevingOmgevingsvergunningVoorBuitenplanseOmgevingsplanactiviteit</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/KennisgevingOmgevingsvergunningVoorBuitenplanseOmgevingsplanactiviteit">https://github.com/Geonovum/TPOD-RSP/tree/master/KennisgevingOmgevingsvergunningVoorBuitenplanseOmgevingsplanactiviteit</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Natura2000-besluiten">https://github.com/Geonovum/TPOD-RSP/Natura2000-besluiten</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Natura2000-besluiten">https://github.com/Geonovum/TPOD-RSP/tree/master/Natura2000-besluiten</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Omgevingsplan">https://github.com/Geonovum/TPOD-RSP/Omgevingsplan</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Omgevingsplan">https://github.com/Geonovum/TPOD-RSP/tree/master/Omgevingsplan</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Omgevingsverordening">https://github.com/Geonovum/TPOD-RSP/Omgevingsverordening</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Omgevingsverordening">https://github.com/Geonovum/TPOD-RSP/tree/master/Omgevingsverordening</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Omgevingsvisie">https://github.com/Geonovum/TPOD-RSP/Omgevingsvisie</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Omgevingsvisie">https://github.com/Geonovum/TPOD-RSP/tree/master/Omgevingsvisie</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Programma">https://github.com/Geonovum/TPOD-RSP/Programma</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Programma">https://github.com/Geonovum/TPOD-RSP/tree/master/Programma</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Projectbesluit">https://github.com/Geonovum/TPOD-RSP/Projectbesluit</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Projectbesluit">https://github.com/Geonovum/TPOD-RSP/tree/master/Projectbesluit</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/ReactieveInterventie">https://github.com/Geonovum/TPOD-RSP/ReactieveInterventie</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/ReactieveInterventie">https://github.com/Geonovum/TPOD-RSP/tree/master/ReactieveInterventie</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Voorbereidingsbesluit">https://github.com/Geonovum/TPOD-RSP/Voorbereidingsbesluit</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Voorbereidingsbesluit">https://github.com/Geonovum/TPOD-RSP/tree/master/Voorbereidingsbesluit</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/TPOD-RSP/Waterschapsverordening">https://github.com/Geonovum/TPOD-RSP/Waterschapsverordening</a></td>
+<td><a href="https://github.com/Geonovum/TPOD-RSP/tree/master/Waterschapsverordening">https://github.com/Geonovum/TPOD-RSP/tree/master/Waterschapsverordening</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -3265,19 +3326,19 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-I">https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-I</a></td>
+<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-I">https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-I</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-VIII-A">https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-VIII-A</a></td>
+<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-A">https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-A</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-VIII-B">https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-VIII-B</a></td>
+<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-B">https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-B</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-VIII-C">https://github.com/Geonovum/VIVET-Werkomgeving/VIMET-VIII-C</a></td>
+<td><a href="https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-C">https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-C</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -3293,23 +3354,23 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/WaU/productmodel/adres">https://github.com/Geonovum/WaU/productmodel/adres</a></td>
+<td><a href="https://github.com/Geonovum/WaU/tree/master/productmodel/adres">https://github.com/Geonovum/WaU/tree/master/productmodel/adres</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/WaU/productmodel/gebouw+">https://github.com/Geonovum/WaU/productmodel/gebouw+</a></td>
+<td><a href="https://github.com/Geonovum/WaU/tree/master/productmodel/gebouw+">https://github.com/Geonovum/WaU/tree/master/productmodel/gebouw+</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/WaU/productmodel/gebouw">https://github.com/Geonovum/WaU/productmodel/gebouw</a></td>
+<td><a href="https://github.com/Geonovum/WaU/tree/master/productmodel/gebouw">https://github.com/Geonovum/WaU/tree/master/productmodel/gebouw</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/WaU/productmodel/graafgebied">https://github.com/Geonovum/WaU/productmodel/graafgebied</a></td>
+<td><a href="https://github.com/Geonovum/WaU/tree/master/productmodel/graafgebied">https://github.com/Geonovum/WaU/tree/master/productmodel/graafgebied</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/WaU/productmodel/willekeurigevraag">https://github.com/Geonovum/WaU/productmodel/willekeurigevraag</a></td>
+<td><a href="https://github.com/Geonovum/WaU/tree/master/productmodel/willekeurigevraag">https://github.com/Geonovum/WaU/tree/master/productmodel/willekeurigevraag</a></td>
 <td>respec-nlgov</td>
 </tr>
 <tr>
@@ -3341,7 +3402,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/whitepaper-standaarden/en">https://github.com/Geonovum/whitepaper-standaarden/en</a></td>
+<td><a href="https://github.com/Geonovum/whitepaper-standaarden/tree/master/en">https://github.com/Geonovum/whitepaper-standaarden/tree/master/en</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -3373,7 +3434,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
-<td><a href="https://github.com/Geonovum/xml_xslt/word2respec/respec">https://github.com/Geonovum/xml_xslt/word2respec/respec</a></td>
+<td><a href="https://github.com/Geonovum/xml_xslt/tree/master/word2respec/respec">https://github.com/Geonovum/xml_xslt/tree/master/word2respec/respec</a></td>
 <td>tools.geostandaarden</td>
 </tr>
 <tr>
@@ -6644,4 +6705,6 @@ function hidePanel(panel) {
   panel.hidden = true;
   panel.classList.remove("docked");
 }
-})()</script><div class="sidelabel">Geonovum Algemeen - Document</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
+})()</script><div class="sidelabel">Geonovum Algemeen - Document</div><div id="ddiagram-1"><svg id="diagram-1" width="400" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="768 0 512 512"><style>
+#diagram-1 {font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#diagram-1 .error-icon{fill:#552222;}#diagram-1 .error-text{fill:#552222;stroke:#552222;}#diagram-1 .edge-thickness-normal{stroke-width:2px;}#diagram-1 .edge-thickness-thick{stroke-width:3.5px;}#diagram-1 .edge-pattern-solid{stroke-dasharray:0;}#diagram-1 .edge-pattern-dashed{stroke-dasharray:3;}#diagram-1 .edge-pattern-dotted{stroke-dasharray:2;}#diagram-1 .marker{fill:#333333;stroke:#333333;}#diagram-1 .marker.cross{stroke:#333333;}#diagram-1 svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#diagram-1 .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#diagram-1 .cluster-label text{fill:#333;}#diagram-1 .cluster-label span{color:#333;}#diagram-1 .label text,#diagram-1 span{fill:#333;color:#333;}#diagram-1 .node rect,#diagram-1 .node circle,#diagram-1 .node ellipse,#diagram-1 .node polygon,#diagram-1 .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#diagram-1 .node .label{text-align:center;}#diagram-1 .node.clickable{cursor:pointer;}#diagram-1 .arrowheadPath{fill:#333333;}#diagram-1 .edgePath .path{stroke:#333333;stroke-width:2.0px;}#diagram-1 .flowchart-link{stroke:#333333;fill:none;}#diagram-1 .edgeLabel{background-color:#e8e8e8;text-align:center;}#diagram-1 .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#diagram-1 .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#diagram-1 .cluster text{fill:#333;}#diagram-1 .cluster span{color:#333;}#diagram-1 div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#diagram-1 :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}
+</style><g></g><g><path class="error-icon" d="m411.313,123.313c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32-9.375,9.375-20.688-20.688c-12.484-12.5-32.766-12.5-45.25,0l-16,16c-1.261,1.261-2.304,2.648-3.31,4.051-21.739-8.561-45.324-13.426-70.065-13.426-105.867,0-192,86.133-192,192s86.133,192 192,192 192-86.133 192-192c0-24.741-4.864-48.327-13.426-70.065 1.402-1.007 2.79-2.049 4.051-3.31l16-16c12.5-12.492 12.5-32.758 0-45.25l-20.688-20.688 9.375-9.375 32.001-31.999zm-219.313,100.687c-52.938,0-96,43.063-96,96 0,8.836-7.164,16-16,16s-16-7.164-16-16c0-70.578 57.422-128 128-128 8.836,0 16,7.164 16,16s-7.164,16-16,16z"></path><path class="error-icon" d="m459.02,148.98c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l16,16c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16.001-16z"></path><path class="error-icon" d="m340.395,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688 6.25-6.25 6.25-16.375 0-22.625l-16-16c-6.25-6.25-16.375-6.25-22.625,0s-6.25,16.375 0,22.625l15.999,16z"></path><path class="error-icon" d="m400,64c8.844,0 16-7.164 16-16v-32c0-8.836-7.156-16-16-16-8.844,0-16,7.164-16,16v32c0,8.836 7.156,16 16,16z"></path><path class="error-icon" d="m496,96.586h-32c-8.844,0-16,7.164-16,16 0,8.836 7.156,16 16,16h32c8.844,0 16-7.164 16-16 0-8.836-7.156-16-16-16z"></path><path class="error-icon" d="m436.98,75.605c3.125,3.125 7.219,4.688 11.313,4.688 4.094,0 8.188-1.563 11.313-4.688l32-32c6.25-6.25 6.25-16.375 0-22.625s-16.375-6.25-22.625,0l-32,32c-6.251,6.25-6.251,16.375-0.001,22.625z"></path><text class="error-text" x="1240" y="250" font-size="150px" style="text-anchor: middle;">Syntax error in graph</text><text class="error-text" x="1050" y="400" font-size="100px" style="text-anchor: middle;">mermaid version 9.0.0</text></g></svg></div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
