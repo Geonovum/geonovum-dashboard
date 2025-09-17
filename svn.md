@@ -7,14 +7,14 @@
 | BRO                                           | BRO      |
 | CIM-DSO                                       | DSO      |
 | CIMOP-DSO                                     | DSO      |
-| Datatypes                                     |          |
-| Domeinmodel BRO BHR-GT bmonderzoek.xml'       |          |
-| Geostandaarden                                |          |
+| Datatypes                                     | Basisprogramma       |
+| Domeinmodel BRO BHR-GT bmonderzoek.xml'       | BRO        |
+| Geostandaarden                                | Basisprogramma        |
 | Grondwaterproductiedossier (GPD) logisch.xml' |          |
 | IMEV                                          | IMEV     |
 | IMGeluid                                      | IMGeluid |
 | IMGeo                                         | BGT      |
-| IMGolf                                        |          |
+| IMGolf                                        | NEN3610        |
 | IMKA                                          |          |
 | IMKL                                          | IMKL     |
 | IMKL-MIM                                      | IMKL     |
