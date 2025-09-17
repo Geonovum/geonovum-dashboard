@@ -2,18 +2,19 @@
 
 ## In welke projecten beheren we informatiemodellen
 
-| id             | Omschrijving                          | Github Team                                                                       | Teams Team               |
-| -------------- | ------------------------------------- | --------------------------------------------------------------------------------- | ------------------------ |
-| BRO            | Basisregistratie Ondergrond           | [broprogramma](https://github.com/broprogramma)                                   | BRO                      |
-| IMGeluid       | Informatiemodel Geluid                | [IMG team](https://github.com/orgs/Geonovum/teams/img-team)                       | IMG                      |
-| IMEV           | Informatiemodel Externe Veiligheid    | [IMEV team](https://github.com/orgs/Geonovum/teams/imev-team)                     | IMEV                     |
-| BGT            | Basiskaart grootschalige topografie   | [BGT team](https://github.com/orgs/Geonovum/teams/bgt-team)                       | BGT \| IMGeo standaarden |
-| DSO            | Digitaal stelsel omgevingswet         | [DSO team](https://github.com/orgs/Geonovum/teams/dso-team)                       | TPOD                     |
-| MIM            | Metamodel Informatie Modellering      | [Basisprogramma team](https://github.com/orgs/Geonovum/teams/basisprogramma-team) | Basisprogrogramma        |
-| RO-Standaarden | Standaarden Ruimtelijke Ordening      | [ro-beheerteam](https://github.com/orgs/Geonovum/teams/ro-beheerteam)             | DRO                      |
-| IMKL           | Informatiemodel Kabel en Leidingen    | [IMKL team](https://github.com/orgs/Geonovum/teams/imkl-team)                     | IMKL                     |
-| INSPIRE        | INSPIRE                               | [EU team](https://github.com/orgs/Geonovum/teams/eu-team)                         | INSPRE                   |
-| Basisprogramma | Basisprogramma voor algemene modellen | [Basisprogramma team](https://github.com/orgs/Geonovum/teams/basisprogramma-team) | Basisprogramma           |
+| id             | Omschrijving                          | Github Team                                                                       | Teams Team                                                                                                                                                                                                           |
+| -------------- | ------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| BRO            | Basisregistratie Ondergrond           | [broprogramma](https://github.com/broprogramma)                                   | BRO                                                                                                                                                                                                                  |
+| IMGeluid       | Informatiemodel Geluid                | [IMG team](https://github.com/orgs/Geonovum/teams/img-team)                       | IMG                                                                                                                                                                                                                  |
+| IMEV           | Informatiemodel Externe Veiligheid    | [IMEV team](https://github.com/orgs/Geonovum/teams/imev-team)                     | IMEV                                                                                                                                                                                                                 |
+| BGT            | Basiskaart grootschalige topografie   | [BGT team](https://github.com/orgs/Geonovum/teams/bgt-team)                       | BGT \| IMGeo standaarden                                                                                                                                                                                             |
+| DSO            | Digitaal stelsel omgevingswet         | [DSO team](https://github.com/orgs/Geonovum/teams/dso-team)                       | TPOD                                                                                                                                                                                                                 |
+| MIM            | Metamodel Informatie Modellering      | [Basisprogramma team](https://github.com/orgs/Geonovum/teams/basisprogramma-team) | Basisprogrogramma                                                                                                                                                                                                    |
+| RO-Standaarden | Standaarden Ruimtelijke Ordening      | [ro-beheerteam](https://github.com/orgs/Geonovum/teams/ro-beheerteam)             | DRO                                                                                                                                                                                                                  |
+| IMKL           | Informatiemodel Kabel en Leidingen    | [IMKL team](https://github.com/orgs/Geonovum/teams/imkl-team)                     | [IMKL](https://teams.microsoft.com/l/team/19%3AiaoESCSHIsbq7yvi2SoqfB8DudsAeKpllqKKBucX_7o1%40thread.tacv2/conversations?groupId=27529a47-2e96-4cfd-b4e7-a6e7a5a341d3&tenantId=e5823331-ca32-4bae-a7f8-1e630643bf6c) |
+| INSPIRE        | INSPIRE                               | [EU team](https://github.com/orgs/Geonovum/teams/eu-team)                         | INSPRE                                                                                                                                                                                                               |
+| Basisprogramma | Basisprogramma voor algemene modellen | [Basisprogramma team](https://github.com/orgs/Geonovum/teams/basisprogramma-team) | Basisprogramma                                                                                                                                                                                                       |
+| Beheer         | Beheert modellen zonder project       |                                                                                   |                                                                                                                                                                                                                      |
 
 ## Welke modellen hebben we
 
@@ -69,9 +70,3 @@
 | NEN3610        | NEN3610                                                   | Basismodel geoinformatie                                                        |        |       |              |     |
 |                | gIM-OOV                                                   | Informatiemodel openbare orde en veiligheid                                     |        |       |              |     |
 | RO-Standaarden | IMRO                                                      | Informatiemodel Ruimtelijke Ordening                                            |        |       |              |     |
-
-## Opmerkingen
-
-- Deze lijsten zijn met de hand samengesteld.
-- Hoe bepalen we eigenlijk welke modellen we beheren?
-- Is dit lijstje automatisch af te leiden? Nou nee. Misschien ten dele uit de UML
