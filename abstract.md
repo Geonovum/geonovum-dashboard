@@ -1,2 +1,2 @@
-Dit is een leven document met informatie over informatiemodellen binnen Geonovum.
+Dit is een levend document met informatie over informatiemodellen binnen Geonovum.
 
