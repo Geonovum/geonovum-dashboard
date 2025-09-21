@@ -52,6 +52,10 @@ for repo in org.get_repos():
     for release in repo.get_releases():
         releases = releases + " " + release.tag_name
 
+#    open_issues = repo.get_issues(state='open')
+#    for issue in open_issues:
+#        print("================")
+#        print(issue)
 
 
     description = repo.description
