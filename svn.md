@@ -10,7 +10,7 @@
 | Datatypes                                     | Basisprogramma       |
 | Domeinmodel BRO BHR-GT bmonderzoek.xml'       | BRO        |
 | Geostandaarden                                | Basisprogramma        |
-| Grondwaterproductiedossier (GPD) logisch.xml' |          |
+| Grondwaterproductiedossier (GPD) logisch.xml' | BRO        |
 | IMEV                                          | IMEV     |
 | IMGeluid                                      | IMGeluid |
 | IMGeo                                         | BGT      |
