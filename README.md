@@ -1,115 +1,159 @@
-## ReSpec template instructies
+# Geonovum dashboard
 
-ReSpec is een tool om HTML- en PDF-documenten te genereren op basis van markdowncontent. Deze template helpt je bij het opstellen en publiceren van documenten volgens de Geonovum-standaard.
+Deze repository bevat het dashboard voor een overzicht van Geonovum- en
+BROprogramma-repositories, ReSpec-documenten, beheerindicatoren en
+publicatiechecks.
 
-De dynamische voorbeeldpagina van het template is [hier te bekijken](https://geonovum.github.io/NL-ReSpec-GN-template/).
+Live dashboard:
 
----
+[Dashboard](https://geonovum.github.io/geonovum-dashboard/)
 
-## Starten
+## Wat wordt bijgehouden
 
-Gebruik de knop [*Gebruik deze template*](https://github.com/Geonovum/NL-ReSpec-template/generate?description=Geonovum+documenttemplate) om een nieuwe repository aan te maken:
+Het dashboard combineert handmatig beheerde overzichten met automatisch
+gegenereerde data:
 
-* **Owner:** kies `Geonovum` als je daar rechten voor hebt.
-* **Visibility:** kies **Public**.
+- GitHub-repositories van `Geonovum` en `BROprogramma`
+- ReSpec-documenten per repository
+- gebruikte ReSpec-configuratie en publicatielocaties
+- laatste repository-activiteit en contactkandidaat
+- open issues en pull requests
+- aanwezigheid van beheerbestanden zoals `README`, `LICENSE`,
+  workflowconfiguratie en `CODEOWNERS`
+- linkcheck-resultaten
+- WCAG-checkresultaten
 
-> ℹ️ Na het aanmaken moet je **handmatig GitHub Pages activeren** in de instellingen van je nieuwe repository:
->
-> * Ga naar `Settings` → `Pages`
-> * Kies onder “Source” de branch `main` en map `/ (root)`
+## Belangrijkste bestanden
 
----
+| bestand | doel |
+| --- | --- |
+| `index.html` | ReSpec-ingangspunt voor het dashboard |
+| `dashboardoverzicht.md` | automatisch gegenereerde samenvatting en actielijst |
+| `githubrepos.md` | automatisch gegenereerd repositoryoverzicht |
+| `respecdocuments.md` | automatisch gegenereerd ReSpec-documentoverzicht |
+| `brokenlinks.md` | automatisch gegenereerd linkcheckrapport |
+| `listGeonovumRepos.py` | haalt GitHub- en ReSpec-data op |
+| `generateBrokenLinks.py` | zet Muffet JSON-output om naar `brokenlinks.md` |
+| `.checks/` | gegenereerde checkresultaten voor linkcheck en WCAG |
+| `snapshot.html` | door ReSpec gegenereerde HTML-snapshot |
 
-## Gebruikersinstructie
+De overige Markdown-bestanden, zoals `informatiemodellen.md`,
+`conceptenbibliotheken.md` en `svn.md`, bevatten aanvullende
+dashboardsecties.
 
-Voor het aanpassen van het document raden we aan om een IDE te gebruiken, zoals [Visual Studio Code](https://code.visualstudio.com/). Deze geeft een voorbeeldweergave van je markdown en helpt bij het beheren van je bestanden.
+## Automatische workflow
 
-### Aanpassen van content
+De workflow draait via GitHub Actions:
 
-* Pas instellingen aan in de configuratiebestanden (`config.js`)
-* Voeg markdown-bestanden toe of wijzig bestaande bestanden
+- bij iedere push
+- bij pull requests
+- dagelijks om `04:17 UTC`
+- bij releases
 
-### Configuratiebestanden
+De hoofdworkflow staat in `.github/workflows/main.yml`. De build- en
+checkstappen staan in `.github/workflows/build.yml`.
 
-* [`js/config.js`](js/config.js): bevat document-specifieke instellingen zoals titel, status en auteurs
-* [`organisation-config.js`](https://tools.geostandaarden.nl/respec/config/geonovum-config.js): bevat algemene informatie over de organisatie
+Tijdens een push of dagelijkse run worden de gegenereerde bestanden
+teruggeschreven naar dezelfde branch. Deze commit wordt gemaakt door
+`github-actions[bot]`, zodat duidelijk is welke wijzigingen automatisch zijn
+gegenereerd.
 
-Beide bestanden worden gelinkt in de [`index.html`](index.html)
+De workflow voert onder andere deze stappen uit:
 
-### Content schrijven
+1. GitHub-repositorydata ophalen.
+2. `dashboardoverzicht.md`, `githubrepos.md` en `respecdocuments.md` genereren.
+3. ReSpec HTML-snapshot genereren.
+4. HTML-validatie uitvoeren.
+5. WCAG 2.2-check uitvoeren met Axe.
+6. Linkcheck uitvoeren met Muffet.
+7. `brokenlinks.md` genereren uit de linkcheck-output.
+8. Checkresultaten en snapshot committen.
 
-* Gebruik markdown of HTML
-* Splits content idealiter per hoofdstuk in losse bestanden
-* Voeg nieuwe secties toe aan de `index.html` via `data-include`:
+## Lokaal draaien
 
-```html
-<section data-include-format="markdown" data-include="ch01.md" class="informative"></section>
-<section data-include-format="markdown" data-include="ch02.md"></section>
+Voor het genereren van de repository- en ReSpec-overzichten:
+
+```sh
+python3 listGeonovumRepos.py
 ```
 
-CSS-classes zijn ook bruikbaar in markdown via HTML:
+Voor het genereren van het broken-links rapport uit bestaande Muffet-output:
 
-```html
-<div class="example">voorbeeld</div>
+```sh
+python3 generateBrokenLinks.py \
+  .checks/link-check.json \
+  brokenlinks.md \
+  .checks/link-check.txt
 ```
 
-Meer info: [ReSpec documentatie](https://respec.org/docs/#css-classes)
+Voor het genereren van de HTML-snapshot:
 
----
-
-## Automatische checks en build
-
-De GitHub Actions workflow draait automatisch bij iedere commit of bij een GitHub Release. Daarbij gebeuren de volgende stappen:
-
-1. HTML wordt gegenereerd met [ReSpec](https://respec.org/)
-2. (optioneel) PDF wordt gegenereerd — indien `alternateFormats` is ingesteld in `config.js`:
-
-```js
-alternateFormats: [
-  {
-    label: "pdf",
-    uri: "template.pdf",
-  },
-]
+```sh
+npx respec --localhost --src index.html --out snapshot.html
 ```
 
-3. Automatische controles worden uitgevoerd:
+Voor een lokale preview:
 
-    * HTML-validatie
-    * WCAG-check (toegankelijkheid)
-    * Linkcheck (controleren van verwijzingen)
+```sh
+python3 -m http.server 8080
+```
 
-De resultaten zijn zichtbaar in het tabblad **Actions** van je repository.
+Open daarna:
 
----
+<http://localhost:8080/>
 
-## Publiceren van documenten
+## GitHub-token
 
-Wanneer je document klaar is, publiceer je via **GitHub Releases**:
+`listGeonovumRepos.py` gebruikt de GitHub API. In GitHub Actions wordt
+automatisch `GH_TOKEN` gezet.
 
-### Pre-release (testomgeving)
+Lokaal werkt het script zonder token, maar met een token zijn rate limits
+minder snel een probleem:
 
-* Ga naar het tabblad **Releases** in je eigen repo
-* Klik op **“Create a new release”**
-* Geef een tag aan bij, Choose a tag (bijv. `v0.1.0`) en klik op **“Create new tag”**
-* **Vink aan:** “This is a pre-release” onderop deze pagina
-* Klik op **“Publish release”**
+```sh
+export GH_TOKEN=...
+python3 listGeonovumRepos.py
+```
 
-💡 Dit publiceert je document automatisch op:
-https://test.docs.geostandaarden.nl/
+## Organisaties toevoegen
 
-(De exacte URL wordt bepaald door waarden in `config.js`)
+De te scannen organisaties staan in `listGeonovumRepos.py`:
 
-### Release (productieomgeving)
+```py
+ORGS = ["Geonovum", "BROprogramma"]
+```
 
-* Ga opnieuw naar **Releases**
-* Klik op **“Create a new release”**
-* Geef een tag aan bij, Choose a tag (bijv. `v0.1.0`) en klik op **“Create new tag”**
-* Laat “pre-release” uitgevinkt
-* Klik op **“Publish release”**
+Voeg daar een organisatie aan toe als die in dezelfde dashboardrapportage moet
+worden meegenomen.
 
-💡 Dit maakt automatisch een **Pull Request** aan naar:
-[`Geonovum/docs.geostandaarden.nl`](https://github.com/Geonovum/docs.geostandaarden.nl/pulls)
+## Linkcheck
 
-Na goedkeuring van de PR wordt het document gepubliceerd op:
-https://docs.geostandaarden.nl/
+De linkcheck gebruikt Muffet en schrijft JSON-output naar
+`.checks/link-check.json`.
+
+`generateBrokenLinks.py` vertaalt die output naar `brokenlinks.md`. Daarbij
+worden tijdelijke of niet-actiegerichte responses, zoals `401`, `403` en `429`,
+niet als kapotte link behandeld. Zo blijft het dashboard gericht op links die
+waarschijnlijk echt aandacht nodig hebben.
+
+## Publicatie
+
+GitHub Pages publiceert de inhoud van `main`.
+
+Voor gewone wijzigingen:
+
+1. Werk op een featurebranch, bijvoorbeeld `dashboard-daily-update`.
+2. Push de branch.
+3. Controleer de GitHub Actions-run.
+4. Maak een pull request naar `main`.
+5. Na merge wordt GitHub Pages opnieuw opgebouwd.
+
+## Bekende aandachtspunten
+
+- De workflow commit gegenereerde bestanden terug. Daardoor kunnen na een push
+  extra commits van `github-actions[bot]` verschijnen.
+- Linkchecks op externe sites kunnen per netwerk of moment verschillen.
+- GitHub-webpagina's kunnen rate limits geven; daarom worden `429` responses
+  niet als kapotte links geteld.
+- De README beschrijft dit dashboardrepository. Gebruik `NL-ReSpec-template`
+  voor documenttemplates.
