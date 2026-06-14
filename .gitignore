@@ -1,5 +1,6 @@
 ﻿*_log
 .idea
+**/.DS_Store
 .checks/*
 !.checks/*.txt
 /repos
