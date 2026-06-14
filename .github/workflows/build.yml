@@ -242,10 +242,21 @@ jobs:
 
       - name: Run link check with Muffet
         run: |
+          set -euo pipefail
           sudo apt-get install -y golang-go
           go install github.com/raviqqe/muffet@latest
           echo "${HOME}/go/bin" >> $GITHUB_PATH
+
+          LINK_JSON="$CHECK_DIR/link-check.json"
+          LINK_STDERR="$CHECK_DIR/link-check.stderr"
+
+          set +e
           muffet \
+            --format=json \
+            --accepted-status-codes '200..300,401,403,429' \
+            --max-connections-per-host 4 \
+            --rate-limit 8 \
+            --timeout 15 \
             --exclude '\.pdf$' \
             --exclude '^https://gitdocumentatie.*' \
             --exclude '^https://docs.geostandaarden.*' \
@@ -254,7 +265,19 @@ jobs:
             --ignore-fragments \
             --one-page-only \
             http://localhost:8080/snapshot.html \
-            --buffer-size 8192 > $CHECK_DIR/link-check.txt 2>&1 || echo "Geen linkfouten gevonden." > $CHECK_DIR/link-check.txt
+            --buffer-size 8192 > "$LINK_JSON" 2> "$LINK_STDERR"
+          LINK_STATUS=$?
+          set -e
+
+          if [[ -s "$LINK_STDERR" ]]; then
+            cat "$LINK_STDERR"
+          fi
+
+          python3 generateBrokenLinks.py "$LINK_JSON" brokenlinks.md "$CHECK_DIR/link-check.txt"
+
+          if [[ "$LINK_STATUS" -ne 0 ]]; then
+            echo "Muffet vond linkmeldingen. Zie brokenlinks.md en $CHECK_DIR/link-check.txt."
+          fi
 
       - name: Stop snapshot HTTP server
         if: always()
@@ -274,7 +297,7 @@ jobs:
             mv static/*.pdf .
           fi
 
-          git add snapshot.html dashboardoverzicht.md githubrepos.md respecdocuments.md $CHECK_DIR/*.txt
+          git add snapshot.html dashboardoverzicht.md githubrepos.md respecdocuments.md brokenlinks.md $CHECK_DIR/*.txt
           git add -f $CHECK_DIR/*.json
 
           if compgen -G "*.pdf" > /dev/null; then

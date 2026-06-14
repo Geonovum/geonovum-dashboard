@@ -5,10 +5,8 @@ all: githubrepos.md respecbase.md brokenlinks.md
 docs.geostandaarden.nl.html:
 	linkchecker --no-warnings -o html https://docs.geostandaarden.nl/ > docs.geostandaarden.nl.html
 
-brokenlinks.md: docs.geostandaarden.nl.html Makefile
-	echo '# Broken links' > $@
-	echo >> $@
-	echo 'Broken links rapport voor [tools.geostandaarden.nl](docs.geostandaarden.nl.html).' >> $@
+brokenlinks.md: .checks/link-check.json generateBrokenLinks.py
+	python3 generateBrokenLinks.py .checks/link-check.json brokenlinks.md .checks/link-check.txt
 
 githubrepos.md: listGeonovumRepos.py
 	python3 listGeonovumRepos.py
