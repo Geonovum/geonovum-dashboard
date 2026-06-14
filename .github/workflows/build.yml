@@ -94,7 +94,7 @@ jobs:
           fi
 
       - name: Generate HTML snapshot
-        run: npx respec --localhost --src index.html --out snapshot.html
+        run: npx respec --localhost --src index.html --out snapshot.html --timeout 60
 
       - name: Prepare HTML for validation
         run: |
