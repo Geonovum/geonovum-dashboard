@@ -6,7 +6,7 @@ Automatisch bijgewerkt op 2026-06-14.
 <div><strong>315</strong><span>repos</span></div>
 <div><strong>470</strong><span>ReSpec documenten</span></div>
 <div><strong>1663</strong><span>open issues</span></div>
-<div><strong>428</strong><span>open PR's</span></div>
+<div><strong>425</strong><span>open PR's</span></div>
 <div><strong>232</strong><span>Pages repos</span></div>
 <div><strong>127</strong><span>met workflow</span></div>
 </div>
