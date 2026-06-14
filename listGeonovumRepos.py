@@ -2,16 +2,60 @@
 #
 # Genereert githubrepos.md met publieke, niet-gearchiveerde Geonovum repos.
 #
+from collections import Counter, defaultdict
+from datetime import date
 import json
 import subprocess
+import time
 import urllib.parse
 
 ORG = "Geonovum"
+CODE_SEARCH_INTERVAL_SECONDS = 7
+last_code_search_at = 0
+RESPEC_BUILD_QUERIES = [
+    {
+        "query": "respec-geonovum",
+        "label": "tools.geostandaarden",
+        "build_url": "https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js",
+    },
+    {
+        "query": "respec-nlgov",
+        "label": "respec-nlgov",
+        "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js",
+    },
+    {
+        "query": '"gitdocumentatie.logius.nl/publicatie/respec/fixup.js"',
+        "label": "fixup",
+        "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js",
+    },
+    {
+        "query": "respec-logius",
+        "label": "respec-logius",
+        "build_url": "https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js",
+    },
+    {
+        "query": "respec-w3c",
+        "label": "https://www.w3.org/Tools/respec/respec-w3c",
+        "build_url": "https://www.w3.org/Tools/respec/respec-w3c",
+    },
+]
 
 
 def github_json(path):
     output = subprocess.check_output(["gh", "api", path], text=True)
     return json.loads(output)
+
+
+def github_code_search_json(path):
+    global last_code_search_at
+
+    elapsed = time.monotonic() - last_code_search_at
+    if elapsed < CODE_SEARCH_INTERVAL_SECONDS:
+        time.sleep(CODE_SEARCH_INTERVAL_SECONDS - elapsed)
+
+    data = github_json(path)
+    last_code_search_at = time.monotonic()
+    return data
 
 
 def github_graphql(query, variables):
@@ -74,6 +118,72 @@ def release_tags(metadata):
         tags.append("...")
 
     return " ".join(tags)
+
+
+def github_file_location(repo, path):
+    if path == "index.html":
+        return repo["html_url"]
+
+    directory = path.rsplit("/", 1)[0]
+    encoded_directory = urllib.parse.quote(directory, safe="/")
+    return "{}/tree/{}/{}".format(repo["html_url"], repo["default_branch"], encoded_directory)
+
+
+def search_code(query):
+    items = []
+    page = 1
+
+    while True:
+        params = urllib.parse.urlencode({"q": query, "per_page": 100, "page": page})
+        data = github_code_search_json("search/code?{}".format(params))
+        batch = data.get("items", [])
+        items.extend(batch)
+
+        if len(batch) < 100:
+            break
+        page += 1
+
+    return items
+
+
+def is_index_html_search_item(item):
+    path = item.get("path", "")
+    return item.get("name") == "index.html" and (path == "index.html" or path.endswith("/index.html"))
+
+
+def respec_documents(repos):
+    documents = []
+    repos_by_full_name = {repo["full_name"]: repo for repo in repos}
+    seen = set()
+
+    def append_document(repo, path, build_url, label):
+        location = github_file_location(repo, path)
+        key = (location, label)
+        if key in seen:
+            return
+        seen.add(key)
+
+        documents.append(
+            {
+                "location": location,
+                "build_url": build_url,
+                "label": label,
+            }
+        )
+
+    for build in RESPEC_BUILD_QUERIES:
+        query = "org:{} filename:index.html {}".format(ORG, build["query"])
+        for item in search_code(query):
+            if not is_index_html_search_item(item):
+                continue
+
+            repo = repos_by_full_name.get((item.get("repository") or {}).get("full_name"))
+            if not repo:
+                continue
+
+            append_document(repo, item["path"], build["build_url"], build["label"])
+
+    return sorted(documents, key=lambda document: document["location"].lower())
 
 
 def batched(items, size):
@@ -192,6 +302,44 @@ Op dit dashboard zie je in een oogopslag alle openbare niet gearchiveerde Github
             )
 
 
+def write_respec_documents(documents):
+    counts = Counter(document["label"] for document in documents)
+    locations_by_label = defaultdict(Counter)
+    for document in documents:
+        locations_by_label[document["label"]][document["build_url"]] += 1
+
+    with open("respecdocuments.md", "w") as f:
+        f.write(
+            """# Welke versie van respec zit in welk repo
+
+Automatisch bijgewerkt op {}.
+
+| respec versie | aantal | locatie |
+| ------------- | ------ | ------- |
+""".format(date.today().isoformat())
+        )
+
+        for label, count in counts.most_common():
+            build_url = locations_by_label[label].most_common(1)[0][0]
+            f.write("| {} | {} | {} |\n".format(table_text(label), count, table_text(build_url)))
+
+        f.write(
+            """
+| file | respecversie |
+| ---- | ------------ |
+"""
+        )
+
+        for document in documents:
+            f.write(
+                "| {} | {} |\n".format(
+                    table_text(document["location"]),
+                    table_text(document["label"]),
+                )
+            )
+
+
 repos = list_repositories()
 metadata_by_repo = repository_metadata([repo["name"] for repo in repos])
 write_dashboard(repos, metadata_by_repo)
+write_respec_documents(respec_documents(repos))
