@@ -61,7 +61,8 @@ gegenereerd.
 De workflow voert onder andere deze stappen uit:
 
 1. GitHub-repositorydata ophalen.
-2. `dashboardoverzicht.md`, `githubrepos.md` en `respecdocuments.md` genereren.
+2. `dashboardoverzicht.md`, `githubrepos.md`, `respecdocuments.md` en de lijst
+   met Pages-startpagina's genereren.
 3. ReSpec HTML-snapshot genereren.
 4. HTML-validatie uitvoeren.
 5. WCAG 2.2-check uitvoeren met Axe.
@@ -83,7 +84,8 @@ Voor het genereren van het broken-links rapport uit bestaande Muffet-output:
 python3 generateBrokenLinks.py \
   .checks/link-check.json \
   brokenlinks.md \
-  .checks/link-check.txt
+  .checks/link-check.txt \
+  .checks/link-targets.txt
 ```
 
 Voor het genereren van de HTML-snapshot:
@@ -129,7 +131,15 @@ worden meegenomen.
 ## Linkcheck
 
 De linkcheck gebruikt Muffet en schrijft JSON-output naar
-`.checks/link-check.json`.
+`.checks/link-check.json`. De workflow controleert het lokale dashboardsnapshot
+en de startpagina's van repositories waarvoor GitHub Pages aan staat. Die
+startpagina's worden tijdens de repositoryscan naar `.checks/pages-urls.txt`
+geschreven en samen met het dashboardsnapshot in `.checks/link-targets.txt`
+gezet.
+
+De check gebruikt `--one-page-only`: per Pages-site wordt dus alleen de
+startpagina gecontroleerd, niet de hele site gecrawld. Dat houdt de dagelijkse
+workflow voorspelbaar.
 
 `generateBrokenLinks.py` vertaalt die output naar `brokenlinks.md`. Daarbij
 worden tijdelijke of niet-actiegerichte responses, zoals `401`, `403` en `429`,

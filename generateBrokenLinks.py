@@ -98,7 +98,13 @@ def read_results(path: Path) -> tuple[list[dict[str, str]], str | None]:
     return flatten_results(data), None
 
 
-def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: Path) -> None:
+def read_target_count(path: Path | None) -> int:
+    if not path or not path.exists():
+        return 0
+    return len([line for line in path.read_text(encoding="utf-8").splitlines() if line.strip()])
+
+
+def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: Path, target_count: int) -> None:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     actual = [row for row in rows if row["kind"] in {"kapot", "clientfout", "serverfout"}]
     uncertain = [row for row in rows if row["kind"] not in {"kapot", "clientfout", "serverfout"}]
@@ -127,6 +133,7 @@ def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: 
                 f"<div><strong>{len(actual)}</strong><span>kapotte links</span></div>",
                 f"<div><strong>{len(uncertain)}</strong><span>tijdelijke meldingen</span></div>",
                 f"<div><strong>{len(rows)}</strong><span>meldingen totaal</span></div>",
+                f"<div><strong>{target_count}</strong><span>gecontroleerde startpagina's</span></div>",
                 "</div>",
                 "",
             ]
@@ -173,13 +180,14 @@ def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: 
     target.write_text("\n".join(lines), encoding="utf-8")
 
 
-def write_text_summary(rows: list[dict[str, str]], parse_error: str | None, target: Path) -> None:
+def write_text_summary(rows: list[dict[str, str]], parse_error: str | None, target: Path, target_count: int) -> None:
     actual = [row for row in rows if row["kind"] in {"kapot", "clientfout", "serverfout"}]
     uncertain = [row for row in rows if row["kind"] not in {"kapot", "clientfout", "serverfout"}]
     lines = [
         f"Kapotte links: {len(actual)}",
         f"Tijdelijke/onzekere meldingen: {len(uncertain)}",
         f"Meldingen totaal: {len(rows)}",
+        f"Gecontroleerde startpagina's: {target_count}",
     ]
     if parse_error:
         lines.append(parse_error)
@@ -189,17 +197,19 @@ def write_text_summary(rows: list[dict[str, str]], parse_error: str | None, targ
 
 
 def main() -> int:
-    if len(sys.argv) != 4:
-        print("Usage: generateBrokenLinks.py <muffet-json> <brokenlinks-md> <summary-txt>", file=sys.stderr)
+    if len(sys.argv) not in (4, 5):
+        print("Usage: generateBrokenLinks.py <muffet-json> <brokenlinks-md> <summary-txt> [targets-txt]", file=sys.stderr)
         return 2
 
     source = Path(sys.argv[1])
     markdown_target = Path(sys.argv[2])
     summary_target = Path(sys.argv[3])
+    targets = Path(sys.argv[4]) if len(sys.argv) == 5 else None
 
     rows, parse_error = read_results(source)
-    write_markdown(rows, parse_error, markdown_target)
-    write_text_summary(rows, parse_error, summary_target)
+    target_count = read_target_count(targets)
+    write_markdown(rows, parse_error, markdown_target, target_count)
+    write_text_summary(rows, parse_error, summary_target, target_count)
     return 0
 
 

@@ -249,6 +249,16 @@ jobs:
 
           LINK_JSON="$CHECK_DIR/link-check.json"
           LINK_STDERR="$CHECK_DIR/link-check.stderr"
+          LINK_TARGETS_FILE="$CHECK_DIR/link-targets.txt"
+          PAGES_URLS_FILE="$CHECK_DIR/pages-urls.txt"
+
+          printf '%s\n' "http://localhost:8080/snapshot.html" > "$LINK_TARGETS_FILE"
+          if [[ -s "$PAGES_URLS_FILE" ]]; then
+            cat "$PAGES_URLS_FILE" >> "$LINK_TARGETS_FILE"
+          fi
+          sort -u -o "$LINK_TARGETS_FILE" "$LINK_TARGETS_FILE"
+          mapfile -t LINK_TARGETS < "$LINK_TARGETS_FILE"
+          echo "Muffet controleert ${#LINK_TARGETS[@]} startpagina's."
 
           set +e
           muffet \
@@ -264,8 +274,8 @@ jobs:
             --header 'user-agent:Curl' \
             --ignore-fragments \
             --one-page-only \
-            http://localhost:8080/snapshot.html \
-            --buffer-size 8192 > "$LINK_JSON" 2> "$LINK_STDERR"
+            --buffer-size 8192 \
+            "${LINK_TARGETS[@]}" > "$LINK_JSON" 2> "$LINK_STDERR"
           LINK_STATUS=$?
           set -e
 
@@ -277,7 +287,7 @@ jobs:
             cat "$LINK_STDERR"
           fi
 
-          python3 generateBrokenLinks.py "$LINK_JSON" brokenlinks.md "$CHECK_DIR/link-check.txt"
+          python3 generateBrokenLinks.py "$LINK_JSON" brokenlinks.md "$CHECK_DIR/link-check.txt" "$LINK_TARGETS_FILE"
 
           if [[ "$LINK_STATUS" -ne 0 ]]; then
             echo "Muffet vond linkmeldingen. Zie brokenlinks.md en $CHECK_DIR/link-check.txt."

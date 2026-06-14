@@ -18,6 +18,7 @@ import urllib.request
 ORGS = ["Geonovum", "BROprogramma"]
 TREE_CACHE = {}
 TODAY = date.today()
+CHECK_DIR = os.environ.get("CHECK_DIR", ".checks")
 
 
 def github_json(path):
@@ -531,12 +532,34 @@ def repository_metadata(repos):
 
 
 def repo_pages_link(repo):
+    url = repo_pages_url(repo)
+    if not url:
+        return ""
+    return "[pages]({})".format(url)
+
+
+def repo_pages_url(repo):
     if not repo.get("has_pages"):
         return ""
-    return "[pages](https://{}.github.io/{}/)".format(
+
+    owner = repo["owner"]["login"].lower()
+    name = repo["name"]
+    if name.lower() == "{}.github.io".format(owner):
+        return "https://{}.github.io/".format(owner)
+
+    return "https://{}.github.io/{}/".format(
         repo["owner"]["login"].lower(),
         repo["name"],
     )
+
+
+def write_pages_urls(repos):
+    path = os.path.join(CHECK_DIR, "pages-urls.txt")
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    urls = sorted({url for repo in repos for url in [repo_pages_url(repo)] if url})
+    with open(path, "w") as f:
+        for url in urls:
+            f.write("{}\n".format(url))
 
 
 def repo_open_work(metadata):
@@ -756,3 +779,4 @@ documents = respec_documents(repos)
 write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents)
 write_dashboard(repos, metadata_by_repo, flags_by_repo)
 write_respec_documents(documents)
+write_pages_urls(repos)
