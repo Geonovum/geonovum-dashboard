@@ -132,14 +132,7 @@ def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: 
             ]
         )
 
-    if not rows and not parse_error:
-        lines.extend(
-            [
-                '<span class="dashboard-badge dashboard-badge--success">0</span> Geen kapotte links gevonden.',
-                "",
-            ]
-        )
-    else:
+    if rows or parse_error:
         lines.extend(["## Samenvatting per fout", ""])
         if counts:
             lines.extend(["| fout | aantal |", "| --- | ---: |"])

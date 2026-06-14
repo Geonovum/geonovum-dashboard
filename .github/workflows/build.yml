@@ -269,6 +269,10 @@ jobs:
           LINK_STATUS=$?
           set -e
 
+          if [[ ! -s "$LINK_JSON" ]]; then
+            printf '[]\n' > "$LINK_JSON"
+          fi
+
           if [[ -s "$LINK_STDERR" ]]; then
             cat "$LINK_STDERR"
           fi
