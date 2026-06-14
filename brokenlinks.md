@@ -1,11 +1,12 @@
 # Broken links
 
-Laatst bijgewerkt: 2026-06-14 13:28 UTC.
+Laatst bijgewerkt: 2026-06-14 13:37 UTC.
 
 <div class="dashboard-kpis">
 <div><strong>0</strong><span>kapotte links</span></div>
 <div><strong>0</strong><span>tijdelijke meldingen</span></div>
 <div><strong>0</strong><span>meldingen totaal</span></div>
+<div><strong>233</strong><span>gecontroleerde startpagina's</span></div>
 </div>
 
 **Kapotte links**
