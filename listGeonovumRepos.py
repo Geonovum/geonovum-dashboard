@@ -378,6 +378,8 @@ def respec_documents_for_blob(index_blob):
     for build_url in extract_respec_build_urls(html):
         documents.append(
             {
+                "organization": repo["owner"]["login"],
+                "repository": repo["name"],
                 "location": github_file_location(repo, path),
                 "build_url": build_url,
                 "label": respec_label(build_url),
@@ -731,14 +733,16 @@ Automatisch bijgewerkt op {}.
 
         f.write(
             """
-| file | respecversie |
-| ---- | ------------ |
+| organisatie | repo | file | respecversie |
+| ----------- | ---- | ---- | ------------ |
 """
         )
 
         for document in documents:
             f.write(
-                "| {} | {} |\n".format(
+                "| {} | {} | {} | {} |\n".format(
+                    table_text(document["organization"]),
+                    table_text(document["repository"]),
                     table_text(document["location"]),
                     table_text(document["label"]),
                 )
