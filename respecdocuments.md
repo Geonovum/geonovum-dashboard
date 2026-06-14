@@ -14,6 +14,11 @@ Automatisch bijgewerkt op 2026-06-14.
 | ../js/respec.js | 1 | ../js/respec.js |
 | https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js | 1 | https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js |
 
+| organisatie | aantal documenten |
+| ----------- | ----------------- |
+| Geonovum | 442 |
+| BROprogramma | 28 |
+
 | file | respecversie |
 | ---- | ------------ |
 | https://github.com/BROprogramma/_temp_imagemaps | respec-nlgov |

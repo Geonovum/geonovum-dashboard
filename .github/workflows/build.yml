@@ -274,7 +274,7 @@ jobs:
             mv static/*.pdf .
           fi
 
-          git add snapshot.html githubrepos.md respecdocuments.md $CHECK_DIR/*.txt
+          git add snapshot.html dashboardoverzicht.md githubrepos.md respecdocuments.md $CHECK_DIR/*.txt
           git add -f $CHECK_DIR/*.json
 
           if compgen -G "*.pdf" > /dev/null; then
