@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 #
-# Genereert githubrepos.md met publieke, niet-gearchiveerde Geonovum repos.
+# Genereert githubrepos.md met publieke, niet-gearchiveerde repos.
 #
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -9,12 +9,14 @@ import base64
 import json
 import os
 import re
+import socket
 import subprocess
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 
-ORG = "Geonovum"
+ORGS = ["Geonovum", "BROprogramma"]
 
 
 def github_json(path):
@@ -28,8 +30,16 @@ def github_json(path):
         headers["Authorization"] = "Bearer {}".format(token)
 
     request = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8"))
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=30) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError:
+            raise
+        except (TimeoutError, socket.timeout, urllib.error.URLError):
+            if attempt == 2:
+                raise
+            time.sleep(2 * (attempt + 1))
 
 
 def github_graphql(query, variables):
@@ -144,7 +154,7 @@ def respec_label(build_url):
 def repository_tree(repo):
     branch = urllib.parse.quote(repo["default_branch"], safe="")
     path = "repos/{}/{}/git/trees/{}?recursive=1".format(
-        urllib.parse.quote(ORG),
+        urllib.parse.quote(repo["owner"]["login"]),
         urllib.parse.quote(repo["name"]),
         branch,
     )
@@ -162,7 +172,7 @@ def repository_tree(repo):
 
 def blob_text(repo, sha):
     path = "repos/{}/{}/git/blobs/{}".format(
-        urllib.parse.quote(ORG),
+        urllib.parse.quote(repo["owner"]["login"]),
         urllib.parse.quote(repo["name"]),
         urllib.parse.quote(sha, safe=""),
     )
@@ -235,13 +245,13 @@ def batched(items, size):
         yield items[index : index + size]
 
 
-def list_repositories():
+def list_org_repositories(org):
     repos = []
     page = 1
 
     while True:
         params = urllib.parse.urlencode({"per_page": 100, "page": page, "type": "public"})
-        batch = github_json("orgs/{}/repos?{}".format(urllib.parse.quote(ORG), params))
+        batch = github_json("orgs/{}/repos?{}".format(urllib.parse.quote(org), params))
 
         if not batch:
             break
@@ -258,54 +268,65 @@ def list_repositories():
     return repos
 
 
-def repository_metadata(repo_names):
+def list_repositories():
+    repos = []
+    for org in ORGS:
+        repos.extend(list_org_repositories(org))
+    return repos
+
+
+def repository_metadata(repos):
     metadata = {}
+    repos_by_owner = defaultdict(list)
+    for repo in repos:
+        repos_by_owner[repo["owner"]["login"]].append(repo)
 
-    for batch in batched(repo_names, 25):
-        fields = []
-        alias_to_name = {}
+    for owner, owner_repos in repos_by_owner.items():
+        for batch in batched(owner_repos, 25):
+            fields = []
+            alias_to_full_name = {}
 
-        for index, repo_name in enumerate(batch):
-            alias = "repo{}".format(index)
-            alias_to_name[alias] = repo_name
-            fields.append(
-                """
-                {alias}: repository(owner: $owner, name: {repo_name}) {{
-                  defaultBranchRef {{
-                    target {{
-                      ... on Commit {{
-                        history(first: 25) {{
-                          nodes {{
-                            author {{
-                              name
-                              user {{
-                                login
-                                url
+            for index, repo in enumerate(batch):
+                alias = "repo{}".format(index)
+                alias_to_full_name[alias] = repo["full_name"]
+                fields.append(
+                    """
+                    {alias}: repository(owner: $owner, name: {repo_name}) {{
+                      defaultBranchRef {{
+                        target {{
+                          ... on Commit {{
+                            history(first: 25) {{
+                              nodes {{
+                                author {{
+                                  name
+                                  user {{
+                                    login
+                                    url
+                                  }}
+                                }}
                               }}
                             }}
                           }}
                         }}
                       }}
+                      releases(first: 10, orderBy: {{field: CREATED_AT, direction: DESC}}) {{
+                        totalCount
+                        nodes {{
+                          tagName
+                        }}
+                      }}
                     }}
-                  }}
-                  releases(first: 10, orderBy: {{field: CREATED_AT, direction: DESC}}) {{
-                    totalCount
-                    nodes {{
-                      tagName
-                    }}
-                  }}
-                }}
-                """.format(
-                    alias=alias,
-                    repo_name=json.dumps(repo_name),
+                    """.format(
+                        alias=alias,
+                        repo_name=json.dumps(repo["name"]),
+                    )
                 )
-            )
 
-        query = "query($owner: String!) {{ {} }}".format("\n".join(fields))
-        data = github_graphql(query, {"owner": ORG})
+            query = "query($owner: String!) {{ {} }}".format("\n".join(fields))
+            data = github_graphql(query, {"owner": owner})
 
-        for alias, repo_name in alias_to_name.items():
-            metadata[repo_name] = data.get(alias) or {}
+            for alias, full_name in alias_to_full_name.items():
+                metadata[full_name] = data.get(alias) or {}
 
     return metadata
 
@@ -316,21 +337,25 @@ def write_dashboard(repos, metadata_by_repo):
             """
 # Overzicht Github repos
 
-Op dit dashboard zie je in een oogopslag alle openbare niet gearchiveerde Github repositories van Geonovum.
+Op dit dashboard zie je in een oogopslag alle openbare niet gearchiveerde Github repositories van Geonovum en BROprogramma.
 
-| Naam | Omschrijving | laatste wijziging | laatste gebruiker | zichtbaarheid | archief | heeft_pages | nview | releases | teams |
-|------|--------------|-------------------|-------------------|---------------|---------|-------------|-------|----------|-------|
+| Organisatie | Naam | Omschrijving | laatste wijziging | laatste gebruiker | zichtbaarheid | archief | heeft_pages | nview | releases | teams |
+|-------------|------|--------------|-------------------|-------------------|---------------|---------|-------------|-------|----------|-------|
 """
         )
 
         for repo in repos:
-            metadata = metadata_by_repo.get(repo["name"], {})
+            metadata = metadata_by_repo.get(repo["full_name"], {})
             pages = ""
             if repo.get("has_pages"):
-                pages = "[pages](https://geonovum.github.io/{}/)".format(repo["name"])
+                pages = "[pages](https://{}.github.io/{}/)".format(
+                    repo["owner"]["login"].lower(),
+                    repo["name"],
+                )
 
             f.write(
-                "| [{}]({}) | {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
+                "| {} | [{}]({}) | {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
+                    table_text(repo["owner"]["login"]),
                     table_text(repo["name"]),
                     repo["html_url"],
                     table_text(repo.get("description")),
@@ -384,6 +409,6 @@ Automatisch bijgewerkt op {}.
 
 
 repos = list_repositories()
-metadata_by_repo = repository_metadata([repo["name"] for repo in repos])
+metadata_by_repo = repository_metadata(repos)
 write_dashboard(repos, metadata_by_repo)
 write_respec_documents(respec_documents(repos))

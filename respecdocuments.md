@@ -4,8 +4,8 @@ Automatisch bijgewerkt op 2026-06-14.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
-| tools.geostandaarden | 207 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| respec-nlgov | 153 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| tools.geostandaarden | 221 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| respec-nlgov | 167 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | fixup | 54 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
 | respec-logius | 8 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
@@ -16,6 +16,34 @@ Automatisch bijgewerkt op 2026-06-14.
 
 | file | respecversie |
 | ---- | ------------ |
+| https://github.com/BROprogramma/_temp_imagemaps | respec-nlgov |
+| https://github.com/BROprogramma/BHR-AG | tools.geostandaarden |
+| https://github.com/BROprogramma/BHR-G | respec-nlgov |
+| https://github.com/BROprogramma/BHR-GT | respec-nlgov |
+| https://github.com/BROprogramma/BHR-P | respec-nlgov |
+| https://github.com/BROprogramma/CPT | respec-nlgov |
+| https://github.com/BROprogramma/DGM | tools.geostandaarden |
+| https://github.com/BROprogramma/EPC | tools.geostandaarden |
+| https://github.com/BROprogramma/EPL | tools.geostandaarden |
+| https://github.com/BROprogramma/FRD | respec-nlgov |
+| https://github.com/BROprogramma/GAR | respec-nlgov |
+| https://github.com/BROprogramma/GLD | respec-nlgov |
+| https://github.com/BROprogramma/GMM | tools.geostandaarden |
+| https://github.com/BROprogramma/GMN | respec-nlgov |
+| https://github.com/BROprogramma/GMW | respec-nlgov |
+| https://github.com/BROprogramma/GMW/tree/gh-pages/gmw-1.0 | tools.geostandaarden |
+| https://github.com/BROprogramma/GPD | respec-nlgov |
+| https://github.com/BROprogramma/GTM | tools.geostandaarden |
+| https://github.com/BROprogramma/GUF | respec-nlgov |
+| https://github.com/BROprogramma/HGM | tools.geostandaarden |
+| https://github.com/BROprogramma/SAD | respec-nlgov |
+| https://github.com/BROprogramma/SAMPLE | tools.geostandaarden |
+| https://github.com/BROprogramma/SAMPLE1 | tools.geostandaarden |
+| https://github.com/BROprogramma/SAMPLE2 | tools.geostandaarden |
+| https://github.com/BROprogramma/SFR | tools.geostandaarden |
+| https://github.com/BROprogramma/SGM | tools.geostandaarden |
+| https://github.com/BROprogramma/SLD | respec-nlgov |
+| https://github.com/BROprogramma/WDM | tools.geostandaarden |
 | https://github.com/Geonovum/3d-standaard-onderzoek | respec-nlgov |
 | https://github.com/Geonovum/3d-standaard-rapport | respec-nlgov |
 | https://github.com/Geonovum/3d-tiling | respec-nlgov |
