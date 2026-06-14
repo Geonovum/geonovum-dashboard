@@ -1,7 +1,3 @@
-Kapotte links: 4
+Kapotte links: 0
 Tijdelijke/onzekere meldingen: 0
-Meldingen totaal: 4
-404	https://staging-definities.geostandaarden.nl/disgeo/nl/	dashboard snapshot
-404	https://staging-definities.geostandaarden.nl/imev2/nl/	dashboard snapshot
-404	https://staging-definities.geostandaarden.nl/imev/nl/	dashboard snapshot
-404	https://geonovum.github.io/ogc-api-workshops/	dashboard snapshot
+Meldingen totaal: 0
