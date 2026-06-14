@@ -1,6 +1,6 @@
 # Broken links
 
-Laatst bijgewerkt: 2026-06-14 13:03 UTC.
+Laatst bijgewerkt: 2026-06-14 13:15 UTC.
 
 <div class="dashboard-kpis">
 <div><strong>0</strong><span>kapotte links</span></div>
