@@ -1,6 +1,6 @@
-# welke modellen zitten in subversion?
+# Modellen in Subversion
 
-Dit zijn de mappen die in `svn.geostandaarden.nl` zit. Aan iedere map heb ik een project toegekend.
+Dit zijn de mappen in `svn.geostandaarden.nl`. Aan iedere map is een project toegekend.
 
 | Folder / bestand                              | project        |
 | --------------------------------------------- | -------------- |
@@ -31,5 +31,4 @@ Dit zijn de mappen die in `svn.geostandaarden.nl` zit. Aan iedere map heb ik een
 | MIM                                           | MIM            |
 | NEN3610                                       | NEN3610        |
 | WaU                                           | Beheer         |
-
 

@@ -115,6 +115,8 @@ def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: 
         "",
         f"Laatst bijgewerkt: {now}.",
         "",
+        "Controleert het dashboard en de GitHub Pages-startpagina's van repositories. Volledige sites worden niet gecrawld.",
+        "",
     ]
 
     if parse_error:

@@ -89,6 +89,16 @@ def table_text(value):
     return str(value).replace("|", " ").replace("\n", " ")
 
 
+def percentage(part, total):
+    if not total:
+        return "0%"
+    return "{:.0f}%".format((part / total) * 100)
+
+
+def ratio(part, total):
+    return "{} / {} ({})".format(part, total, percentage(part, total))
+
+
 def badge(text, kind):
     return '<span class="dashboard-badge dashboard-badge--{}">{}</span>'.format(kind, table_text(text))
 
@@ -576,6 +586,19 @@ def repo_action_score(repo, metadata, flags):
     return stale_score + issues * 15 + pull_requests * 30 + missing_score * 20
 
 
+def repo_contact_text(metadata):
+    contact, source = latest_activity_contact(metadata)
+    return "{} ({})".format(contact, source) if contact and source else contact
+
+
+def repo_missing_score(flags):
+    return 7 - flags.get("score", 0)
+
+
+def repo_link(repo):
+    return "[{}]({})".format(table_text(repo["name"]), repo["html_url"])
+
+
 def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents):
     repos_by_org = Counter(repo["owner"]["login"] for repo in repos)
     stale_repos = [repo for repo in repos if isinstance(days_since(repo.get("pushed_at")), int) and days_since(repo.get("pushed_at")) > 365]
@@ -596,16 +619,51 @@ def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents):
         for document in documents
         if document["label"] not in ("tools.geostandaarden",)
     ]
-
-    action_repos = sorted(
-        repos,
-        key=lambda repo: repo_action_score(
-            repo,
-            metadata_by_repo.get(repo["full_name"], {}),
-            flags_by_repo.get(repo["full_name"], {}),
+    open_work_repos = sorted(
+        [
+            repo
+            for repo in repos
+            if sum(repo_open_work(metadata_by_repo.get(repo["full_name"], {}))) > 0
+        ],
+        key=lambda repo: (
+            repo_open_work(metadata_by_repo.get(repo["full_name"], {}))[1],
+            repo_open_work(metadata_by_repo.get(repo["full_name"], {}))[0],
         ),
         reverse=True,
     )[:12]
+    active_missing_management = sorted(
+        [
+            repo
+            for repo in repos
+            if isinstance(days_since(repo.get("pushed_at")), int)
+            and days_since(repo.get("pushed_at")) <= 365
+            and repo_missing_score(flags_by_repo.get(repo["full_name"], {})) > 0
+        ],
+        key=lambda repo: (
+            repo_missing_score(flags_by_repo.get(repo["full_name"], {})),
+            sum(repo_open_work(metadata_by_repo.get(repo["full_name"], {}))),
+            -days_since(repo.get("pushed_at")),
+        ),
+        reverse=True,
+    )[:12]
+    archive_candidates = sorted(
+        [
+            repo
+            for repo in sleeping_repos
+            if sum(repo_open_work(metadata_by_repo.get(repo["full_name"], {}))) == 0
+        ],
+        key=lambda repo: days_since(repo.get("pushed_at")) if isinstance(days_since(repo.get("pushed_at")), int) else 0,
+        reverse=True,
+    )[:12]
+    old_respec_by_repo = defaultdict(lambda: {"count": 0, "labels": Counter(), "org": "", "repo": "", "url": ""})
+    for document in old_respec_documents:
+        key = (document["organization"], document["repository"])
+        old_respec_by_repo[key]["org"] = document["organization"]
+        old_respec_by_repo[key]["repo"] = document["repository"]
+        old_respec_by_repo[key]["url"] = "https://github.com/{}/{}".format(document["organization"], document["repository"])
+        old_respec_by_repo[key]["count"] += 1
+        old_respec_by_repo[key]["labels"][document["label"]] += 1
+    respec_attention = sorted(old_respec_by_repo.values(), key=lambda item: item["count"], reverse=True)[:12]
 
     with open("dashboardoverzicht.md", "w") as f:
         f.write(
@@ -630,8 +688,8 @@ Automatisch bijgewerkt op {}.
                 len(documents),
                 open_issues,
                 open_prs,
-                len(pages_repos),
-                len(workflow_repos),
+                ratio(len(pages_repos), len(repos)),
+                ratio(len(workflow_repos), len(repos)),
             )
         )
 
@@ -640,44 +698,118 @@ Automatisch bijgewerkt op {}.
 
         f.write(
             """
-| Indicator | aantal |
-| --------- | ------ |
-| Repos stiler dan 1 jaar | {} |
-| Repos stiler dan 2 jaar | {} |
-| Repos zonder SECURITY.md | {} |
-| Repos zonder publiccode.yml | {} |
-| ReSpec documenten met migratie-aandacht | {} |
+| Indicator | aantal | aandeel |
+| --------- | ------ | ------- |
+| Repos stiler dan 1 jaar | {} | {} |
+| Repos stiler dan 2 jaar | {} | {} |
+| Repos zonder SECURITY.md | {} | {} |
+| Repos zonder publiccode.yml | {} | {} |
+| ReSpec documenten met migratie-aandacht | {} | {} |
 
-## Actielijst repo beheer
+## Actielijsten
 
-| Organisatie | repo | gezondheid | laatste wijziging | contact | open issues | open PR's | beheerbestanden |
-| ----------- | ---- | ---------- | ----------------- | ------- | ----------- | --------- | --------------- |
+**Open werk**
+
+Repos met de meeste open pull requests en issues.
+
+| Organisatie | repo | gezondheid | laatste wijziging | contact | open issues | open PR's |
+| ----------- | ---- | ---------- | ----------------- | ------- | ----------- | --------- |
 """.format(
                 len(stale_repos),
+                percentage(len(stale_repos), len(repos)),
                 len(sleeping_repos),
+                percentage(len(sleeping_repos), len(repos)),
                 len(missing_security),
+                percentage(len(missing_security), len(repos)),
                 len(missing_publiccode),
+                percentage(len(missing_publiccode), len(repos)),
                 len(old_respec_documents),
+                percentage(len(old_respec_documents), len(documents)),
             )
         )
 
-        for repo in action_repos:
+        for repo in open_work_repos:
             metadata = metadata_by_repo.get(repo["full_name"], {})
-            flags = flags_by_repo.get(repo["full_name"], {})
-            contact, source = latest_activity_contact(metadata)
             issues, pull_requests = repo_open_work(metadata)
-            contact_text = "{} ({})".format(contact, source) if contact and source else contact
             f.write(
-                "| {} | [{}]({}) | {} | {} | {} | {} | {} | {} |\n".format(
+                "| {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(repo["owner"]["login"]),
-                    table_text(repo["name"]),
-                    repo["html_url"],
+                    repo_link(repo),
                     repo_health(repo),
                     table_text(repo["pushed_at"][:10]),
-                    contact_text,
+                    repo_contact_text(metadata),
                     issues,
                     pull_requests,
+                )
+            )
+
+        f.write(
+            """
+**Actieve repos met ontbrekende beheerbestanden**
+
+Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
+
+| Organisatie | repo | laatste wijziging | contact | beheerbestanden |
+| ----------- | ---- | ----------------- | ------- | --------------- |
+"""
+        )
+        for repo in active_missing_management:
+            metadata = metadata_by_repo.get(repo["full_name"], {})
+            flags = flags_by_repo.get(repo["full_name"], {})
+            f.write(
+                "| {} | {} | {} | {} | {} |\n".format(
+                    table_text(repo["owner"]["login"]),
+                    repo_link(repo),
+                    table_text(repo["pushed_at"][:10]),
+                    repo_contact_text(metadata),
                     management_files_text(flags),
+                )
+            )
+
+        f.write(
+            """
+**Archiefkandidaten**
+
+Repos die langer dan twee jaar niet zijn gewijzigd en geen open issues of pull requests hebben.
+
+| Organisatie | repo | laatste wijziging | dagen stil | contact | Pages |
+| ----------- | ---- | ----------------- | ---------- | ------- | ----- |
+"""
+        )
+        for repo in archive_candidates:
+            metadata = metadata_by_repo.get(repo["full_name"], {})
+            f.write(
+                "| {} | {} | {} | {} | {} | {} |\n".format(
+                    table_text(repo["owner"]["login"]),
+                    repo_link(repo),
+                    table_text(repo["pushed_at"][:10]),
+                    days_since(repo.get("pushed_at")),
+                    repo_contact_text(metadata),
+                    repo_pages_link(repo),
+                )
+            )
+
+        f.write(
+            """
+**ReSpec migratie-aandacht**
+
+Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
+
+| Organisatie | repo | documenten | gevonden ReSpec-versies |
+| ----------- | ---- | ---------- | ----------------------- |
+"""
+        )
+        for item in respec_attention:
+            labels = ", ".join(label for label, _ in item["labels"].most_common(4))
+            if len(item["labels"]) > 4:
+                labels += ", ..."
+            f.write(
+                "| {} | [{}]({}) | {} | {} |\n".format(
+                    table_text(item["org"]),
+                    table_text(item["repo"]),
+                    item["url"],
+                    item["count"],
+                    table_text(labels),
                 )
             )
 
@@ -686,39 +818,97 @@ def write_dashboard(repos, metadata_by_repo, flags_by_repo):
     with open("githubrepos.md", "w") as f:
         f.write(
             """
-# Overzicht Github repos
+# Overzicht GitHub repos
 
-Op dit dashboard zie je in een oogopslag alle openbare niet gearchiveerde Github repositories van Geonovum en BROprogramma.
+Op dit dashboard zie je in een oogopslag alle openbare niet-gearchiveerde GitHub repositories van Geonovum en BROprogramma.
 
-| Organisatie | Naam | Omschrijving | gezondheid | laatste wijziging | dagen stil | mogelijke contactpersoon | contactbron | open issues | open PR's | Pages | workflows | beheerbestanden | laatste release | releases |
-|-------------|------|--------------|------------|-------------------|------------|-------------------------|------------|-------------|----------|-------|-----------|----------------|----------------|----------|
+De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scannen zijn.
+
+## Repo beheer
+
+| Organisatie | repo | gezondheid | laatste wijziging | dagen stil | contact | open issues | open PR's | beheerbestanden |
+| ----------- | ---- | ---------- | ----------------- | ---------- | ------- | ----------- | --------- | --------------- |
 """
         )
 
         for repo in repos:
             metadata = metadata_by_repo.get(repo["full_name"], {})
             flags = flags_by_repo.get(repo["full_name"], {})
-            contact, contact_source = latest_activity_contact(metadata)
             issues, pull_requests = repo_open_work(metadata)
 
             f.write(
-                "| {} | [{}]({}) | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
+                "| {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(repo["owner"]["login"]),
-                    table_text(repo["name"]),
-                    repo["html_url"],
-                    table_text(repo.get("description")),
+                    repo_link(repo),
                     repo_health(repo),
                     table_text(repo["pushed_at"][:10]),
                     days_since(repo.get("pushed_at")),
-                    contact,
-                    table_text(contact_source),
+                    repo_contact_text(metadata),
                     issues,
                     pull_requests,
+                    management_files_text(flags),
+                )
+            )
+
+        f.write(
+            """
+## Publicatie en workflows
+
+| Organisatie | repo | Pages | workflows | laatste wijziging |
+| ----------- | ---- | ----- | --------- | ----------------- |
+"""
+        )
+        for repo in repos:
+            flags = flags_by_repo.get(repo["full_name"], {})
+            f.write(
+                "| {} | {} | {} | {} | {} |\n".format(
+                    table_text(repo["owner"]["login"]),
+                    repo_link(repo),
                     repo_pages_link(repo),
                     flags.get("workflow_count", 0),
-                    management_files_text(flags),
+                    table_text(repo["pushed_at"][:10]),
+                )
+            )
+
+        release_repos = [
+            repo
+            for repo in repos
+            if latest_release_date(metadata_by_repo.get(repo["full_name"], {}))
+            or release_tags(metadata_by_repo.get(repo["full_name"], {}))
+        ]
+        f.write(
+            """
+## Releases
+
+| Organisatie | repo | laatste release | releases |
+| ----------- | ---- | --------------- | -------- |
+"""
+        )
+        for repo in release_repos:
+            metadata = metadata_by_repo.get(repo["full_name"], {})
+            f.write(
+                "| {} | {} | {} | {} |\n".format(
+                    table_text(repo["owner"]["login"]),
+                    repo_link(repo),
                     latest_release_date(metadata),
                     release_tags(metadata),
+                )
+            )
+
+        f.write(
+            """
+## Beschrijvingen
+
+| Organisatie | repo | omschrijving |
+| ----------- | ---- | ------------ |
+"""
+        )
+        for repo in repos:
+            f.write(
+                "| {} | {} | {} |\n".format(
+                    table_text(repo["owner"]["login"]),
+                    repo_link(repo),
+                    table_text(repo.get("description")),
                 )
             )
 
@@ -772,11 +962,16 @@ Automatisch bijgewerkt op {}.
             )
 
 
-repos = list_repositories()
-metadata_by_repo = repository_metadata(repos)
-flags_by_repo = repository_file_flags(repos)
-documents = respec_documents(repos)
-write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents)
-write_dashboard(repos, metadata_by_repo, flags_by_repo)
-write_respec_documents(documents)
-write_pages_urls(repos)
+def main():
+    repos = list_repositories()
+    metadata_by_repo = repository_metadata(repos)
+    flags_by_repo = repository_file_flags(repos)
+    documents = respec_documents(repos)
+    write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents)
+    write_dashboard(repos, metadata_by_repo, flags_by_repo)
+    write_respec_documents(documents)
+    write_pages_urls(repos)
+
+
+if __name__ == "__main__":
+    main()

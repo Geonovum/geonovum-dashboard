@@ -2,7 +2,7 @@
 
 ## In welke projecten beheren we informatiemodellen
 
-| id             | Omschrijving                          | Github Team                                                                       | Teams Team                 | Begrippen                                                                                                  |
+| id             | Omschrijving                          | GitHub Team                                                                       | Teams Team                 | Begrippen                                                                                                  |
 | -------------- | ------------------------------------- | --------------------------------------------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | BRO            | Basisregistratie Ondergrond           | [broprogramma](https://github.com/broprogramma)                                   | [BRO standaarden]          |                                                                                                            |
 | IMGeluid       | Informatiemodel Geluid                | [IMG team](https://github.com/orgs/Geonovum/teams/img-team)                       | [IMG]                      |                                                                                                            |

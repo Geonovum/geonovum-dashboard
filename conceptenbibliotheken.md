@@ -1,4 +1,4 @@
-# overzicht conceptenbibliotheken
+# Overzicht conceptenbibliotheken
 
 | locatie    | informatiemodel | omschrijving                                                                                               |
 | ---------- | --------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -44,12 +44,11 @@
 | staging    | IMKL            | [IMKL 3.0 begrippen](https://staging-definities.geostandaarden.nl/imkl3/nl/)                               |
 | staging    | IMKL            | [IMKL 2.0 waardelijsten](https://staging-definities.geostandaarden.nl/imkl3wl/nl/)                         |
 
-## Opmerkingen en verbeterpunten
+## Aandachtspunten
 
-- Dit lijstje is tot stand gekomen door scannen van <definities.geostandaarden.nl> en <staging-definities.geostandaarden.nl>.
-- Dit lijstje kan je automatiseren en er een SPARQL query van maken.
-- Moeten de modellen niet verwijderd worden op staging als ze definitief zijn? TODO
+- Dit overzicht is tot stand gekomen door scannen van <definities.geostandaarden.nl> en <staging-definities.geostandaarden.nl>.
+- Dit overzicht kan verder worden geautomatiseerd met een SPARQL-query.
+- Controleer of modellen op staging verwijderd kunnen worden zodra ze definitief zijn.
 - Hoe ziet het met de staging van NEN 3610?
 - Zijn waardelijsten te onderscheiden van catalogi?
 - Er is onduidelijkheid over of er versienummers in een conceptenbibliotheek moet.
-

@@ -80,6 +80,7 @@ div.imageinfo img {max-width: none;}
       border-radius: 6px;
       background: white;
       font-size: .88rem;
+      box-shadow: inset -12px 0 12px -14px rgba(31, 41, 55, .45);
     }
 
     table thead th,
@@ -167,6 +168,31 @@ div.imageinfo img {max-width: none;}
     .dashboard-badge--neutral {
       color: var(--dashboard-blue);
       background: var(--dashboard-blue-bg);
+    }
+
+    .dashboard-table-filter {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .5rem .75rem;
+      margin-block: .75rem .35rem;
+      color: var(--dashboard-text-muted);
+      font-size: .88rem;
+    }
+
+    .dashboard-table-filter input {
+      min-width: min(100%, 18rem);
+      border: 1px solid var(--dashboard-border);
+      border-radius: 6px;
+      padding: .35rem .5rem;
+      font: inherit;
+      color: #1f2937;
+      background: white;
+    }
+
+    .dashboard-table-filter input:focus {
+      outline: 2px solid var(--dashboard-blue);
+      outline-offset: 2px;
     }
 
     .sidelabel {
@@ -1527,7 +1553,7 @@ img.license{float:left;padding-right:5px;background:0 0}
   </div>
 <section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Dit is een levend document met informatie over informatiemodellen binnen Geonovum.</p>
 </section>
-<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een document zonder officiële status.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#dashboard-overzicht"><bdi class="secno">1. </bdi>Dashboard overzicht</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#actielijst-repo-beheer"><bdi class="secno">1.1 </bdi>Actielijst repo beheer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-informatiemodellen"><bdi class="secno">2. </bdi>Overzicht informatiemodellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#in-welke-projecten-beheren-we-informatiemodellen"><bdi class="secno">2.1 </bdi>In welke projecten beheren we informatiemodellen</a></li><li class="tocline"><a class="tocxref" href="#welke-modellen-hebben-we"><bdi class="secno">2.2 </bdi>Welke modellen hebben we</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-conceptenbibliotheken"><bdi class="secno">3. </bdi>overzicht conceptenbibliotheken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#opmerkingen-en-verbeterpunten"><bdi class="secno">3.1 </bdi>Opmerkingen en verbeterpunten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#welke-modellen-zitten-in-subversion"><bdi class="secno">4. </bdi>welke modellen zitten in subversion?</a></li><li class="tocline"><a class="tocxref" href="#welke-versie-van-respec-zit-in-welk-repo"><bdi class="secno">5. </bdi>Welke versie van respec zit in welk repo</a></li><li class="tocline"><a class="tocxref" href="#overzicht-github-repos"><bdi class="secno">6. </bdi>Overzicht Github repos</a></li><li class="tocline"><a class="tocxref" href="#broken-links"><bdi class="secno">7. </bdi>Broken links</a></li></ol></nav>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een document zonder officiële status.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#dashboard-overzicht"><bdi class="secno">1. </bdi>Dashboard overzicht</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#actielijst-repo-beheer"><bdi class="secno">1.1 </bdi>Actielijst repo beheer</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-informatiemodellen"><bdi class="secno">2. </bdi>Overzicht informatiemodellen</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#in-welke-projecten-beheren-we-informatiemodellen"><bdi class="secno">2.1 </bdi>In welke projecten beheren we informatiemodellen</a></li><li class="tocline"><a class="tocxref" href="#welke-modellen-hebben-we"><bdi class="secno">2.2 </bdi>Welke modellen hebben we</a></li></ol></li><li class="tocline"><a class="tocxref" href="#overzicht-conceptenbibliotheken"><bdi class="secno">3. </bdi>Overzicht conceptenbibliotheken</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#aandachtspunten"><bdi class="secno">3.1 </bdi>Aandachtspunten</a></li></ol></li><li class="tocline"><a class="tocxref" href="#modellen-in-subversion"><bdi class="secno">4. </bdi>Modellen in Subversion</a></li><li class="tocline"><a class="tocxref" href="#welke-versie-van-respec-zit-in-welk-repo"><bdi class="secno">5. </bdi>Welke versie van respec zit in welk repo</a></li><li class="tocline"><a class="tocxref" href="#overzicht-github-repos"><bdi class="secno">6. </bdi>Overzicht Github repos</a></li><li class="tocline"><a class="tocxref" href="#broken-links"><bdi class="secno">7. </bdi>Broken links</a></li></ol></nav>
 
 <section id="dashboard-overzicht"><div class="header-wrapper"><h2 id="x1-dashboard-overzicht"><bdi class="secno">1. </bdi>Dashboard overzicht</h2><a class="self-link" href="#dashboard-overzicht" aria-label="Permalink for Section 1."></a></div>
 <p>Automatisch bijgewerkt op 2026-06-14.</p>
@@ -1725,7 +1751,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <tr>
 <th>id</th>
 <th>Omschrijving</th>
-<th>Github Team</th>
+<th>GitHub Team</th>
 <th>Teams Team</th>
 <th>Begrippen</th>
 </tr>
@@ -1830,7 +1856,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 </tr>
 </tbody></table>
 </section><section id="welke-modellen-hebben-we"><div class="header-wrapper"><h3 id="x2-2-welke-modellen-hebben-we"><bdi class="secno">2.2 </bdi>Welke modellen hebben we</h3><a class="self-link" href="#welke-modellen-hebben-we" aria-label="Permalink for Section 2.2"></a></div>
-<table>
+<div class="dashboard-table-filter"><label for="dashboard-table-filter-4">Filter tabel</label><input id="dashboard-table-filter-4" type="search" placeholder="Typ om rijen te filteren"><span aria-live="polite">58 / 58 rijen</span></div><table data-dashboard-filter-ready="true">
 <thead>
 <tr>
 <th>project</th>
@@ -2366,8 +2392,8 @@ img.license{float:left;padding-right:5px;background:0 0}
 </tr>
 </tbody></table>
 </section></section>
-<section id="overzicht-conceptenbibliotheken"><div class="header-wrapper"><h2 id="x3-overzicht-conceptenbibliotheken"><bdi class="secno">3. </bdi>overzicht conceptenbibliotheken</h2><a class="self-link" href="#overzicht-conceptenbibliotheken" aria-label="Permalink for Section 3."></a></div>
-<table>
+<section id="overzicht-conceptenbibliotheken"><div class="header-wrapper"><h2 id="x3-overzicht-conceptenbibliotheken"><bdi class="secno">3. </bdi>Overzicht conceptenbibliotheken</h2><a class="self-link" href="#overzicht-conceptenbibliotheken" aria-label="Permalink for Section 3."></a></div>
+<div class="dashboard-table-filter"><label for="dashboard-table-filter-5">Filter tabel</label><input id="dashboard-table-filter-5" type="search" placeholder="Typ om rijen te filteren"><span aria-live="polite">41 / 41 rijen</span></div><table data-dashboard-filter-ready="true">
 <thead>
 <tr>
 <th>locatie</th>
@@ -2581,19 +2607,19 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td><a href="https://staging-definities.geostandaarden.nl/imkl3wl/nl/">IMKL 2.0 waardelijsten</a></td>
 </tr>
 </tbody></table>
-<section id="opmerkingen-en-verbeterpunten"><div class="header-wrapper"><h3 id="x3-1-opmerkingen-en-verbeterpunten"><bdi class="secno">3.1 </bdi>Opmerkingen en verbeterpunten</h3><a class="self-link" href="#opmerkingen-en-verbeterpunten" aria-label="Permalink for Section 3.1"></a></div>
+<section id="aandachtspunten"><div class="header-wrapper"><h3 id="x3-1-aandachtspunten"><bdi class="secno">3.1 </bdi>Aandachtspunten</h3><a class="self-link" href="#aandachtspunten" aria-label="Permalink for Section 3.1"></a></div>
 <ul>
-<li>Dit lijstje is tot stand gekomen door scannen van &lt;definities.geostandaarden.nl&gt; en &lt;staging-definities.geostandaarden.nl&gt;.</li>
-<li>Dit lijstje kan je automatiseren en er een SPARQL query van maken.</li>
-<li>Moeten de modellen niet verwijderd worden op staging als ze definitief zijn? TODO</li>
+<li>Dit overzicht is tot stand gekomen door scannen van &lt;definities.geostandaarden.nl&gt; en &lt;staging-definities.geostandaarden.nl&gt;.</li>
+<li>Dit overzicht kan verder worden geautomatiseerd met een SPARQL-query.</li>
+<li>Controleer of modellen op staging verwijderd kunnen worden zodra ze definitief zijn.</li>
 <li>Hoe ziet het met de staging van NEN 3610?</li>
 <li>Zijn waardelijsten te onderscheiden van catalogi?</li>
 <li>Er is onduidelijkheid over of er versienummers in een conceptenbibliotheek moet.</li>
 </ul>
 </section></section>
-<section id="welke-modellen-zitten-in-subversion"><div class="header-wrapper"><h2 id="x4-welke-modellen-zitten-in-subversion"><bdi class="secno">4. </bdi>welke modellen zitten in subversion?</h2><a class="self-link" href="#welke-modellen-zitten-in-subversion" aria-label="Permalink for Section 4."></a></div>
-<p>Dit zijn de mappen die in <code>svn.geostandaarden.nl</code> zit. Aan iedere map heb ik een project toegekend.</p>
-<table>
+<section id="modellen-in-subversion"><div class="header-wrapper"><h2 id="x4-modellen-in-subversion"><bdi class="secno">4. </bdi>Modellen in Subversion</h2><a class="self-link" href="#modellen-in-subversion" aria-label="Permalink for Section 4."></a></div>
+<p>Dit zijn de mappen in <code>svn.geostandaarden.nl</code>. Aan iedere map is een project toegekend.</p>
+<div class="dashboard-table-filter"><label for="dashboard-table-filter-6">Filter tabel</label><input id="dashboard-table-filter-6" type="search" placeholder="Typ om rijen te filteren"><span aria-live="polite">27 / 27 rijen</span></div><table data-dashboard-filter-ready="true">
 <thead>
 <tr>
 <th>Folder / bestand</th>
@@ -2782,7 +2808,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 <td>28</td>
 </tr>
 </tbody></table>
-<table>
+<div class="dashboard-table-filter"><label for="dashboard-table-filter-9">Filter tabel</label><input id="dashboard-table-filter-9" type="search" placeholder="Typ om rijen te filteren"><span aria-live="polite">470 / 470 rijen</span></div><table data-dashboard-filter-ready="true">
 <thead>
 <tr>
 <th>organisatie</th>
@@ -5615,7 +5641,7 @@ img.license{float:left;padding-right:5px;background:0 0}
 </section>
 <section id="overzicht-github-repos"><div class="header-wrapper"><h2 id="x6-overzicht-github-repos"><bdi class="secno">6. </bdi>Overzicht Github repos</h2><a class="self-link" href="#overzicht-github-repos" aria-label="Permalink for Section 6."></a></div>
 <p>Op dit dashboard zie je in een oogopslag alle openbare niet gearchiveerde Github repositories van Geonovum en BROprogramma.</p>
-<table>
+<div class="dashboard-table-filter"><label for="dashboard-table-filter-10">Filter tabel</label><input id="dashboard-table-filter-10" type="search" placeholder="Typ om rijen te filteren"><span aria-live="polite">315 / 315 rijen</span></div><table data-dashboard-filter-ready="true">
 <thead>
 <tr>
 <th>Organisatie</th>
@@ -10993,14 +11019,82 @@ img.license{float:left;padding-right:5px;background:0 0}
 </tbody></table>
 </section>
 <section id="broken-links"><div class="header-wrapper"><h2 id="x7-broken-links"><bdi class="secno">7. </bdi>Broken links</h2><a class="self-link" href="#broken-links" aria-label="Permalink for Section 7."></a></div>
-<p>Laatst bijgewerkt: 2026-06-14 13:28 UTC.</p>
+<p>Laatst bijgewerkt: 2026-06-14 15:17 UTC.</p>
+<p>Controleert het dashboard en de GitHub Pages-startpagina's van repositories. Volledige sites worden niet gecrawld.</p>
 <div class="dashboard-kpis">
 <div><strong>0</strong><span>kapotte links</span></div>
 <div><strong>0</strong><span>tijdelijke meldingen</span></div>
 <div><strong>0</strong><span>meldingen totaal</span></div>
+<div><strong>233</strong><span>gecontroleerde startpagina's</span></div>
 </div><p><strong>Kapotte links</strong></p>
 <p><span class="dashboard-badge dashboard-badge--success">0</span> Geen kapotte links gevonden.</p>
 </section>
+
+<script>
+  (function () {
+    function initDashboardTableFilters() {
+      document.querySelectorAll("table").forEach(function (table, index) {
+        var bodyRows = Array.from(table.querySelectorAll("tbody tr"));
+        if (bodyRows.length <= 20) {
+          return;
+        }
+
+        var wrapper = table.previousElementSibling;
+        var input;
+        var counter;
+
+        if (wrapper && wrapper.classList.contains("dashboard-table-filter")) {
+          input = wrapper.querySelector("input");
+          counter = wrapper.querySelector("span");
+        } else {
+          wrapper = document.createElement("div");
+          wrapper.className = "dashboard-table-filter";
+
+          var label = document.createElement("label");
+          var inputId = "dashboard-table-filter-" + index;
+          label.setAttribute("for", inputId);
+          label.textContent = "Filter tabel";
+
+          input = document.createElement("input");
+          input.id = inputId;
+          input.type = "search";
+          input.placeholder = "Typ om rijen te filteren";
+
+          counter = document.createElement("span");
+          counter.setAttribute("aria-live", "polite");
+
+          wrapper.append(label, input, counter);
+          table.parentNode.insertBefore(wrapper, table);
+        }
+
+        table.dataset.dashboardFilterReady = "true";
+
+        function updateRows() {
+          var query = input.value.trim().toLowerCase();
+          var visible = 0;
+          bodyRows.forEach(function (row) {
+            var match = !query || row.textContent.toLowerCase().indexOf(query) !== -1;
+            row.hidden = !match;
+            if (match) {
+              visible += 1;
+            }
+          });
+          counter.textContent = visible + " / " + bodyRows.length + " rijen";
+        }
+
+        input.oninput = updateRows;
+        updateRows();
+      });
+    }
+
+    if (document.respec && document.respec.ready) {
+      document.respec.ready.then(initDashboardTableFilters);
+    }
+    window.addEventListener("load", function () {
+      window.setTimeout(initDashboardTableFilters, 0);
+    });
+  }());
+</script>
 
 
 <section id="tof"></section>
