@@ -133,7 +133,7 @@ def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: 
         )
 
     if rows or parse_error:
-        lines.extend(["## Samenvatting per fout", ""])
+        lines.extend(["**Samenvatting per fout**", ""])
         if counts:
             lines.extend(["| fout | aantal |", "| --- | ---: |"])
             for error, count in counts.most_common():
@@ -142,7 +142,7 @@ def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: 
             lines.append("Geen verwerkbare linkmeldingen gevonden.")
         lines.append("")
 
-    lines.extend(["## Kapotte links", ""])
+    lines.extend(["**Kapotte links**", ""])
     if actual:
         lines.extend(["| fout | link | gevonden op |", "| --- | --- | --- |"])
         for row in actual:
@@ -156,7 +156,7 @@ def write_markdown(rows: list[dict[str, str]], parse_error: str | None, target: 
     if uncertain:
         lines.extend(
             [
-                "## Tijdelijke of onzekere meldingen",
+                "**Tijdelijke of onzekere meldingen**",
                 "",
                 "Deze meldingen tellen niet mee als kapotte link. Het gaat bijvoorbeeld om rate limits, timeouts of afgeschermde pagina's.",
                 "",

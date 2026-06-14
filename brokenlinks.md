@@ -8,6 +8,6 @@ Laatst bijgewerkt: 2026-06-14 13:22 UTC.
 <div><strong>0</strong><span>meldingen totaal</span></div>
 </div>
 
-## Kapotte links
+**Kapotte links**
 
 <span class="dashboard-badge dashboard-badge--success">0</span> Geen kapotte links gevonden.
