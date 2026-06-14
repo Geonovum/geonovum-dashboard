@@ -3,59 +3,33 @@
 # Genereert githubrepos.md met publieke, niet-gearchiveerde Geonovum repos.
 #
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
+import base64
 import json
+import os
+import re
 import subprocess
-import time
+import urllib.error
 import urllib.parse
+import urllib.request
 
 ORG = "Geonovum"
-CODE_SEARCH_INTERVAL_SECONDS = 7
-last_code_search_at = 0
-RESPEC_BUILD_QUERIES = [
-    {
-        "query": "respec-geonovum",
-        "label": "tools.geostandaarden",
-        "build_url": "https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js",
-    },
-    {
-        "query": "respec-nlgov",
-        "label": "respec-nlgov",
-        "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js",
-    },
-    {
-        "query": '"gitdocumentatie.logius.nl/publicatie/respec/fixup.js"',
-        "label": "fixup",
-        "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js",
-    },
-    {
-        "query": "respec-logius",
-        "label": "respec-logius",
-        "build_url": "https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js",
-    },
-    {
-        "query": "respec-w3c",
-        "label": "https://www.w3.org/Tools/respec/respec-w3c",
-        "build_url": "https://www.w3.org/Tools/respec/respec-w3c",
-    },
-]
 
 
 def github_json(path):
-    output = subprocess.check_output(["gh", "api", path], text=True)
-    return json.loads(output)
+    url = "https://api.github.com/{}".format(path)
+    headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if token:
+        headers["Authorization"] = "Bearer {}".format(token)
 
-
-def github_code_search_json(path):
-    global last_code_search_at
-
-    elapsed = time.monotonic() - last_code_search_at
-    if elapsed < CODE_SEARCH_INTERVAL_SECONDS:
-        time.sleep(CODE_SEARCH_INTERVAL_SECONDS - elapsed)
-
-    data = github_json(path)
-    last_code_search_at = time.monotonic()
-    return data
+    request = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8"))
 
 
 def github_graphql(query, variables):
@@ -129,59 +103,129 @@ def github_file_location(repo, path):
     return "{}/tree/{}/{}".format(repo["html_url"], repo["default_branch"], encoded_directory)
 
 
-def search_code(query):
-    items = []
-    page = 1
+def extract_respec_build_urls(html):
+    build_urls = []
 
-    while True:
-        params = urllib.parse.urlencode({"q": query, "per_page": 100, "page": page})
-        data = github_code_search_json("search/code?{}".format(params))
-        batch = data.get("items", [])
-        items.extend(batch)
+    for match in re.finditer(r"<script\b[^>]*\bsrc=[\"']([^\"']+)[\"']", html, re.IGNORECASE):
+        candidate = match.group(1)
+        lower_candidate = candidate.lower()
 
-        if len(batch) < 100:
-            break
-        page += 1
+        if "respec" not in lower_candidate:
+            continue
+        if "respec-mermaid" in lower_candidate:
+            continue
+        if "/config/" in lower_candidate:
+            continue
+        if lower_candidate.endswith("config.js"):
+            continue
+        if lower_candidate.endswith(("easy-button.js", "leaflet.js", "rules.js")):
+            continue
 
-    return items
+        build_urls.append(candidate)
+
+    return build_urls
 
 
-def is_index_html_search_item(item):
-    path = item.get("path", "")
-    return item.get("name") == "index.html" and (path == "index.html" or path.endswith("/index.html"))
+def respec_label(build_url):
+    lower_url = build_url.lower()
+
+    if "respec-geonovum" in lower_url:
+        return "tools.geostandaarden"
+    if "respec-nlgov" in lower_url:
+        return "respec-nlgov"
+    if "fixup.js" in lower_url:
+        return "fixup"
+    if "respec-logius" in lower_url:
+        return "respec-logius"
+
+    return build_url
+
+
+def repository_tree(repo):
+    branch = urllib.parse.quote(repo["default_branch"], safe="")
+    path = "repos/{}/{}/git/trees/{}?recursive=1".format(
+        urllib.parse.quote(ORG),
+        urllib.parse.quote(repo["name"]),
+        branch,
+    )
+    try:
+        data = github_json(path)
+    except urllib.error.HTTPError as error:
+        if error.code in (404, 409):
+            return []
+        raise
+
+    if data.get("truncated"):
+        return []
+    return data.get("tree", [])
+
+
+def blob_text(repo, sha):
+    path = "repos/{}/{}/git/blobs/{}".format(
+        urllib.parse.quote(ORG),
+        urllib.parse.quote(repo["name"]),
+        urllib.parse.quote(sha, safe=""),
+    )
+    data = github_json(path)
+    content = data.get("content", "")
+    if data.get("encoding") != "base64" or not content:
+        return ""
+    return base64.b64decode(content).decode("utf-8", errors="replace")
+
+
+def index_blobs_for_repo(repo):
+    blobs = []
+    for item in repository_tree(repo):
+        path = item.get("path", "")
+        if item.get("type") != "blob" or path.rsplit("/", 1)[-1] != "index.html":
+            continue
+
+        blobs.append((repo, path, item["sha"]))
+
+    return blobs
+
+
+def respec_documents_for_blob(index_blob):
+    repo, path, sha = index_blob
+    documents = []
+
+    html = blob_text(repo, sha)
+    for build_url in extract_respec_build_urls(html):
+        documents.append(
+            {
+                "location": github_file_location(repo, path),
+                "build_url": build_url,
+                "label": respec_label(build_url),
+            }
+        )
+
+    return documents
 
 
 def respec_documents(repos):
     documents = []
-    repos_by_full_name = {repo["full_name"]: repo for repo in repos}
     seen = set()
 
-    def append_document(repo, path, build_url, label):
-        location = github_file_location(repo, path)
-        key = (location, label)
+    def append_document(document):
+        key = (document["location"], document["label"])
         if key in seen:
             return
         seen.add(key)
+        documents.append(document)
 
-        documents.append(
-            {
-                "location": location,
-                "build_url": build_url,
-                "label": label,
-            }
-        )
+    index_blobs = []
+    with ThreadPoolExecutor(max_workers=12) as executor:
+        futures = [executor.submit(index_blobs_for_repo, repo) for repo in repos]
+        for future in as_completed(futures):
+            index_blobs.extend(future.result())
 
-    for build in RESPEC_BUILD_QUERIES:
-        query = "org:{} filename:index.html {}".format(ORG, build["query"])
-        for item in search_code(query):
-            if not is_index_html_search_item(item):
-                continue
+    print("Gevonden {} index.html-bestanden voor ReSpec-scan.".format(len(index_blobs)))
 
-            repo = repos_by_full_name.get((item.get("repository") or {}).get("full_name"))
-            if not repo:
-                continue
-
-            append_document(repo, item["path"], build["build_url"], build["label"])
+    with ThreadPoolExecutor(max_workers=16) as executor:
+        futures = [executor.submit(respec_documents_for_blob, index_blob) for index_blob in index_blobs]
+        for future in as_completed(futures):
+            for document in future.result():
+                append_document(document)
 
     return sorted(documents, key=lambda document: document["location"].lower())
 
