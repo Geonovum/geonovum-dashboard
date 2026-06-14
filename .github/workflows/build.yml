@@ -15,7 +15,7 @@ jobs:
 
       - name: Bepaal branch voor terugschrijven
         id: commit-target
-        if: ${{ github.event_name == 'push' || github.event_name == 'release' }}
+        if: ${{ github.event_name == 'push' || github.event_name == 'release' || github.event_name == 'schedule' }}
         shell: bash
         run: |
           set -euo pipefail
@@ -23,6 +23,9 @@ jobs:
           case "${{ github.event_name }}" in
             push)
               TARGET_BRANCH="${GITHUB_REF#refs/heads/}"
+              ;;
+            schedule)
+              TARGET_BRANCH="${{ github.event.repository.default_branch }}"
               ;;
             release)
               TARGET_BRANCH="${{ github.event.release.target_commitish }}"
@@ -54,6 +57,13 @@ jobs:
       - name: Prepare directories
         run: |
           mkdir -p static $CHECK_DIR
+
+      - name: Update GitHub repos overview
+        if: ${{ github.event_name != 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 listGeonovumRepos.py
 
       - name: Blokkeer raw.githubusercontent.com-links in bronbestand
         shell: bash
@@ -264,7 +274,7 @@ jobs:
             mv static/*.pdf .
           fi
 
-          git add snapshot.html $CHECK_DIR/*.txt $CHECK_DIR/*.json
+          git add snapshot.html githubrepos.md $CHECK_DIR/*.txt $CHECK_DIR/*.json
 
           if compgen -G "*.pdf" > /dev/null; then
             git add *.pdf

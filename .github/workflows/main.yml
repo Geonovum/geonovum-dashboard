@@ -1,5 +1,7 @@
 name: Main Workflow
 on:
+  schedule:
+    - cron: '17 4 * * *'
   push:
     branches:
       - '**'
