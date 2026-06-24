@@ -34,7 +34,6 @@ https://geonovum.github.io/3d-standaard-onderzoek/
 https://geonovum.github.io/3d-standaard-rapport/
 https://geonovum.github.io/3d-tiling/
 https://geonovum.github.io/Basisgeometrie-Werkomgeving/
-https://geonovum.github.io/CIM-Funderingen/
 https://geonovum.github.io/DCAT-AP-NL30/
 https://geonovum.github.io/DSO-RM/
 https://geonovum.github.io/DTaaS-Testbed2/

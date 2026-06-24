@@ -1,11 +1,11 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-06-23.
+Automatisch bijgewerkt op 2026-06-24.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
 | tools.geostandaarden | 221 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| respec-nlgov | 168 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov | 167 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | fixup | 54 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
 | respec-logius | 8 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
@@ -16,7 +16,7 @@ Automatisch bijgewerkt op 2026-06-23.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 443 |
+| Geonovum | 442 |
 | BROprogramma | 28 |
 
 | organisatie | repo | file | respecversie |
@@ -61,7 +61,6 @@ Automatisch bijgewerkt op 2026-06-23.
 | Geonovum | brt-next-cv | https://github.com/Geonovum/brt-next-cv | tools.geostandaarden |
 | Geonovum | brt-next-cv | https://github.com/Geonovum/brt-next-cv/tree/main/wv2-vs-wv3 | tools.geostandaarden |
 | Geonovum | checks-and-deploy | https://github.com/Geonovum/checks-and-deploy | respec-nlgov |
-| Geonovum | CIM-Funderingen | https://github.com/Geonovum/CIM-Funderingen | respec-nlgov |
 | Geonovum | dcat-ap-nl-wijzigingsprotocol | https://github.com/Geonovum/dcat-ap-nl-wijzigingsprotocol | respec-nlgov |
 | Geonovum | DCAT-AP-NL30 | https://github.com/Geonovum/DCAT-AP-NL30 | respec-nlgov |
 | Geonovum | dcat-dcat-ap-don | https://github.com/Geonovum/dcat-dcat-ap-don | respec-nlgov |
