@@ -1,6 +1,6 @@
 # Broken links
 
-Laatst bijgewerkt: 2026-06-24 07:58 UTC.
+Laatst bijgewerkt: 2026-06-25 07:59 UTC.
 
 Controleert het dashboard en de GitHub Pages-startpagina's van repositories. Volledige sites worden niet gecrawld.
 
