@@ -1,12 +1,12 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-06-26.
+Automatisch bijgewerkt op 2026-06-27.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
 | tools.geostandaarden | 221 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | respec-nlgov | 167 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| fixup | 54 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
+| fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
 | respec-logius | 8 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
 | https://www.w3.org/Tools/respec/respec-w3c | 3 | https://www.w3.org/Tools/respec/respec-w3c |
@@ -16,7 +16,7 @@ Automatisch bijgewerkt op 2026-06-26.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 442 |
+| Geonovum | 443 |
 | BROprogramma | 28 |
 
 | organisatie | repo | file | respecversie |
@@ -108,6 +108,7 @@ Automatisch bijgewerkt op 2026-06-26.
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/gbd/gsb | fixup |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/gbd/vv-bd-gsb-20250604 | fixup |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/geo-standaarden/cv-bd-gsw-20251009 | fixup |
+| Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/geo-standaarden/def-bd-gsw-20260626 | fixup |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/geo-standaarden/vv-bd-gsw-20260521 | fixup |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/ibro/cv-im-ibro-cm-20250519 | js/modeldesk-respec.js |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/ibro/cv-im-ibro-cm-20250519 | fixup |

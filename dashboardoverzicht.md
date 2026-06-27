@@ -1,12 +1,12 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-06-26.
+Automatisch bijgewerkt op 2026-06-27.
 
 <div class="dashboard-kpis">
 <div><strong>315</strong><span>repos</span></div>
-<div><strong>470</strong><span>ReSpec documenten</span></div>
-<div><strong>1658</strong><span>open issues</span></div>
-<div><strong>407</strong><span>open PR's</span></div>
+<div><strong>471</strong><span>ReSpec documenten</span></div>
+<div><strong>1659</strong><span>open issues</span></div>
+<div><strong>405</strong><span>open PR's</span></div>
 <div><strong>232 / 315 (74%)</strong><span>Pages repos</span></div>
 <div><strong>127 / 315 (40%)</strong><span>met workflow</span></div>
 </div>
@@ -22,7 +22,7 @@ Automatisch bijgewerkt op 2026-06-26.
 | Repos stiler dan 2 jaar | 79 | 25% |
 | Repos zonder SECURITY.md | 314 | 100% |
 | Repos zonder publiccode.yml | 314 | 100% |
-| ReSpec documenten met migratie-aandacht | 249 | 53% |
+| ReSpec documenten met migratie-aandacht | 250 | 53% |
 
 ## Actielijsten
 
@@ -40,7 +40,7 @@ Repos met de meeste open pull requests en issues.
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-09 | [fterpstra](https://github.com/fterpstra) (commit) | 107 | 5 |
 | Geonovum | [gitcursus](https://github.com/Geonovum/gitcursus) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-08 | [SilvyGEONOVUM](https://github.com/SilvyGEONOVUM) (commit) | 0 | 5 |
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
-| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-08 | [fterpstra](https://github.com/fterpstra) (commit) | 44 | 4 |
+| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-26 | [fterpstra](https://github.com/fterpstra) (commit) | 45 | 4 |
 | BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-24 | [jacobvosimpronotion](https://github.com/jacobvosimpronotion) (commit) | 10 | 4 |
 | Geonovum | [mim-fbm](https://github.com/Geonovum/mim-fbm) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-18 | [pasibun](https://github.com/pasibun) (commit) | 0 | 4 |
 | Geonovum | [TransparantieApp](https://github.com/Geonovum/TransparantieApp) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-25 | [fterpstra](https://github.com/fterpstra) (commit) | 0 | 4 |
@@ -70,18 +70,18 @@ Repos die langer dan twee jaar niet zijn gewijzigd en geen open issues of pull r
 
 | Organisatie | repo | laatste wijziging | dagen stil | contact | Pages |
 | ----------- | ---- | ----------------- | ---------- | ------- | ----- |
-| Geonovum | [inspirelab](https://github.com/Geonovum/inspirelab) | 2015-06-01 | 4043 | [thijsbrentjens](https://github.com/thijsbrentjens) (commit) |  |
-| Geonovum | [TOP10NL](https://github.com/Geonovum/TOP10NL) | 2015-07-08 | 4006 | [ndkv](https://github.com/ndkv) (commit) |  |
-| Geonovum | [IMBRT](https://github.com/Geonovum/IMBRT) | 2015-07-08 | 4006 | [ndkv](https://github.com/ndkv) (commit) |  |
-| Geonovum | [geo4web-testbed](https://github.com/Geonovum/geo4web-testbed) | 2015-11-25 | 3866 | [lvdbrink](https://github.com/lvdbrink) (commit) |  |
-| Geonovum | [etf-webapp](https://github.com/Geonovum/etf-webapp) | 2016-08-11 | 3606 | [thijsbrentjens](https://github.com/thijsbrentjens) (commit) |  |
-| Geonovum | [IMOOV](https://github.com/Geonovum/IMOOV) | 2017-03-01 | 3404 | [PalmJanssen](https://github.com/PalmJanssen) (commit) |  |
-| BROprogramma | [CC](https://github.com/BROprogramma/CC) | 2018-01-11 | 3088 | [ArjanLoeffen](https://github.com/ArjanLoeffen) (commit) | [pages](https://broprogramma.github.io/CC/) |
-| Geonovum | [IMBRO-rulebase](https://github.com/Geonovum/IMBRO-rulebase) | 2018-05-11 | 2968 |  |  |
-| Geonovum | [ldt-config](https://github.com/Geonovum/ldt-config) | 2018-07-09 | 2909 |  |  |
-| Geonovum | [etf-ets-repository](https://github.com/Geonovum/etf-ets-repository) | 2018-12-03 | 2762 | [thijsbrentjens](https://github.com/thijsbrentjens) (commit) |  |
-| Geonovum | [IMBAG-NEN3610](https://github.com/Geonovum/IMBAG-NEN3610) | 2018-12-21 | 2744 |  |  |
-| Geonovum | [specref](https://github.com/Geonovum/specref) | 2019-02-25 | 2678 | [specworker](https://github.com/specworker) (commit) |  |
+| Geonovum | [inspirelab](https://github.com/Geonovum/inspirelab) | 2015-06-01 | 4044 | [thijsbrentjens](https://github.com/thijsbrentjens) (commit) |  |
+| Geonovum | [TOP10NL](https://github.com/Geonovum/TOP10NL) | 2015-07-08 | 4007 | [ndkv](https://github.com/ndkv) (commit) |  |
+| Geonovum | [IMBRT](https://github.com/Geonovum/IMBRT) | 2015-07-08 | 4007 | [ndkv](https://github.com/ndkv) (commit) |  |
+| Geonovum | [geo4web-testbed](https://github.com/Geonovum/geo4web-testbed) | 2015-11-25 | 3867 | [lvdbrink](https://github.com/lvdbrink) (commit) |  |
+| Geonovum | [etf-webapp](https://github.com/Geonovum/etf-webapp) | 2016-08-11 | 3607 | [thijsbrentjens](https://github.com/thijsbrentjens) (commit) |  |
+| Geonovum | [IMOOV](https://github.com/Geonovum/IMOOV) | 2017-03-01 | 3405 | [PalmJanssen](https://github.com/PalmJanssen) (commit) |  |
+| BROprogramma | [CC](https://github.com/BROprogramma/CC) | 2018-01-11 | 3089 | [ArjanLoeffen](https://github.com/ArjanLoeffen) (commit) | [pages](https://broprogramma.github.io/CC/) |
+| Geonovum | [IMBRO-rulebase](https://github.com/Geonovum/IMBRO-rulebase) | 2018-05-11 | 2969 |  |  |
+| Geonovum | [ldt-config](https://github.com/Geonovum/ldt-config) | 2018-07-09 | 2910 |  |  |
+| Geonovum | [etf-ets-repository](https://github.com/Geonovum/etf-ets-repository) | 2018-12-03 | 2763 | [thijsbrentjens](https://github.com/thijsbrentjens) (commit) |  |
+| Geonovum | [IMBAG-NEN3610](https://github.com/Geonovum/IMBAG-NEN3610) | 2018-12-21 | 2745 |  |  |
+| Geonovum | [specref](https://github.com/Geonovum/specref) | 2019-02-25 | 2679 | [specworker](https://github.com/specworker) (commit) |  |
 
 **ReSpec migratie-aandacht**
 
@@ -89,7 +89,7 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 
 | Organisatie | repo | documenten | gevonden ReSpec-versies |
 | ----------- | ---- | ---------- | ----------------------- |
-| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 69 | fixup, js/modeldesk-respec.js?v=3, respec-nlgov, js/modeldesk-respec.js |
+| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 70 | fixup, js/modeldesk-respec.js?v=3, respec-nlgov, js/modeldesk-respec.js |
 | Geonovum | [ROST](https://github.com/Geonovum/ROST) | 11 | respec-nlgov |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | 8 | respec-nlgov |
 | Geonovum | [RSP-Vergelijk](https://github.com/Geonovum/RSP-Vergelijk) | 7 | respec-logius, https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js |
