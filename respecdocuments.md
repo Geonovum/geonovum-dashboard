@@ -1,11 +1,11 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-01.
+Automatisch bijgewerkt op 2026-07-02.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
 | tools.geostandaarden | 221 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| respec-nlgov | 167 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov | 168 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
 | respec-logius | 8 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
@@ -16,7 +16,7 @@ Automatisch bijgewerkt op 2026-07-01.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 443 |
+| Geonovum | 444 |
 | BROprogramma | 28 |
 
 | organisatie | repo | file | respecversie |
@@ -347,6 +347,7 @@ Automatisch bijgewerkt op 2026-07-01.
 | Geonovum | Metadata-ISO19115 | https://github.com/Geonovum/Metadata-ISO19115 | tools.geostandaarden |
 | Geonovum | Metadata-ISO19119 | https://github.com/Geonovum/Metadata-ISO19119 | tools.geostandaarden |
 | Geonovum | mim-archimate | https://github.com/Geonovum/mim-archimate | respec-nlgov |
+| Geonovum | mim-begrippenkader | https://github.com/Geonovum/mim-begrippenkader | respec-nlgov |
 | Geonovum | MIM-Beheerplan | https://github.com/Geonovum/MIM-Beheerplan | tools.geostandaarden |
 | Geonovum | mim-datatypen | https://github.com/Geonovum/mim-datatypen | respec-nlgov |
 | Geonovum | mim-fbm | https://github.com/Geonovum/mim-fbm | respec-nlgov |

@@ -182,6 +182,7 @@ https://geonovum.github.io/logboek-dataverwerkingen-voor-objecten/
 https://geonovum.github.io/markdown-test/
 https://geonovum.github.io/md-test/
 https://geonovum.github.io/mim-archimate/
+https://geonovum.github.io/mim-begrippenkader/
 https://geonovum.github.io/mim-datatypen/
 https://geonovum.github.io/mim-fbm/
 https://geonovum.github.io/mim-ld/
