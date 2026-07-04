@@ -1,11 +1,11 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-03.
+Automatisch bijgewerkt op 2026-07-04.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
 | tools.geostandaarden | 221 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| respec-nlgov | 168 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov | 172 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
 | respec-logius | 8 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
@@ -16,7 +16,7 @@ Automatisch bijgewerkt op 2026-07-03.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 444 |
+| Geonovum | 448 |
 | BROprogramma | 28 |
 
 | organisatie | repo | file | respecversie |
@@ -338,6 +338,7 @@ Automatisch bijgewerkt op 2026-07-03.
 | Geonovum | KP-APIs | https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/signing-jades | respec-nlgov |
 | Geonovum | KP-APIs | https://github.com/Geonovum/KP-APIs/tree/master/overleggen/Werkgroep%20API%20beveiliging/archief | tools.geostandaarden |
 | Geonovum | KP-APIs | https://github.com/Geonovum/KP-APIs/tree/master/overleggen/Werkgroep%20API%20beveiliging/archief/NL%20GOV%20Assurance%20Profile%20OAuth | tools.geostandaarden |
+| Geonovum | ldt-citiverse-edic-ra | https://github.com/Geonovum/ldt-citiverse-edic-ra | respec-nlgov |
 | Geonovum | logboek-dataverwerkingen-voor-objecten | https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten | respec-nlgov |
 | Geonovum | logboek-dataverwerkingen-voor-objecten | https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/logboek_objecten_extensie | respec-nlgov |
 | Geonovum | markdown-test | https://github.com/Geonovum/markdown-test | respec-nlgov |
@@ -349,10 +350,13 @@ Automatisch bijgewerkt op 2026-07-03.
 | Geonovum | mim-archimate | https://github.com/Geonovum/mim-archimate | respec-nlgov |
 | Geonovum | mim-begrippenkader | https://github.com/Geonovum/mim-begrippenkader | respec-nlgov |
 | Geonovum | MIM-Beheerplan | https://github.com/Geonovum/MIM-Beheerplan | tools.geostandaarden |
+| Geonovum | mim-best-practices | https://github.com/Geonovum/mim-best-practices | respec-nlgov |
+| Geonovum | mim-conceptueel | https://github.com/Geonovum/mim-conceptueel | respec-nlgov |
 | Geonovum | mim-datatypen | https://github.com/Geonovum/mim-datatypen | respec-nlgov |
 | Geonovum | mim-fbm | https://github.com/Geonovum/mim-fbm | respec-nlgov |
 | Geonovum | mim-ld | https://github.com/Geonovum/mim-ld | respec-nlgov |
 | Geonovum | mim-lineage | https://github.com/Geonovum/mim-lineage | respec-nlgov |
+| Geonovum | mim-logisch | https://github.com/Geonovum/mim-logisch | respec-nlgov |
 | Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel | respec-nlgov |
 | Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/modellen/dienstbetrekking | https://www.w3.org/Tools/respec/respec-w3c |
 | Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/modellen/fietsenwinkel | https://www.w3.org/Tools/respec/respec-w3c |

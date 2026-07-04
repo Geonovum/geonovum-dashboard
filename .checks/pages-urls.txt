@@ -182,10 +182,13 @@ https://geonovum.github.io/markdown-test/
 https://geonovum.github.io/md-test/
 https://geonovum.github.io/mim-archimate/
 https://geonovum.github.io/mim-begrippenkader/
+https://geonovum.github.io/mim-best-practices/
+https://geonovum.github.io/mim-conceptueel/
 https://geonovum.github.io/mim-datatypen/
 https://geonovum.github.io/mim-fbm/
 https://geonovum.github.io/mim-ld/
 https://geonovum.github.io/mim-lineage/
+https://geonovum.github.io/mim-logisch/
 https://geonovum.github.io/mim-metamodel/
 https://geonovum.github.io/mim-ontouml/
 https://geonovum.github.io/mim-uml/

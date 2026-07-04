@@ -1,6 +1,6 @@
 # Broken links
 
-Laatst bijgewerkt: 2026-07-03 07:43 UTC.
+Laatst bijgewerkt: 2026-07-04 07:20 UTC.
 
 Controleert het dashboard en de GitHub Pages-startpagina's van repositories. Volledige sites worden niet gecrawld.
 
@@ -8,7 +8,7 @@ Controleert het dashboard en de GitHub Pages-startpagina's van repositories. Vol
 <div><strong>0</strong><span>kapotte links</span></div>
 <div><strong>0</strong><span>tijdelijke meldingen</span></div>
 <div><strong>0</strong><span>meldingen totaal</span></div>
-<div><strong>234</strong><span>gecontroleerde startpagina's</span></div>
+<div><strong>237</strong><span>gecontroleerde startpagina's</span></div>
 </div>
 
 **Kapotte links**
