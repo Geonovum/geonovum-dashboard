@@ -23,6 +23,20 @@ IGNORED_ACTIVITY_LOGINS = {"pasibun", "github-actions[bot]", "github-action[bot]
 GRAPHQL_REPO_BATCH_SIZE = 10
 
 
+class GitHubTeamAccessDenied(Exception):
+    pass
+
+
+def should_retry_github_error(error):
+    if error.code == 429:
+        return True
+    if error.code != 403:
+        return False
+    if error.headers.get("Retry-After"):
+        return True
+    return error.headers.get("X-RateLimit-Remaining") == "0"
+
+
 def github_json(path):
     url = "https://api.github.com/{}".format(path)
     headers = {
@@ -39,7 +53,7 @@ def github_json(path):
             with urllib.request.urlopen(request, timeout=30) as response:
                 return json.loads(response.read().decode("utf-8"))
         except urllib.error.HTTPError as error:
-            if error.code in (403, 429) and attempt < 4:
+            if attempt < 4 and should_retry_github_error(error):
                 retry_after = error.headers.get("Retry-After")
                 wait_seconds = int(retry_after) if retry_after and retry_after.isdigit() else 8 * (attempt + 1)
                 time.sleep(wait_seconds)
@@ -405,19 +419,66 @@ def repo_teams(repo):
     try:
         teams = github_json(path)
     except urllib.error.HTTPError as error:
-        if error.code in (403, 404):
+        if error.code == 403:
+            raise GitHubTeamAccessDenied
+        if error.code == 404:
             return []
         raise
 
     return sorted(teams, key=lambda team: team.get("name", "").lower())
 
 
-def repository_teams(repos):
+def parse_team_links(text):
+    return [
+        {"name": match.group(1), "html_url": match.group(2)}
+        for match in re.finditer(r"\[([^\]]+)\]\(([^)]+)\)", text)
+    ]
+
+
+def existing_repository_teams(repos, fallback_path="githubrepos.md"):
+    teams_by_repo = {repo["full_name"]: [] for repo in repos}
+    if not fallback_path or not os.path.exists(fallback_path):
+        return teams_by_repo
+
+    header = None
+    with open(fallback_path) as f:
+        for line in f:
+            if not line.startswith("|"):
+                continue
+
+            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+            if "GitHub teams" in cells:
+                header = cells
+                continue
+            if not header or len(cells) != len(header) or set(cells) == {"---"}:
+                continue
+
+            try:
+                repo_cell = cells[header.index("repo")]
+                teams_cell = cells[header.index("GitHub teams")]
+            except ValueError:
+                continue
+
+            repo_match = re.search(r"\]\(https://github\.com/([^/]+)/([^)]+)\)", repo_cell)
+            if not repo_match:
+                continue
+
+            full_name = "{}/{}".format(repo_match.group(1), repo_match.group(2))
+            if full_name in teams_by_repo:
+                teams_by_repo[full_name] = parse_team_links(teams_cell)
+
+    return teams_by_repo
+
+
+def repository_teams(repos, fallback_path="githubrepos.md"):
     teams_by_repo = {}
     with ThreadPoolExecutor(max_workers=8) as executor:
         futures = {executor.submit(repo_teams, repo): repo["full_name"] for repo in repos}
         for future in as_completed(futures):
-            teams_by_repo[futures[future]] = future.result()
+            try:
+                teams_by_repo[futures[future]] = future.result()
+            except GitHubTeamAccessDenied:
+                return existing_repository_teams(repos, fallback_path)
     return teams_by_repo
 
 

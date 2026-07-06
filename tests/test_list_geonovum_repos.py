@@ -1,5 +1,7 @@
 import unittest
+import urllib.error
 from datetime import date
+from email.message import Message
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -192,6 +194,58 @@ class MeaningfulActivityTest(unittest.TestCase):
         self.assertIn("| GitHub team | repos |", summary)
         self.assertIn("| [ro-beheerteam](https://github.com/orgs/Geonovum/teams/ro-beheerteam) | 1 |", summary)
         self.assertIn("| zonder GitHub team | 1 |", summary)
+
+    def test_github_json_does_not_retry_forbidden_without_rate_limit(self):
+        headers = Message()
+        headers["X-RateLimit-Remaining"] = "42"
+        error = urllib.error.HTTPError(
+            "https://api.github.com/repos/Geonovum/imro/teams",
+            403,
+            "Forbidden",
+            headers,
+            None,
+        )
+
+        with patch("listGeonovumRepos.urllib.request.urlopen", side_effect=error) as urlopen, patch("listGeonovumRepos.time.sleep") as sleep:
+            with self.assertRaises(urllib.error.HTTPError):
+                dashboard.github_json("repos/Geonovum/imro/teams")
+
+        self.assertEqual(urlopen.call_count, 1)
+        sleep.assert_not_called()
+
+    def test_repository_teams_falls_back_to_existing_dashboard_when_access_is_denied(self):
+        repo = {
+            "full_name": "Geonovum/imro",
+            "name": "imro",
+            "html_url": "https://github.com/Geonovum/imro",
+            "owner": {"login": "Geonovum"},
+        }
+
+        existing_dashboard = """# Overzicht GitHub repos
+
+| Organisatie | repo | GitHub teams | gezondheid |
+| ----------- | ---- | ------------ | ---------- |
+| Geonovum | [imro](https://github.com/Geonovum/imro) | [ro-beheerteam](https://github.com/orgs/Geonovum/teams/ro-beheerteam) | actief |
+"""
+
+        with TemporaryDirectory() as tmpdir:
+            fallback_path = Path(tmpdir) / "githubrepos.md"
+            fallback_path.write_text(existing_dashboard)
+
+            with patch.object(dashboard, "repo_teams", side_effect=dashboard.GitHubTeamAccessDenied):
+                teams_by_repo = dashboard.repository_teams([repo], fallback_path=fallback_path)
+
+        self.assertEqual(
+            teams_by_repo,
+            {
+                "Geonovum/imro": [
+                    {
+                        "name": "ro-beheerteam",
+                        "html_url": "https://github.com/orgs/Geonovum/teams/ro-beheerteam",
+                    }
+                ]
+            },
+        )
 
 
 if __name__ == "__main__":
