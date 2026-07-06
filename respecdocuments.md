@@ -1,27 +1,25 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-05.
+Automatisch bijgewerkt op 2026-07-06.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
-| tools.geostandaarden | 221 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| respec-nlgov | 172 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov | 153 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| tools.geostandaarden | 152 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
-| respec-logius | 8 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
+| respec-logius | 7 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
 | https://www.w3.org/Tools/respec/respec-w3c | 3 | https://www.w3.org/Tools/respec/respec-w3c |
 | js/modeldesk-respec.js | 1 | js/modeldesk-respec.js |
-| ../js/respec.js | 1 | ../js/respec.js |
 | https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js | 1 | https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js |
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 448 |
-| BROprogramma | 28 |
+| Geonovum | 360 |
+| BROprogramma | 26 |
 
 | organisatie | repo | file | respecversie |
 | ----------- | ---- | ---- | ------------ |
-| BROprogramma | _temp_imagemaps | https://github.com/BROprogramma/_temp_imagemaps | respec-nlgov |
 | BROprogramma | BHR-AG | https://github.com/BROprogramma/BHR-AG | tools.geostandaarden |
 | BROprogramma | BHR-G | https://github.com/BROprogramma/BHR-G | respec-nlgov |
 | BROprogramma | BHR-GT | https://github.com/BROprogramma/BHR-GT | respec-nlgov |
@@ -44,7 +42,6 @@ Automatisch bijgewerkt op 2026-07-05.
 | BROprogramma | SAD | https://github.com/BROprogramma/SAD | respec-nlgov |
 | BROprogramma | SAMPLE | https://github.com/BROprogramma/SAMPLE | tools.geostandaarden |
 | BROprogramma | SAMPLE1 | https://github.com/BROprogramma/SAMPLE1 | tools.geostandaarden |
-| BROprogramma | SAMPLE2 | https://github.com/BROprogramma/SAMPLE2 | tools.geostandaarden |
 | BROprogramma | SFR | https://github.com/BROprogramma/SFR | tools.geostandaarden |
 | BROprogramma | SGM | https://github.com/BROprogramma/SGM | tools.geostandaarden |
 | BROprogramma | SLD | https://github.com/BROprogramma/SLD | respec-nlgov |
@@ -53,30 +50,18 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | 3d-standaard-rapport | https://github.com/Geonovum/3d-standaard-rapport | respec-nlgov |
 | Geonovum | 3d-tiling | https://github.com/Geonovum/3d-tiling | respec-nlgov |
 | Geonovum | bag-IMBAG | https://github.com/Geonovum/bag-IMBAG | respec-nlgov |
-| Geonovum | Basisgeometrie-Werkomgeving | https://github.com/Geonovum/Basisgeometrie-Werkomgeving/tree/master/docs | respec-nlgov |
 | Geonovum | bestuurlijke-gebieden-cm | https://github.com/Geonovum/bestuurlijke-gebieden-cm | js/modeldesk-respec.js?v=3 |
 | Geonovum | bestuurlijke-gebieden-cm | https://github.com/Geonovum/bestuurlijke-gebieden-cm | respec-nlgov |
 | Geonovum | bestuurlijke-gebieden-lm | https://github.com/Geonovum/bestuurlijke-gebieden-lm | js/modeldesk-respec.js?v=3 |
 | Geonovum | bestuurlijke-gebieden-lm | https://github.com/Geonovum/bestuurlijke-gebieden-lm | respec-nlgov |
-| Geonovum | brt-next-cv | https://github.com/Geonovum/brt-next-cv | tools.geostandaarden |
-| Geonovum | brt-next-cv | https://github.com/Geonovum/brt-next-cv/tree/main/wv2-vs-wv3 | tools.geostandaarden |
 | Geonovum | checks-and-deploy | https://github.com/Geonovum/checks-and-deploy | respec-nlgov |
 | Geonovum | dcat-ap-nl-wijzigingsprotocol | https://github.com/Geonovum/dcat-ap-nl-wijzigingsprotocol | respec-nlgov |
 | Geonovum | DCAT-AP-NL30 | https://github.com/Geonovum/DCAT-AP-NL30 | respec-nlgov |
-| Geonovum | dcat-dcat-ap-don | https://github.com/Geonovum/dcat-dcat-ap-don | respec-nlgov |
-| Geonovum | disgeo-arch | https://github.com/Geonovum/disgeo-arch | tools.geostandaarden |
-| Geonovum | disgeo-arqa | https://github.com/Geonovum/disgeo-arqa | tools.geostandaarden |
-| Geonovum | disgeo-begrippen | https://github.com/Geonovum/disgeo-begrippen | tools.geostandaarden |
-| Geonovum | disgeo-demo | https://github.com/Geonovum/disgeo-demo | tools.geostandaarden |
-| Geonovum | disgeo-demo-2 | https://github.com/Geonovum/disgeo-demo-2 | tools.geostandaarden |
 | Geonovum | disgeo-demo-3a | https://github.com/Geonovum/disgeo-demo-3a | tools.geostandaarden |
-| Geonovum | disgeo-demo-3b | https://github.com/Geonovum/disgeo-demo-3b | tools.geostandaarden |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/casus/imboom | tools.geostandaarden |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/documentatie | tools.geostandaarden |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/kwaliteitseisen | tools.geostandaarden |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/modelleerprincipes | tools.geostandaarden |
-| Geonovum | disgeo-inhoud | https://github.com/Geonovum/disgeo-inhoud | tools.geostandaarden |
-| Geonovum | disgeo-inhoud-2 | https://github.com/Geonovum/disgeo-inhoud-2 | tools.geostandaarden |
 | Geonovum | disgeo-scope | https://github.com/Geonovum/disgeo-scope/tree/main/bestuurlijkegebieden | tools.geostandaarden |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/api/API-Strategie-mod-batching | fixup |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/api/cv-st-API-Strategie-mod-batching-20251021 | fixup |
@@ -207,7 +192,6 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/serv/def-pr-vt-20251013 | fixup |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/vtm/cv-al-vrk-20211125 | tools.geostandaarden |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/vtm/vrk | tools.geostandaarden |
-| Geonovum | ds-template | https://github.com/Geonovum/ds-template/tree/master/dataspecificatie | tools.geostandaarden |
 | Geonovum | dso-cim-am | https://github.com/Geonovum/dso-cim-am | respec-nlgov |
 | Geonovum | dso-cim-bhkv | https://github.com/Geonovum/dso-cim-bhkv | respec-nlgov |
 | Geonovum | dso-cim-hlp | https://github.com/Geonovum/dso-cim-hlp | respec-nlgov |
@@ -219,28 +203,17 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | dso-cim-pdc | https://github.com/Geonovum/dso-cim-pdc | respec-nlgov |
 | Geonovum | dso-cim-swf | https://github.com/Geonovum/dso-cim-swf | respec-nlgov |
 | Geonovum | dso-cim-tr | https://github.com/Geonovum/dso-cim-tr | respec-nlgov |
-| Geonovum | DSO-RM | https://github.com/Geonovum/DSO-RM | tools.geostandaarden |
 | Geonovum | dso-validatiematrix | https://github.com/Geonovum/dso-validatiematrix | respec-nlgov |
 | Geonovum | DTaaS-Testbed2 | https://github.com/Geonovum/DTaaS-Testbed2/tree/main/docs | respec-nlgov |
-| Geonovum | eu-beheerportaal-test | https://github.com/Geonovum/eu-beheerportaal-test | respec-nlgov |
 | Geonovum | eu-DataspaceProtocolconnectorexperiment | https://github.com/Geonovum/eu-DataspaceProtocolconnectorexperiment | respec-nlgov |
-| Geonovum | eu-test-dcat | https://github.com/Geonovum/eu-test-dcat | respec-nlgov |
-| Geonovum | eu-VerkenningDataspaces | https://github.com/Geonovum/eu-VerkenningDataspaces | tools.geostandaarden |
 | Geonovum | eu_regelingen_datastrategie | https://github.com/Geonovum/eu_regelingen_datastrategie | tools.geostandaarden |
 | Geonovum | Geen- | https://github.com/Geonovum/Geen- | respec-nlgov |
 | Geonovum | geen-hrldto | https://github.com/Geonovum/geen-hrldto | respec-nlgov |
-| Geonovum | geen-HVDHandreiking | https://github.com/Geonovum/geen-HVDHandreiking | respec-nlgov |
 | Geonovum | geen-respec | https://github.com/Geonovum/geen-respec | respec-nlgov |
 | Geonovum | geen-respec | https://github.com/Geonovum/geen-respec/tree/main/respec | respec-nlgov |
 | Geonovum | geen-weggooien | https://github.com/Geonovum/geen-weggooien | respec-nlgov |
 | Geonovum | Geo-standaarden-beheerplan | https://github.com/Geonovum/Geo-standaarden-beheerplan | respec-nlgov |
 | Geonovum | Geo-standaarden-wijzigingsprotocol | https://github.com/Geonovum/Geo-standaarden-wijzigingsprotocol | respec-nlgov |
-| Geonovum | GeoBAG | https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.0.1 | tools.geostandaarden |
-| Geonovum | GeoBAG | https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.0.2 | tools.geostandaarden |
-| Geonovum | GeoBAG | https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.1 | tools.geostandaarden |
-| Geonovum | GeoBAG | https://github.com/Geonovum/GeoBAG/tree/master/documentatie/1.1.1 | tools.geostandaarden |
-| Geonovum | GeoBAG | https://github.com/Geonovum/GeoBAG/tree/master/documentatie/praktijkrichtlijnen/identificaties%20in%20berichten | tools.geostandaarden |
-| Geonovum | GeoBAG | https://github.com/Geonovum/GeoBAG/tree/master/documentatie/praktijkrichtlijnen/n-m%20berichtenverkeer | tools.geostandaarden |
 | Geonovum | GeoBIM_BIM_naar_Geo | https://github.com/Geonovum/GeoBIM_BIM_naar_Geo | respec-nlgov |
 | Geonovum | GeoBIM_Georefereren | https://github.com/Geonovum/GeoBIM_Georefereren | respec-nlgov |
 | Geonovum | geonovum-allemodellen | https://github.com/Geonovum/geonovum-allemodellen | respec-nlgov |
@@ -248,17 +221,12 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | geonovum-datatypen | https://github.com/Geonovum/geonovum-datatypen | respec-nlgov |
 | Geonovum | geooptijd | https://github.com/Geonovum/geooptijd | respec-nlgov |
 | Geonovum | geox | https://github.com/Geonovum/geox | tools.geostandaarden |
-| Geonovum | gimeg | https://github.com/Geonovum/gimeg | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/catalogus/bgt | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/catalogus/imgeo | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/implementatieplan | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/overig/resultaten%20informele%20consultatie | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/release%20notes/2.2 | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/wijzigingsvoorstel | tools.geostandaarden |
-| Geonovum | gpkg | https://github.com/Geonovum/gpkg | respec-nlgov |
-| Geonovum | gpkg | https://github.com/Geonovum/gpkg/tree/main/apps/areaalgegevens | respec-nlgov |
-| Geonovum | grondwatersensorgegevens | https://github.com/Geonovum/grondwatersensorgegevens | tools.geostandaarden |
-| Geonovum | HIM-Werkomgeving | https://github.com/Geonovum/HIM-Werkomgeving | tools.geostandaarden |
 | Geonovum | hr-3d-standaarden | https://github.com/Geonovum/hr-3d-standaarden | respec-nlgov |
 | Geonovum | HR-CRS-Gebruik | https://github.com/Geonovum/HR-CRS-Gebruik | respec-nlgov |
 | Geonovum | HTML-validatie | https://github.com/Geonovum/HTML-validatie | fixup |
@@ -300,25 +268,14 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | IMGeo | https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/opdelen-panden/niet-toestaan | respec-nlgov |
 | Geonovum | IMGeo | https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/opdelen-panden/wel-toestaan | respec-nlgov |
 | Geonovum | IMGeo | https://github.com/Geonovum/IMGeo/tree/master/werkafspraken/tijdzone-berichtenverkeer-objecten | tools.geostandaarden |
-| Geonovum | IMGeoMIM | https://github.com/Geonovum/IMGeoMIM | tools.geostandaarden |
 | Geonovum | imgolf-werkomgeving | https://github.com/Geonovum/imgolf-werkomgeving | respec-nlgov |
-| Geonovum | imka-scope | https://github.com/Geonovum/imka-scope | tools.geostandaarden |
 | Geonovum | imkl-werkomgeving | https://github.com/Geonovum/imkl-werkomgeving | respec-nlgov |
 | Geonovum | imkl2015-review | https://github.com/Geonovum/imkl2015-review/tree/master/IMKL2.x/1-dataspecificatie | tools.geostandaarden |
 | Geonovum | imkl2015-review | https://github.com/Geonovum/imkl2015-review/tree/master/IMKL2.x/2-objectcatalogus | tools.geostandaarden |
-| Geonovum | IMLE | https://github.com/Geonovum/IMLE | tools.geostandaarden |
-| Geonovum | IMLE | https://github.com/Geonovum/IMLE/tree/main/scope | tools.geostandaarden |
 | Geonovum | IMMOB | https://github.com/Geonovum/IMMOB | respec-nlgov |
 | Geonovum | imro | https://github.com/Geonovum/imro | respec-nlgov |
 | Geonovum | IMROI | https://github.com/Geonovum/IMROI | respec-nlgov |
-| Geonovum | imropt | https://github.com/Geonovum/imropt | respec-nlgov |
-| Geonovum | IMVG | https://github.com/Geonovum/IMVG | tools.geostandaarden |
-| Geonovum | imx-digilab | https://github.com/Geonovum/imx-digilab | respec-nlgov |
-| Geonovum | IMX-Geo | https://github.com/Geonovum/IMX-Geo | respec-nlgov |
-| Geonovum | IMX-LineageModel | https://github.com/Geonovum/IMX-LineageModel | respec-nlgov |
-| Geonovum | IMX-Metadata | https://github.com/Geonovum/IMX-Metadata | respec-nlgov |
 | Geonovum | IMX-ModelMapping | https://github.com/Geonovum/IMX-ModelMapping | respec-nlgov |
-| Geonovum | inspire-handreiking | https://github.com/Geonovum/inspire-handreiking | tools.geostandaarden |
 | Geonovum | iso-19107-datatypen | https://github.com/Geonovum/iso-19107-datatypen | respec-nlgov |
 | Geonovum | KBI-WOZ-advies | https://github.com/Geonovum/KBI-WOZ-advies | respec-nlgov |
 | Geonovum | kl-pmkl30 | https://github.com/Geonovum/kl-pmkl30 | respec-nlgov |
@@ -341,15 +298,12 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | ldt-citiverse-edic-ra | https://github.com/Geonovum/ldt-citiverse-edic-ra | respec-nlgov |
 | Geonovum | logboek-dataverwerkingen-voor-objecten | https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten | respec-nlgov |
 | Geonovum | logboek-dataverwerkingen-voor-objecten | https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/logboek_objecten_extensie | respec-nlgov |
-| Geonovum | markdown-test | https://github.com/Geonovum/markdown-test | respec-nlgov |
 | Geonovum | md-test | https://github.com/Geonovum/md-test | respec-nlgov |
-| Geonovum | MD-VDT | https://github.com/Geonovum/MD-VDT | tools.geostandaarden |
 | Geonovum | Metadata-handreiking | https://github.com/Geonovum/Metadata-handreiking | respec-nlgov |
 | Geonovum | Metadata-ISO19115 | https://github.com/Geonovum/Metadata-ISO19115 | tools.geostandaarden |
 | Geonovum | Metadata-ISO19119 | https://github.com/Geonovum/Metadata-ISO19119 | tools.geostandaarden |
 | Geonovum | mim-archimate | https://github.com/Geonovum/mim-archimate | respec-nlgov |
 | Geonovum | mim-begrippenkader | https://github.com/Geonovum/mim-begrippenkader | respec-nlgov |
-| Geonovum | MIM-Beheerplan | https://github.com/Geonovum/MIM-Beheerplan | tools.geostandaarden |
 | Geonovum | mim-best-practices | https://github.com/Geonovum/mim-best-practices | respec-nlgov |
 | Geonovum | mim-conceptueel | https://github.com/Geonovum/mim-conceptueel | respec-nlgov |
 | Geonovum | mim-datatypen | https://github.com/Geonovum/mim-datatypen | respec-nlgov |
@@ -367,7 +321,6 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | MIM-Werkomgeving | https://github.com/Geonovum/MIM-Werkomgeving | respec-nlgov |
 | Geonovum | MIM-Werkomgeving | https://github.com/Geonovum/MIM-Werkomgeving/tree/master/MIM-NEN2660 | tools.geostandaarden |
 | Geonovum | MIM-Werkomgeving | https://github.com/Geonovum/MIM-Werkomgeving/tree/master/Werkversie/rdf/model | respec-nlgov |
-| Geonovum | NEN3610-Linkeddata | https://github.com/Geonovum/NEN3610-Linkeddata | tools.geostandaarden |
 | Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving | tools.geostandaarden |
 | Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving/tree/main/model/respec | tools.geostandaarden |
 | Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving/tree/main/model/respec | https://www.w3.org/Tools/respec/respec-w3c |
@@ -379,22 +332,15 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | NLDT-Architectuur | https://github.com/Geonovum/NLDT-Architectuur | respec-nlgov |
 | Geonovum | NLDT-Architectuur | https://github.com/Geonovum/NLDT-Architectuur/tree/main/en | respec-nlgov |
 | Geonovum | nLDT-Recipe | https://github.com/Geonovum/nLDT-Recipe | respec-nlgov |
-| Geonovum | OAPIF-PDOK-INSPIRE | https://github.com/Geonovum/OAPIF-PDOK-INSPIRE | tools.geostandaarden |
 | Geonovum | ogc-api-features-guideline | https://github.com/Geonovum/ogc-api-features-guideline | respec-nlgov |
 | Geonovum | ow-IMOW | https://github.com/Geonovum/ow-IMOW | respec-nlgov |
-| Geonovum | PDOK-NGR-TNG | https://github.com/Geonovum/PDOK-NGR-TNG | tools.geostandaarden |
 | Geonovum | praktijkrichtlijn-vector-tiling | https://github.com/Geonovum/praktijkrichtlijn-vector-tiling | respec-nlgov |
 | Geonovum | raamwerk-geostandaarden | https://github.com/Geonovum/raamwerk-geostandaarden | respec-nlgov |
 | Geonovum | raamwerk-geostandaarden | https://github.com/Geonovum/raamwerk-geostandaarden | tools.geostandaarden |
 | Geonovum | ReSpec-debug | https://github.com/Geonovum/ReSpec-debug | respec-nlgov |
 | Geonovum | ReSpec-oefen | https://github.com/Geonovum/ReSpec-oefen | respec-nlgov |
-| Geonovum | respec | https://github.com/Geonovum/respec/tree/develop/examples/md_example | tools.geostandaarden |
-| Geonovum | respec | https://github.com/Geonovum/respec/tree/develop/templates/new_respec_gn_doc | tools.geostandaarden |
-| Geonovum | respec | https://github.com/Geonovum/respec/tree/develop/templates/new_respec_gn_doc_html | tools.geostandaarden |
-| Geonovum | respec | https://github.com/Geonovum/respec/tree/develop/tests/specifications | ../js/respec.js |
 | Geonovum | respecPublicatieTest | https://github.com/Geonovum/respecPublicatieTest | respec-nlgov |
 | Geonovum | ro-handreiiking | https://github.com/Geonovum/ro-handreiiking | respec-nlgov |
-| Geonovum | ro-tab001 | https://github.com/Geonovum/ro-tab001 | respec-nlgov |
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/HRARP | respec-nlgov |
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/HRDoO | respec-nlgov |
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/HRTAMomplan | tools.geostandaarden |
@@ -442,58 +388,21 @@ Automatisch bijgewerkt op 2026-07-05.
 | Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/W3C-GNM | tools.geostandaarden |
 | Geonovum | rwgs-wijzigingsprotocol | https://github.com/Geonovum/rwgs-wijzigingsprotocol | respec-nlgov |
 | Geonovum | SAMPLE | https://github.com/Geonovum/SAMPLE | tools.geostandaarden |
-| Geonovum | semigeo | https://github.com/Geonovum/semigeo | tools.geostandaarden |
 | Geonovum | specref.geostandaarden.nl | https://github.com/Geonovum/specref.geostandaarden.nl | respec-nlgov |
 | Geonovum | stri | https://github.com/Geonovum/stri | respec-nlgov |
-| Geonovum | svbp | https://github.com/Geonovum/svbp | respec-nlgov |
 | Geonovum | T4R | https://github.com/Geonovum/T4R | respec-nlgov |
 | Geonovum | test_repo | https://github.com/Geonovum/test_repo | respec-nlgov |
 | Geonovum | Testbed-sensordata | https://github.com/Geonovum/Testbed-sensordata | respec-nlgov |
 | Geonovum | testbed-sensordata-2026 | https://github.com/Geonovum/testbed-sensordata-2026 | respec-nlgov |
-| Geonovum | testbed-spatial-APIs | https://github.com/Geonovum/testbed-spatial-APIs | tools.geostandaarden |
-| Geonovum | toegankelijke-locatiedata | https://github.com/Geonovum/toegankelijke-locatiedata | tools.geostandaarden |
 | Geonovum | tools.geostandaarden.nl | https://github.com/Geonovum/tools.geostandaarden.nl/tree/main/respec/test/whitepaper | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/AMVBenMR | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Instructie | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/KennisgevingOmgevingsvergunningVoorBuitenplanseOmgevingsplanactiviteit | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Natura2000-besluiten | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Omgevingsplan | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Omgevingsverordening | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Omgevingsvisie | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Programma | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Projectbesluit | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/ReactieveInterventie | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Voorbereidingsbesluit | tools.geostandaarden |
-| Geonovum | TPOD-RSP | https://github.com/Geonovum/TPOD-RSP/tree/main/Waterschapsverordening | tools.geostandaarden |
 | Geonovum | TransparantieApp | https://github.com/Geonovum/TransparantieApp | respec-nlgov |
 | Geonovum | TransparantieApp-Applicatie-Architectuur | https://github.com/Geonovum/TransparantieApp-Applicatie-Architectuur | respec-nlgov |
 | Geonovum | TransparantieApp-Gebruikers-Onderzoek-UX | https://github.com/Geonovum/TransparantieApp-Gebruikers-Onderzoek-UX | respec-nlgov |
-| Geonovum | TstRespec | https://github.com/Geonovum/TstRespec | respec-logius |
-| Geonovum | UOI-GPvE | https://github.com/Geonovum/UOI-GPvE | tools.geostandaarden |
-| Geonovum | UOI-onderzoek | https://github.com/Geonovum/UOI-onderzoek | tools.geostandaarden |
-| Geonovum | UOI-Ontwerp | https://github.com/Geonovum/UOI-Ontwerp | tools.geostandaarden |
-| Geonovum | uri-bp | https://github.com/Geonovum/uri-bp | tools.geostandaarden |
-| Geonovum | usecases-for-3dgeosparql | https://github.com/Geonovum/usecases-for-3dgeosparql | respec-nlgov |
 | Geonovum | vector-tiling-best-practices | https://github.com/Geonovum/vector-tiling-best-practices | tools.geostandaarden |
 | Geonovum | visiestandaarden | https://github.com/Geonovum/visiestandaarden | respec-nlgov |
-| Geonovum | VIVET-Werkomgeving | https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-I | tools.geostandaarden |
-| Geonovum | VIVET-Werkomgeving | https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-A | tools.geostandaarden |
-| Geonovum | VIVET-Werkomgeving | https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-B | tools.geostandaarden |
-| Geonovum | VIVET-Werkomgeving | https://github.com/Geonovum/VIVET-Werkomgeving/tree/master/VIMET-VIII-C | tools.geostandaarden |
 | Geonovum | vth-cim-flo | https://github.com/Geonovum/vth-cim-flo | respec-nlgov |
 | Geonovum | vth-dim-vergunning-llm | https://github.com/Geonovum/vth-dim-vergunning-llm | respec-nlgov |
-| Geonovum | VTM | https://github.com/Geonovum/VTM | tools.geostandaarden |
-| Geonovum | WaU | https://github.com/Geonovum/WaU | tools.geostandaarden |
-| Geonovum | WaU | https://github.com/Geonovum/WaU/tree/main/productmodel/adres | tools.geostandaarden |
-| Geonovum | WaU | https://github.com/Geonovum/WaU/tree/main/productmodel/gebouw | tools.geostandaarden |
-| Geonovum | WaU | https://github.com/Geonovum/WaU/tree/main/productmodel/gebouw%2B | tools.geostandaarden |
-| Geonovum | WaU | https://github.com/Geonovum/WaU/tree/main/productmodel/graafgebied | respec-nlgov |
-| Geonovum | WaU | https://github.com/Geonovum/WaU/tree/main/productmodel/willekeurigevraag | respec-nlgov |
-| Geonovum | wfs3-experiments | https://github.com/Geonovum/wfs3-experiments | tools.geostandaarden |
-| Geonovum | whitepaper-standaarden | https://github.com/Geonovum/whitepaper-standaarden | tools.geostandaarden |
-| Geonovum | whitepaper-standaarden | https://github.com/Geonovum/whitepaper-standaarden/tree/gh-pages/en | tools.geostandaarden |
 | Geonovum | word2werkversie_handleiding | https://github.com/Geonovum/word2werkversie_handleiding | respec-nlgov |
 | Geonovum | wp-3DGSP | https://github.com/Geonovum/wp-3DGSP | respec-nlgov |
-| Geonovum | wpungii | https://github.com/Geonovum/wpungii | tools.geostandaarden |
 | Geonovum | xml_xslt | https://github.com/Geonovum/xml_xslt/tree/master/word2respec/respec | tools.geostandaarden |
 | Geonovum | ZON-DA | https://github.com/Geonovum/ZON-DA/tree/main/respec | respec-nlgov |
