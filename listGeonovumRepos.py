@@ -19,6 +19,7 @@ ORGS = ["Geonovum", "BROprogramma"]
 TREE_CACHE = {}
 TODAY = date.today()
 CHECK_DIR = os.environ.get("CHECK_DIR", ".checks")
+IGNORED_ACTIVITY_LOGINS = {"pasibun", "github-actions[bot]", "github-action[bot]"}
 
 
 def github_json(path):
@@ -125,8 +126,68 @@ def days_since(value):
     return (TODAY - parsed).days
 
 
-def repo_health(repo):
-    age = days_since(repo.get("pushed_at"))
+def days_since_date(value):
+    if not value:
+        return ""
+    return (TODAY - value).days
+
+
+def commit_history(metadata):
+    default_branch = metadata.get("defaultBranchRef") or {}
+    target = default_branch.get("target") or {}
+    return (target.get("history") or {}).get("nodes", [])
+
+
+def commit_author_login(commit):
+    author = commit.get("author") or {}
+    user = author.get("user")
+    if user and user.get("login"):
+        return user["login"]
+    return author.get("name", "")
+
+
+def is_ignored_activity_login(login):
+    if not login:
+        return False
+    return login.lower() in IGNORED_ACTIVITY_LOGINS
+
+
+def latest_counted_commit(metadata):
+    for commit in commit_history(metadata):
+        author_login = commit_author_login(commit)
+        if is_ignored_activity_login(author_login):
+            continue
+
+        committed_date = parse_github_date(commit.get("committedDate"))
+        if not committed_date:
+            continue
+
+        return {
+            "date": committed_date,
+            "author_login": author_login,
+        }
+
+    return None
+
+
+def repo_activity_date(repo, metadata):
+    counted_commit = latest_counted_commit(metadata)
+    if counted_commit:
+        return counted_commit["date"]
+    return parse_github_date(repo.get("pushed_at"))
+
+
+def repo_activity_days(repo, metadata):
+    return days_since_date(repo_activity_date(repo, metadata))
+
+
+def repo_activity_date_text(repo, metadata):
+    activity_date = repo_activity_date(repo, metadata)
+    return activity_date.isoformat() if activity_date else ""
+
+
+def repo_health(repo, metadata=None):
+    age = repo_activity_days(repo, metadata or {})
     if age == "":
         return badge("onbekend", "neutral")
     if age > 730:
@@ -163,20 +224,17 @@ def markdown_actor(actor):
 
 
 def latest_active_user(metadata):
-    default_branch = metadata.get("defaultBranchRef") or {}
-    target = default_branch.get("target") or {}
-    history = (target.get("history") or {}).get("nodes", [])
     fallback = ""
 
-    for commit in history:
+    for commit in commit_history(metadata):
         author = commit.get("author") or {}
         user = author.get("user")
         formatted_user = markdown_user(user, author.get("name", ""))
 
-        if formatted_user and user and not is_bot_login(user.get("login")):
+        if formatted_user and user and not is_bot_login(user.get("login")) and not is_ignored_activity_login(user.get("login")):
             return formatted_user
 
-        if formatted_user and not user and not is_bot_login(formatted_user) and not fallback:
+        if formatted_user and not user and not is_bot_login(formatted_user) and not is_ignored_activity_login(formatted_user) and not fallback:
             fallback = formatted_user
 
     return fallback
@@ -483,8 +541,9 @@ def repository_metadata(repos):
                       defaultBranchRef {{
                         target {{
                           ... on Commit {{
-                            history(first: 25) {{
+                            history(first: 100) {{
                               nodes {{
+                                committedDate
                                 author {{
                                   name
                                   user {{
@@ -579,7 +638,7 @@ def repo_open_work(metadata):
 
 
 def repo_action_score(repo, metadata, flags):
-    age = days_since(repo.get("pushed_at"))
+    age = repo_activity_days(repo, metadata)
     issues, pull_requests = repo_open_work(metadata)
     missing_score = 7 - flags.get("score", 0)
     stale_score = age if isinstance(age, int) else 0
@@ -601,8 +660,18 @@ def repo_link(repo):
 
 def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents):
     repos_by_org = Counter(repo["owner"]["login"] for repo in repos)
-    stale_repos = [repo for repo in repos if isinstance(days_since(repo.get("pushed_at")), int) and days_since(repo.get("pushed_at")) > 365]
-    sleeping_repos = [repo for repo in repos if isinstance(days_since(repo.get("pushed_at")), int) and days_since(repo.get("pushed_at")) > 730]
+    stale_repos = [
+        repo
+        for repo in repos
+        if isinstance(repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})), int)
+        and repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})) > 365
+    ]
+    sleeping_repos = [
+        repo
+        for repo in repos
+        if isinstance(repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})), int)
+        and repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})) > 730
+    ]
     pages_repos = [repo for repo in repos if repo.get("has_pages")]
     workflow_repos = [repo for repo in repos if flags_by_repo.get(repo["full_name"], {}).get("workflow_count", 0) > 0]
     open_issues = 0
@@ -635,14 +704,14 @@ def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents):
         [
             repo
             for repo in repos
-            if isinstance(days_since(repo.get("pushed_at")), int)
-            and days_since(repo.get("pushed_at")) <= 365
+            if isinstance(repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})), int)
+            and repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})) <= 365
             and repo_missing_score(flags_by_repo.get(repo["full_name"], {})) > 0
         ],
         key=lambda repo: (
             repo_missing_score(flags_by_repo.get(repo["full_name"], {})),
             sum(repo_open_work(metadata_by_repo.get(repo["full_name"], {}))),
-            -days_since(repo.get("pushed_at")),
+            -repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})),
         ),
         reverse=True,
     )[:12]
@@ -652,7 +721,7 @@ def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents):
             for repo in sleeping_repos
             if sum(repo_open_work(metadata_by_repo.get(repo["full_name"], {}))) == 0
         ],
-        key=lambda repo: days_since(repo.get("pushed_at")) if isinstance(days_since(repo.get("pushed_at")), int) else 0,
+        key=lambda repo: repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})) if isinstance(repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})), int) else 0,
         reverse=True,
     )[:12]
     old_respec_by_repo = defaultdict(lambda: {"count": 0, "labels": Counter(), "org": "", "repo": "", "url": ""})
@@ -735,8 +804,8 @@ Repos met de meeste open pull requests en issues.
                 "| {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(repo["owner"]["login"]),
                     repo_link(repo),
-                    repo_health(repo),
-                    table_text(repo["pushed_at"][:10]),
+                    repo_health(repo, metadata),
+                    table_text(repo_activity_date_text(repo, metadata)),
                     repo_contact_text(metadata),
                     issues,
                     pull_requests,
@@ -760,7 +829,7 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
                 "| {} | {} | {} | {} | {} |\n".format(
                     table_text(repo["owner"]["login"]),
                     repo_link(repo),
-                    table_text(repo["pushed_at"][:10]),
+                    table_text(repo_activity_date_text(repo, metadata)),
                     repo_contact_text(metadata),
                     management_files_text(flags),
                 )
@@ -782,8 +851,8 @@ Repos die langer dan twee jaar niet zijn gewijzigd en geen open issues of pull r
                 "| {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(repo["owner"]["login"]),
                     repo_link(repo),
-                    table_text(repo["pushed_at"][:10]),
-                    days_since(repo.get("pushed_at")),
+                    table_text(repo_activity_date_text(repo, metadata)),
+                    repo_activity_days(repo, metadata),
                     repo_contact_text(metadata),
                     repo_pages_link(repo),
                 )
@@ -840,9 +909,9 @@ De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scan
                 "| {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(repo["owner"]["login"]),
                     repo_link(repo),
-                    repo_health(repo),
-                    table_text(repo["pushed_at"][:10]),
-                    days_since(repo.get("pushed_at")),
+                    repo_health(repo, metadata),
+                    table_text(repo_activity_date_text(repo, metadata)),
+                    repo_activity_days(repo, metadata),
                     repo_contact_text(metadata),
                     issues,
                     pull_requests,
@@ -866,7 +935,7 @@ De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scan
                     repo_link(repo),
                     repo_pages_link(repo),
                     flags.get("workflow_count", 0),
-                    table_text(repo["pushed_at"][:10]),
+                    table_text(repo_activity_date_text(repo, metadata_by_repo.get(repo["full_name"], {}))),
                 )
             )
 
