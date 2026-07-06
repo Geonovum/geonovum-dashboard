@@ -64,13 +64,6 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
 | Geonovum | [MIM-Werkomgeving](https://github.com/Geonovum/MIM-Werkomgeving) | 2025-10-16 | [architolk](https://github.com/architolk) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 
-**Archiefkandidaten**
-
-Repos die langer dan twee jaar niet zijn gewijzigd en geen open issues of pull requests hebben.
-
-| Organisatie | repo | laatste wijziging | dagen stil | contact | Pages |
-| ----------- | ---- | ----------------- | ---------- | ------- | ----- |
-
 **ReSpec migratie-aandacht**
 
 Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.

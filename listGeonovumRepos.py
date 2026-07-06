@@ -20,6 +20,7 @@ TREE_CACHE = {}
 TODAY = date.today()
 CHECK_DIR = os.environ.get("CHECK_DIR", ".checks")
 IGNORED_ACTIVITY_LOGINS = {"pasibun", "github-actions[bot]", "github-action[bot]"}
+GRAPHQL_REPO_BATCH_SIZE = 10
 
 
 def github_json(path):
@@ -528,7 +529,7 @@ def repository_metadata(repos):
         repos_by_owner[repo["owner"]["login"]].append(repo)
 
     for owner, owner_repos in repos_by_owner.items():
-        for batch in batched(owner_repos, 25):
+        for batch in batched(owner_repos, GRAPHQL_REPO_BATCH_SIZE):
             fields = []
             alias_to_full_name = {}
 
@@ -715,15 +716,6 @@ def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents):
         ),
         reverse=True,
     )[:12]
-    archive_candidates = sorted(
-        [
-            repo
-            for repo in sleeping_repos
-            if sum(repo_open_work(metadata_by_repo.get(repo["full_name"], {}))) == 0
-        ],
-        key=lambda repo: repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})) if isinstance(repo_activity_days(repo, metadata_by_repo.get(repo["full_name"], {})), int) else 0,
-        reverse=True,
-    )[:12]
     old_respec_by_repo = defaultdict(lambda: {"count": 0, "labels": Counter(), "org": "", "repo": "", "url": ""})
     for document in old_respec_documents:
         key = (document["organization"], document["repository"])
@@ -832,29 +824,6 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
                     table_text(repo_activity_date_text(repo, metadata)),
                     repo_contact_text(metadata),
                     management_files_text(flags),
-                )
-            )
-
-        f.write(
-            """
-**Archiefkandidaten**
-
-Repos die langer dan twee jaar niet zijn gewijzigd en geen open issues of pull requests hebben.
-
-| Organisatie | repo | laatste wijziging | dagen stil | contact | Pages |
-| ----------- | ---- | ----------------- | ---------- | ------- | ----- |
-"""
-        )
-        for repo in archive_candidates:
-            metadata = metadata_by_repo.get(repo["full_name"], {})
-            f.write(
-                "| {} | {} | {} | {} | {} | {} |\n".format(
-                    table_text(repo["owner"]["login"]),
-                    repo_link(repo),
-                    table_text(repo_activity_date_text(repo, metadata)),
-                    repo_activity_days(repo, metadata),
-                    repo_contact_text(metadata),
-                    repo_pages_link(repo),
                 )
             )
 

@@ -423,7 +423,9 @@ De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scan
 | Geonovum | [ROST](https://github.com/Geonovum/ROST) | 2025-12-16 | def-TAMs-20251216 def-pr-tri2012-20250516 hr-arp+hr-doo-20240403 20240214 def-wa+hr-TAM-20240110 PRTRI+PCP2008+waCHWbp def-TAMs-20230530 def-wa-waTAMinstr-20230510+def-hr-HRTAMpbesluit-20230510 def-hr-HRTAMomver-20230313 def-waTAMs ... |
 | Geonovum | [imkl](https://github.com/Geonovum/imkl) | 2025-09-29 | v3.0.1-b v3.0.1 3.0.0vv-2 v3.0.0vv v3.0.0-newrelease v3.0.0 v3.0.0rc2 v3.0.0rc1 pmkl.v2.0.1rc v2.0.0def ... |
 | Geonovum | [praktijkrichtlijn-vector-tiling](https://github.com/Geonovum/praktijkrichtlijn-vector-tiling) | 2025-12-24 | def-pr-vt-20251224 def-pr-vt-20251014 def-pr-vt-20210830 cv-pr-vt-20210415 cv-pr-vt-20201223 |
+| Geonovum | [IMGeo-objectenhandboek](https://github.com/Geonovum/IMGeo-objectenhandboek) | 2023-01-09 | 2023-01 |
 | Geonovum | [IMROI](https://github.com/Geonovum/IMROI) | 2025-07-24 | test002 cv-im-imroi-20250724 |
+| Geonovum | [eu_regelingen_datastrategie](https://github.com/Geonovum/eu_regelingen_datastrategie) | 2022-02-08 | GN-CV-eu-eu-20220209 |
 | Geonovum | [Geo-standaarden-wijzigingsprotocol](https://github.com/Geonovum/Geo-standaarden-wijzigingsprotocol) | 2026-06-26 | v2.0.1-def v2.0.1-fix2 2.0.1-fix v2.0.1 v2.0.0 |
 | Geonovum | [raamwerk-geostandaarden](https://github.com/Geonovum/raamwerk-geostandaarden) | 2026-04-01 | vv-hr-rw-20260401 def-hr-rw-20230622 cv-hr-rw-20230314 |
 | Geonovum | [ow-IMOW](https://github.com/Geonovum/ow-IMOW) | 2025-07-15 | cv-im-imow-20250715 def-im-imow-20250711 def-im-imow-20250625 vv-im-imow-20240920 cv-im-imow-20240419 v3.0.1 2.0.3 |

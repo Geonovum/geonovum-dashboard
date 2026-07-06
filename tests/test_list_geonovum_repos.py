@@ -1,5 +1,7 @@
 import unittest
 from datetime import date
+from pathlib import Path
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
 import listGeonovumRepos as dashboard
@@ -67,6 +69,30 @@ class MeaningfulActivityTest(unittest.TestCase):
 
         with patch.object(dashboard, "TODAY", date(2026, 7, 6)):
             self.assertEqual(dashboard.repo_activity_days(repo, metadata), 1946)
+
+    def test_dashboard_summary_does_not_include_archive_candidates_section(self):
+        repo = {
+            "full_name": "Geonovum/example",
+            "name": "example",
+            "html_url": "https://github.com/Geonovum/example",
+            "pushed_at": "2026-01-01T00:00:00Z",
+            "has_pages": False,
+            "owner": {"login": "Geonovum"},
+        }
+
+        with TemporaryDirectory() as tmpdir, patch.object(dashboard, "TODAY", date(2026, 7, 6)):
+            cwd = Path.cwd()
+            try:
+                import os
+
+                os.chdir(tmpdir)
+                dashboard.write_dashboard_summary([repo], {repo["full_name"]: {}}, {repo["full_name"]: {}}, [])
+                summary = Path("dashboardoverzicht.md").read_text()
+            finally:
+                os.chdir(cwd)
+
+        self.assertNotIn("Archiefkandidaten", summary)
+        self.assertNotIn("Repos die langer dan twee jaar niet zijn gewijzigd", summary)
 
 
 if __name__ == "__main__":
