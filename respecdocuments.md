@@ -5,17 +5,16 @@ Automatisch bijgewerkt op 2026-07-06.
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
 | respec-nlgov | 153 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| tools.geostandaarden | 152 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| tools.geostandaarden | 147 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
-| respec-logius | 7 | https://tools.geostandaarden.nl/respec/vergelijk/nlgov/respec-logius.js |
 | https://www.w3.org/Tools/respec/respec-w3c | 3 | https://www.w3.org/Tools/respec/respec-w3c |
 | js/modeldesk-respec.js | 1 | js/modeldesk-respec.js |
-| https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js | 1 | https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js |
+| respec-logius | 1 | https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js |
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 360 |
+| Geonovum | 348 |
 | BROprogramma | 26 |
 
 | organisatie | repo | file | respecversie |
@@ -57,7 +56,6 @@ Automatisch bijgewerkt op 2026-07-06.
 | Geonovum | checks-and-deploy | https://github.com/Geonovum/checks-and-deploy | respec-nlgov |
 | Geonovum | dcat-ap-nl-wijzigingsprotocol | https://github.com/Geonovum/dcat-ap-nl-wijzigingsprotocol | respec-nlgov |
 | Geonovum | DCAT-AP-NL30 | https://github.com/Geonovum/DCAT-AP-NL30 | respec-nlgov |
-| Geonovum | disgeo-demo-3a | https://github.com/Geonovum/disgeo-demo-3a | tools.geostandaarden |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/casus/imboom | tools.geostandaarden |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/documentatie | tools.geostandaarden |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/kwaliteitseisen | tools.geostandaarden |
@@ -375,17 +373,6 @@ Automatisch bijgewerkt op 2026-07-06.
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/waTAMpbesluit | tools.geostandaarden |
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/waTAMreaint | tools.geostandaarden |
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/waTAMvbbesluit | tools.geostandaarden |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/GNM-Eigen | tools.geostandaarden |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/Logius-Eigen | respec-logius |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/Logius-GNM | respec-logius |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/NLGOV-IM | respec-logius |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/NLGOV-MD | tools.geostandaarden |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/NLGOV-MD | respec-logius |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/NLGOV-WP | respec-logius |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/NLGOV-WP/en | respec-logius |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/Origineel | tools.geostandaarden |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/W3C-Eigen | https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js |
-| Geonovum | RSP-Vergelijk | https://github.com/Geonovum/RSP-Vergelijk/tree/main/W3C-GNM | tools.geostandaarden |
 | Geonovum | rwgs-wijzigingsprotocol | https://github.com/Geonovum/rwgs-wijzigingsprotocol | respec-nlgov |
 | Geonovum | SAMPLE | https://github.com/Geonovum/SAMPLE | tools.geostandaarden |
 | Geonovum | specref.geostandaarden.nl | https://github.com/Geonovum/specref.geostandaarden.nl | respec-nlgov |

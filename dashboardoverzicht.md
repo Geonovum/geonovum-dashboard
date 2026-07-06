@@ -4,7 +4,7 @@ Automatisch bijgewerkt op 2026-07-06.
 
 <div class="dashboard-kpis">
 <div><strong>193</strong><span>repos</span></div>
-<div><strong>387</strong><span>ReSpec documenten</span></div>
+<div><strong>374</strong><span>ReSpec documenten</span></div>
 <div><strong>1251</strong><span>open issues</span></div>
 <div><strong>290</strong><span>open PR's</span></div>
 <div><strong>165 / 193 (85%)</strong><span>Pages repos</span></div>
@@ -66,7 +66,7 @@ Automatisch bijgewerkt op 2026-07-06.
 | Repos stiler dan 2 jaar | 0 | 0% |
 | Niet-ReSpec repos zonder SECURITY.md | 44 | 100% |
 | Niet-ReSpec repos zonder publiccode.yml | 43 | 98% |
-| ReSpec documenten met migratie-aandacht | 235 | 61% |
+| ReSpec documenten met migratie-aandacht | 227 | 61% |
 
 ## Actielijsten
 
@@ -117,7 +117,6 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 | Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 70 | fixup, js/modeldesk-respec.js?v=3, respec-nlgov, js/modeldesk-respec.js |
 | Geonovum | [ROST](https://github.com/Geonovum/ROST) | 11 | respec-nlgov |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | 8 | respec-nlgov |
-| Geonovum | [RSP-Vergelijk](https://github.com/Geonovum/RSP-Vergelijk) | 7 | respec-logius, https://tools.geostandaarden.nl/respec/vergelijk/w3c/respec-w3c.js |
 | Geonovum | [IMGeo](https://github.com/Geonovum/IMGeo) | 5 | respec-nlgov |
 | Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | 5 | respec-nlgov, https://www.w3.org/Tools/respec/respec-w3c, js/modeldesk-respec.js?v=3 |
 | Geonovum | [bestuurlijke-gebieden-cm](https://github.com/Geonovum/bestuurlijke-gebieden-cm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
@@ -126,3 +125,4 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 | Geonovum | [ibro-cm](https://github.com/Geonovum/ibro-cm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
 | Geonovum | [ibro-lm](https://github.com/Geonovum/ibro-lm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
 | Geonovum | [logboek-dataverwerkingen-voor-objecten](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten) | 2 | respec-nlgov |
+| Geonovum | [MIM-Werkomgeving](https://github.com/Geonovum/MIM-Werkomgeving) | 2 | respec-nlgov |
