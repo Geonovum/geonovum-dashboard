@@ -21,6 +21,17 @@ TODAY = date.today()
 CHECK_DIR = os.environ.get("CHECK_DIR", ".checks")
 IGNORED_ACTIVITY_LOGINS = {"pasibun", "github-actions[bot]", "github-action[bot]"}
 GRAPHQL_REPO_BATCH_SIZE = 10
+FULL_MANAGEMENT_KEYS = ("readme", "license", "contributing", "security", "publiccode", "dependabot", "codeowners")
+RESPEC_MANAGEMENT_KEYS = ("readme", "license", "codeowners")
+MANAGEMENT_LABELS = {
+    "readme": "README",
+    "license": "LICENSE",
+    "contributing": "CONTRIBUTING",
+    "security": "SECURITY",
+    "publiccode": "publiccode",
+    "dependabot": "dependabot",
+    "codeowners": "CODEOWNERS",
+}
 
 
 class GitHubTeamAccessDenied(Exception):
@@ -394,11 +405,7 @@ def repo_file_flags(repo):
         ),
         "workflow_count": workflow_count,
     }
-    flags["score"] = sum(
-        1
-        for key in ("readme", "license", "contributing", "security", "publiccode", "dependabot", "codeowners")
-        if flags[key]
-    )
+    apply_management_profile(flags)
     return flags
 
 
@@ -408,6 +415,30 @@ def repository_file_flags(repos):
         futures = {executor.submit(repo_file_flags, repo): repo["full_name"] for repo in repos}
         for future in as_completed(futures):
             flags_by_repo[futures[future]] = future.result()
+    return flags_by_repo
+
+
+def respec_repo_names(documents):
+    return {
+        "{}/{}".format(document["organization"], document["repository"])
+        for document in documents
+        if document.get("organization") and document.get("repository")
+    }
+
+
+def apply_management_profile(flags, is_respec_repo=False):
+    keys = RESPEC_MANAGEMENT_KEYS if is_respec_repo else FULL_MANAGEMENT_KEYS
+    flags["management_profile"] = "ReSpec" if is_respec_repo else "volledig"
+    flags["management_keys"] = keys
+    flags["score"] = sum(1 for key in keys if flags.get(key))
+    return flags
+
+
+def apply_management_profiles(flags_by_repo, documents):
+    respec_repos = respec_repo_names(documents)
+    for full_name, flags in flags_by_repo.items():
+        apply_management_profile(flags, full_name in respec_repos)
+
     return flags_by_repo
 
 
@@ -507,24 +538,18 @@ def team_distribution(teams_by_repo):
 
 
 def management_files_text(flags):
+    keys = flags.get("management_keys", FULL_MANAGEMENT_KEYS)
     missing = [
-        label
-        for key, label in (
-            ("readme", "README"),
-            ("license", "LICENSE"),
-            ("contributing", "CONTRIBUTING"),
-            ("security", "SECURITY"),
-            ("publiccode", "publiccode"),
-            ("dependabot", "dependabot"),
-            ("codeowners", "CODEOWNERS"),
-        )
+        MANAGEMENT_LABELS[key]
+        for key in keys
         if not flags.get(key)
     ]
+    total = len(keys)
     if not missing:
-        return badge("7/7", "success")
+        return badge("{}/{}".format(flags.get("score", 0), total), "success")
     if len(missing) <= 2:
-        return "{} mist {}".format(badge("{}/7".format(flags.get("score", 0)), "attention"), ", ".join(missing))
-    return "{} mist {}".format(badge("{}/7".format(flags.get("score", 0)), "warning"), ", ".join(missing[:3]) + " ...")
+        return "{} mist {}".format(badge("{}/{}".format(flags.get("score", 0), total), "attention"), ", ".join(missing))
+    return "{} mist {}".format(badge("{}/{}".format(flags.get("score", 0), total), "warning"), ", ".join(missing[:3]) + " ...")
 
 
 def raw_file_text(repo, path):
@@ -750,7 +775,7 @@ def repo_open_work(metadata):
 def repo_action_score(repo, metadata, flags):
     age = repo_activity_days(repo, metadata)
     issues, pull_requests = repo_open_work(metadata)
-    missing_score = 7 - flags.get("score", 0)
+    missing_score = repo_missing_score(flags)
     stale_score = age if isinstance(age, int) else 0
     return stale_score + issues * 15 + pull_requests * 30 + missing_score * 20
 
@@ -761,7 +786,11 @@ def repo_contact_text(metadata):
 
 
 def repo_missing_score(flags):
-    return 7 - flags.get("score", 0)
+    return len(flags.get("management_keys", FULL_MANAGEMENT_KEYS)) - flags.get("score", 0)
+
+
+def management_file_required(flags, key):
+    return key in flags.get("management_keys", FULL_MANAGEMENT_KEYS)
 
 
 def repo_link(repo):
@@ -792,8 +821,18 @@ def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents, t
         open_issues += issues
         open_prs += pull_requests
 
-    missing_security = [repo for repo in repos if not flags_by_repo.get(repo["full_name"], {}).get("security")]
-    missing_publiccode = [repo for repo in repos if not flags_by_repo.get(repo["full_name"], {}).get("publiccode")]
+    security_relevant_repos = [
+        repo
+        for repo in repos
+        if management_file_required(flags_by_repo.get(repo["full_name"], {}), "security")
+    ]
+    publiccode_relevant_repos = [
+        repo
+        for repo in repos
+        if management_file_required(flags_by_repo.get(repo["full_name"], {}), "publiccode")
+    ]
+    missing_security = [repo for repo in security_relevant_repos if not flags_by_repo.get(repo["full_name"], {}).get("security")]
+    missing_publiccode = [repo for repo in publiccode_relevant_repos if not flags_by_repo.get(repo["full_name"], {}).get("publiccode")]
     old_respec_documents = [
         document
         for document in documents
@@ -882,8 +921,8 @@ Automatisch bijgewerkt op {}.
 | --------- | ------ | ------- |
 | Repos stiler dan 1 jaar | {} | {} |
 | Repos stiler dan 2 jaar | {} | {} |
-| Repos zonder SECURITY.md | {} | {} |
-| Repos zonder publiccode.yml | {} | {} |
+| Niet-ReSpec repos zonder SECURITY.md | {} | {} |
+| Niet-ReSpec repos zonder publiccode.yml | {} | {} |
 | ReSpec documenten met migratie-aandacht | {} | {} |
 
 ## Actielijsten
@@ -900,9 +939,9 @@ Repos met de meeste open pull requests en issues.
                 len(sleeping_repos),
                 percentage(len(sleeping_repos), len(repos)),
                 len(missing_security),
-                percentage(len(missing_security), len(repos)),
+                percentage(len(missing_security), len(security_relevant_repos)),
                 len(missing_publiccode),
-                percentage(len(missing_publiccode), len(repos)),
+                percentage(len(missing_publiccode), len(publiccode_relevant_repos)),
                 len(old_respec_documents),
                 percentage(len(old_respec_documents), len(documents)),
             )
@@ -1127,6 +1166,7 @@ def main():
     flags_by_repo = repository_file_flags(repos)
     teams_by_repo = repository_teams(repos)
     documents = respec_documents(repos)
+    apply_management_profiles(flags_by_repo, documents)
     write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents, teams_by_repo)
     write_dashboard(repos, metadata_by_repo, flags_by_repo, teams_by_repo)
     write_respec_documents(documents)

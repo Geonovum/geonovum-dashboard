@@ -3,17 +3,17 @@
 Automatisch bijgewerkt op 2026-07-06.
 
 <div class="dashboard-kpis">
-<div><strong>196</strong><span>repos</span></div>
-<div><strong>386</strong><span>ReSpec documenten</span></div>
-<div><strong>1253</strong><span>open issues</span></div>
-<div><strong>291</strong><span>open PR's</span></div>
-<div><strong>167 / 196 (85%)</strong><span>Pages repos</span></div>
-<div><strong>111 / 196 (57%)</strong><span>met workflow</span></div>
+<div><strong>193</strong><span>repos</span></div>
+<div><strong>387</strong><span>ReSpec documenten</span></div>
+<div><strong>1251</strong><span>open issues</span></div>
+<div><strong>290</strong><span>open PR's</span></div>
+<div><strong>165 / 193 (85%)</strong><span>Pages repos</span></div>
+<div><strong>111 / 193 (58%)</strong><span>met workflow</span></div>
 </div>
 
 | Organisatie | repos |
 | ----------- | ----- |
-| Geonovum | 170 |
+| Geonovum | 167 |
 | BROprogramma | 26 |
 
 | GitHub team | repos |
@@ -58,15 +58,15 @@ Automatisch bijgewerkt op 2026-07-06.
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 104 |
+| zonder GitHub team | 101 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
-| Repos stiler dan 1 jaar | 35 | 18% |
+| Repos stiler dan 1 jaar | 34 | 18% |
 | Repos stiler dan 2 jaar | 0 | 0% |
-| Repos zonder SECURITY.md | 196 | 100% |
-| Repos zonder publiccode.yml | 195 | 99% |
-| ReSpec documenten met migratie-aandacht | 234 | 61% |
+| Niet-ReSpec repos zonder SECURITY.md | 44 | 100% |
+| Niet-ReSpec repos zonder publiccode.yml | 43 | 98% |
+| ReSpec documenten met migratie-aandacht | 235 | 61% |
 
 ## Actielijsten
 
@@ -95,18 +95,18 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
 
 | Organisatie | repo | laatste wijziging | contact | beheerbestanden |
 | ----------- | ---- | ----------------- | ------- | --------------- |
-| Geonovum | [tools.geostandaarden.nl](https://github.com/Geonovum/tools.geostandaarden.nl) | 2026-05-04 | [wilkoquak](https://github.com/wilkoquak) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [eu-DataspaceProtocolconnectorexperiment](https://github.com/Geonovum/eu-DataspaceProtocolconnectorexperiment) | 2026-07-02 | [MichelGrothe](https://github.com/MichelGrothe) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [bag-IMBAG](https://github.com/Geonovum/bag-IMBAG) | 2026-05-20 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [TPOD-wegwijzer](https://github.com/Geonovum/TPOD-wegwijzer) | 2025-12-01 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [validatie.geostandaarden.nl](https://github.com/Geonovum/validatie.geostandaarden.nl) | 2025-11-24 |  | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [ro-handreiiking](https://github.com/Geonovum/ro-handreiiking) | 2025-08-28 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [word2werkversie_handleiding](https://github.com/Geonovum/word2werkversie_handleiding) | 2025-08-19 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [md-test](https://github.com/Geonovum/md-test) | 2025-08-05 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [SEO-test](https://github.com/Geonovum/SEO-test) | 2025-07-23 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [geen-hrldto](https://github.com/Geonovum/geen-hrldto) | 2025-07-22 | [AnnitaVijverberg](https://github.com/AnnitaVijverberg) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [MIM-Werkomgeving](https://github.com/Geonovum/MIM-Werkomgeving) | 2025-10-16 | [architolk](https://github.com/architolk) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
-| Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [IoT-Workshop](https://github.com/Geonovum/IoT-Workshop) | 2025-09-06 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [word2werkversie-handleiding](https://github.com/Geonovum/word2werkversie-handleiding) | 2026-04-08 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [word2werkversie-handleiding-1](https://github.com/Geonovum/word2werkversie-handleiding-1) | 2026-03-30 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| BROprogramma | [generiek](https://github.com/BROprogramma/generiek) | 2026-07-01 | [BertDarwinkel](https://github.com/BertDarwinkel) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [TPOD](https://github.com/Geonovum/TPOD) | 2026-06-16 | [RubenvanHarn](https://github.com/RubenvanHarn) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [ogc-api-kennissessie](https://github.com/Geonovum/ogc-api-kennissessie) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [ogc-api-workshops](https://github.com/Geonovum/ogc-api-workshops) | 2026-06-30 | [PB-GNM](https://github.com/PB-GNM) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [nLDT-Cook](https://github.com/Geonovum/nLDT-Cook) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [nLDT-CookBook](https://github.com/Geonovum/nLDT-CookBook) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 
 **ReSpec migratie-aandacht**
 

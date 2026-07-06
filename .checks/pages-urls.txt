@@ -58,7 +58,6 @@ https://geonovum.github.io/NL-ReSpec-template/
 https://geonovum.github.io/NL-SBB/
 https://geonovum.github.io/NLDT-Architectuur/
 https://geonovum.github.io/ROST/
-https://geonovum.github.io/RSP-Vergelijk/
 https://geonovum.github.io/ReSpec-debug/
 https://geonovum.github.io/ReSpec-oefen/
 https://geonovum.github.io/SAMPLE/
@@ -78,7 +77,6 @@ https://geonovum.github.io/bestuurlijke-gebieden-cm/
 https://geonovum.github.io/bestuurlijke-gebieden-lm/
 https://geonovum.github.io/checks-and-deploy/
 https://geonovum.github.io/dcat-ap-nl-wijzigingsprotocol/
-https://geonovum.github.io/disgeo-demo-3a/
 https://geonovum.github.io/disgeo-imsor/
 https://geonovum.github.io/disgeo-scope/
 https://geonovum.github.io/dso-cim-am/

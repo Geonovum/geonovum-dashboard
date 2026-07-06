@@ -247,6 +247,108 @@ class MeaningfulActivityTest(unittest.TestCase):
             },
         )
 
+    def test_respec_management_profile_only_requires_readme_license_and_codeowners(self):
+        flags = {
+            "readme": True,
+            "license": True,
+            "contributing": False,
+            "security": False,
+            "publiccode": False,
+            "dependabot": False,
+            "codeowners": True,
+            "workflow_count": 1,
+        }
+
+        dashboard.apply_management_profile(flags, is_respec_repo=True)
+
+        self.assertEqual(flags["management_keys"], ("readme", "license", "codeowners"))
+        self.assertEqual(flags["score"], 3)
+        self.assertEqual(dashboard.repo_missing_score(flags), 0)
+        self.assertEqual(dashboard.management_files_text(flags), dashboard.badge("3/3", "success"))
+
+    def test_respec_management_profile_does_not_list_security_or_publiccode_as_missing(self):
+        flags = {
+            "readme": True,
+            "license": False,
+            "contributing": False,
+            "security": False,
+            "publiccode": False,
+            "dependabot": False,
+            "codeowners": False,
+            "workflow_count": 1,
+        }
+
+        dashboard.apply_management_profile(flags, is_respec_repo=True)
+        text = dashboard.management_files_text(flags)
+
+        self.assertIn("1/3", text)
+        self.assertIn("LICENSE", text)
+        self.assertIn("CODEOWNERS", text)
+        self.assertNotIn("SECURITY", text)
+        self.assertNotIn("publiccode", text)
+        self.assertNotIn("dependabot", text)
+
+    def test_dashboard_summary_excludes_respec_repos_from_security_and_publiccode_indicators(self):
+        repos = [
+            {
+                "full_name": "Geonovum/respec-doc",
+                "name": "respec-doc",
+                "html_url": "https://github.com/Geonovum/respec-doc",
+                "pushed_at": "2026-01-01T00:00:00Z",
+                "has_pages": True,
+                "owner": {"login": "Geonovum"},
+            },
+            {
+                "full_name": "Geonovum/tooling",
+                "name": "tooling",
+                "html_url": "https://github.com/Geonovum/tooling",
+                "pushed_at": "2026-01-01T00:00:00Z",
+                "has_pages": False,
+                "owner": {"login": "Geonovum"},
+            },
+        ]
+        flags_by_repo = {
+            repo["full_name"]: {
+                "readme": True,
+                "license": True,
+                "contributing": False,
+                "security": False,
+                "publiccode": False,
+                "dependabot": False,
+                "codeowners": True,
+                "workflow_count": 1,
+            }
+            for repo in repos
+        }
+        documents = [
+            {
+                "organization": "Geonovum",
+                "repository": "respec-doc",
+                "location": "https://github.com/Geonovum/respec-doc",
+                "label": "respec-nlgov",
+            }
+        ]
+        dashboard.apply_management_profiles(flags_by_repo, documents)
+
+        with TemporaryDirectory() as tmpdir, patch.object(dashboard, "TODAY", date(2026, 7, 6)):
+            cwd = Path.cwd()
+            try:
+                import os
+
+                os.chdir(tmpdir)
+                dashboard.write_dashboard_summary(
+                    repos,
+                    {repo["full_name"]: {} for repo in repos},
+                    flags_by_repo,
+                    documents,
+                )
+                summary = Path("dashboardoverzicht.md").read_text()
+            finally:
+                os.chdir(cwd)
+
+        self.assertIn("| Niet-ReSpec repos zonder SECURITY.md | 1 | 100% |", summary)
+        self.assertIn("| Niet-ReSpec repos zonder publiccode.yml | 1 | 100% |", summary)
+
 
 if __name__ == "__main__":
     unittest.main()
