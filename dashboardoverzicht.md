@@ -16,6 +16,50 @@ Automatisch bijgewerkt op 2026-07-06.
 | Geonovum | 170 |
 | BROprogramma | 26 |
 
+| GitHub team | repos |
+| ----------- | ----- |
+| [TPOD team](https://github.com/orgs/Geonovum/teams/tpod-team) | 13 |
+| [DSO CIM team](https://github.com/orgs/Geonovum/teams/dso-cim-team) | 11 |
+| [DSO team](https://github.com/orgs/Geonovum/teams/dso-team) | 9 |
+| [mim2.0](https://github.com/orgs/Geonovum/teams/mim2-0) | 9 |
+| [Basisprogramma team](https://github.com/orgs/Geonovum/teams/basisprogramma-team) | 7 |
+| [beheerportaal-test](https://github.com/orgs/Geonovum/teams/beheerportaal-test) | 5 |
+| [DTAAS team](https://github.com/orgs/Geonovum/teams/dtaas-team) | 5 |
+| [Digital Twins team](https://github.com/orgs/Geonovum/teams/digital-twins-team) | 4 |
+| [ro-beheerteam](https://github.com/orgs/Geonovum/teams/ro-beheerteam) | 4 |
+| [disgeo-implementatie](https://github.com/orgs/Geonovum/teams/disgeo-implementatie) | 3 |
+| [IBRO team](https://github.com/orgs/Geonovum/teams/ibro-team) | 3 |
+| [IMEV team](https://github.com/orgs/Geonovum/teams/imev-team) | 3 |
+| [IMKL Team](https://github.com/orgs/Geonovum/teams/imkl-team) | 3 |
+| [RaamwerkGeostandaarden](https://github.com/orgs/Geonovum/teams/raamwerkgeostandaarden) | 3 |
+| [technisch register](https://github.com/orgs/Geonovum/teams/technisch-register) | 3 |
+| [TransparantieApp](https://github.com/orgs/Geonovum/teams/transparantieapp) | 3 |
+| [EU team](https://github.com/orgs/Geonovum/teams/eu-team) | 2 |
+| [IMG team](https://github.com/orgs/Geonovum/teams/img-team) | 2 |
+| [IMGeo team](https://github.com/orgs/Geonovum/teams/imgeo-team) | 2 |
+| [Metadata team](https://github.com/orgs/Geonovum/teams/metadata-team) | 2 |
+| [NLDT-Architectuur](https://github.com/orgs/Geonovum/teams/nldt-architectuur) | 2 |
+| [Standaardenbeheerplanteam](https://github.com/orgs/Geonovum/teams/standaardenbeheerplanteam) | 2 |
+| [VTH team](https://github.com/orgs/Geonovum/teams/vth-team) | 2 |
+| [3d-standaard team](https://github.com/orgs/Geonovum/teams/3d-standaard-team) | 1 |
+| [Architectuur team](https://github.com/orgs/Geonovum/teams/architectuur-team) | 1 |
+| [Bestuurlijke gebieden team](https://github.com/orgs/Geonovum/teams/bestuurlijke-gebieden-team) | 1 |
+| [docs.geostandaarden.nl team](https://github.com/orgs/Geonovum/teams/docs-geostandaarden-nl-team) | 1 |
+| [DTaaS-Testbed2](https://github.com/orgs/Geonovum/teams/dtaas-testbed2) | 1 |
+| [ETF Validatie projecten NL](https://github.com/orgs/Geonovum/teams/etf-validatie-projecten-nl) | 1 |
+| [HR-CRS-Gebruik_admin](https://github.com/orgs/Geonovum/teams/hr-crs-gebruik_admin) | 1 |
+| [Iedereen](https://github.com/orgs/Geonovum/teams/iedereen) | 1 |
+| [MIM metamodel werkgroep](https://github.com/orgs/Geonovum/teams/mim-metamodel-werkgroep) | 1 |
+| [MIM team](https://github.com/orgs/Geonovum/teams/mim-team) | 1 |
+| [NL-SBB](https://github.com/orgs/Geonovum/teams/nl-sbb) | 1 |
+| [ogc-api-testbed-admins](https://github.com/orgs/Geonovum/teams/ogc-api-testbed-admins) | 1 |
+| [ReSpec beheer](https://github.com/orgs/Geonovum/teams/respec-beheer) | 1 |
+| [visiedocumentteam](https://github.com/orgs/Geonovum/teams/visiedocumentteam) | 1 |
+| [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
+| [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
+| [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
+| zonder GitHub team | 105 |
+
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
 | Repos stiler dan 1 jaar | 35 | 18% |

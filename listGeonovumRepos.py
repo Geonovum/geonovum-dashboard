@@ -397,6 +397,54 @@ def repository_file_flags(repos):
     return flags_by_repo
 
 
+def repo_teams(repo):
+    path = "repos/{}/{}/teams?per_page=100".format(
+        urllib.parse.quote(repo["owner"]["login"]),
+        urllib.parse.quote(repo["name"]),
+    )
+    try:
+        teams = github_json(path)
+    except urllib.error.HTTPError as error:
+        if error.code in (403, 404):
+            return []
+        raise
+
+    return sorted(teams, key=lambda team: team.get("name", "").lower())
+
+
+def repository_teams(repos):
+    teams_by_repo = {}
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {executor.submit(repo_teams, repo): repo["full_name"] for repo in repos}
+        for future in as_completed(futures):
+            teams_by_repo[futures[future]] = future.result()
+    return teams_by_repo
+
+
+def repo_teams_text(teams):
+    return ", ".join(markdown_link(team.get("name", ""), team.get("html_url")) for team in teams if team.get("name"))
+
+
+def team_distribution(teams_by_repo):
+    counts = Counter()
+    without_team = 0
+
+    for teams in teams_by_repo.values():
+        if not teams:
+            without_team += 1
+            continue
+        for team in teams:
+            name = team.get("name")
+            if name:
+                counts[(name, team.get("html_url", ""))] += 1
+
+    rows = sorted(counts.items(), key=lambda item: (-item[1], item[0][0].lower()))
+    if without_team:
+        rows.append((("zonder GitHub team", ""), without_team))
+
+    return rows
+
+
 def management_files_text(flags):
     missing = [
         label
@@ -659,7 +707,8 @@ def repo_link(repo):
     return "[{}]({})".format(table_text(repo["name"]), repo["html_url"])
 
 
-def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents):
+def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents, teams_by_repo=None):
+    teams_by_repo = teams_by_repo or {}
     repos_by_org = Counter(repo["owner"]["login"] for repo in repos)
     stale_repos = [
         repo
@@ -759,6 +808,15 @@ Automatisch bijgewerkt op {}.
 
         f.write(
             """
+| GitHub team | repos |
+| ----------- | ----- |
+"""
+        )
+        for (team_name, team_url), count in team_distribution(teams_by_repo):
+            f.write("| {} | {} |\n".format(markdown_link(team_name, team_url), count))
+
+        f.write(
+            """
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
 | Repos stiler dan 1 jaar | {} | {} |
@@ -852,7 +910,8 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
             )
 
 
-def write_dashboard(repos, metadata_by_repo, flags_by_repo):
+def write_dashboard(repos, metadata_by_repo, flags_by_repo, teams_by_repo=None):
+    teams_by_repo = teams_by_repo or {}
     with open("githubrepos.md", "w") as f:
         f.write(
             """
@@ -864,8 +923,8 @@ De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scan
 
 ## Repo beheer
 
-| Organisatie | repo | gezondheid | laatste wijziging | dagen stil | contact | open issues | open PR's | beheerbestanden |
-| ----------- | ---- | ---------- | ----------------- | ---------- | ------- | ----------- | --------- | --------------- |
+| Organisatie | repo | GitHub teams | gezondheid | laatste wijziging | dagen stil | contact | open issues | open PR's | beheerbestanden |
+| ----------- | ---- | ------------ | ---------- | ----------------- | ---------- | ------- | ----------- | --------- | --------------- |
 """
         )
 
@@ -875,9 +934,10 @@ De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scan
             issues, pull_requests = repo_open_work(metadata)
 
             f.write(
-                "| {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
+                "| {} | {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(repo["owner"]["login"]),
                     repo_link(repo),
+                    repo_teams_text(teams_by_repo.get(repo["full_name"], [])),
                     repo_health(repo, metadata),
                     table_text(repo_activity_date_text(repo, metadata)),
                     repo_activity_days(repo, metadata),
@@ -1004,9 +1064,10 @@ def main():
     repos = list_repositories()
     metadata_by_repo = repository_metadata(repos)
     flags_by_repo = repository_file_flags(repos)
+    teams_by_repo = repository_teams(repos)
     documents = respec_documents(repos)
-    write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents)
-    write_dashboard(repos, metadata_by_repo, flags_by_repo)
+    write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents, teams_by_repo)
+    write_dashboard(repos, metadata_by_repo, flags_by_repo, teams_by_repo)
     write_respec_documents(documents)
     write_pages_urls(repos)
 
