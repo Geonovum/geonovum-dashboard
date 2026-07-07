@@ -1,10 +1,10 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-06.
+Automatisch bijgewerkt op 2026-07-07.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
-| respec-nlgov | 153 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov | 152 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | tools.geostandaarden | 147 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
@@ -14,7 +14,7 @@ Automatisch bijgewerkt op 2026-07-06.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 348 |
+| Geonovum | 347 |
 | BROprogramma | 26 |
 
 | organisatie | repo | file | respecversie |
@@ -337,7 +337,6 @@ Automatisch bijgewerkt op 2026-07-06.
 | Geonovum | raamwerk-geostandaarden | https://github.com/Geonovum/raamwerk-geostandaarden | tools.geostandaarden |
 | Geonovum | ReSpec-debug | https://github.com/Geonovum/ReSpec-debug | respec-nlgov |
 | Geonovum | ReSpec-oefen | https://github.com/Geonovum/ReSpec-oefen | respec-nlgov |
-| Geonovum | respecPublicatieTest | https://github.com/Geonovum/respecPublicatieTest | respec-nlgov |
 | Geonovum | ro-handreiiking | https://github.com/Geonovum/ro-handreiiking | respec-nlgov |
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/HRARP | respec-nlgov |
 | Geonovum | ROST | https://github.com/Geonovum/ROST/tree/master/HRDoO | respec-nlgov |

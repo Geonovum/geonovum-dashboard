@@ -145,7 +145,6 @@ https://geonovum.github.io/ogc-checker/
 https://geonovum.github.io/ow-IMOW/
 https://geonovum.github.io/praktijkrichtlijn-vector-tiling/
 https://geonovum.github.io/raamwerk-geostandaarden/
-https://geonovum.github.io/respecPublicatieTest/
 https://geonovum.github.io/ro-handreiiking/
 https://geonovum.github.io/rwgs-wijzigingsprotocol/
 https://geonovum.github.io/specref.geostandaarden.nl/

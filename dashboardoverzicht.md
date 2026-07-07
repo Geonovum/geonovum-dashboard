@@ -1,19 +1,19 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-06.
+Automatisch bijgewerkt op 2026-07-07.
 
 <div class="dashboard-kpis">
-<div><strong>193</strong><span>repos</span></div>
-<div><strong>374</strong><span>ReSpec documenten</span></div>
-<div><strong>1251</strong><span>open issues</span></div>
-<div><strong>290</strong><span>open PR's</span></div>
-<div><strong>165 / 193 (85%)</strong><span>Pages repos</span></div>
-<div><strong>111 / 193 (58%)</strong><span>met workflow</span></div>
+<div><strong>192</strong><span>repos</span></div>
+<div><strong>373</strong><span>ReSpec documenten</span></div>
+<div><strong>1252</strong><span>open issues</span></div>
+<div><strong>288</strong><span>open PR's</span></div>
+<div><strong>164 / 192 (85%)</strong><span>Pages repos</span></div>
+<div><strong>110 / 192 (57%)</strong><span>met workflow</span></div>
 </div>
 
 | Organisatie | repos |
 | ----------- | ----- |
-| Geonovum | 167 |
+| Geonovum | 166 |
 | BROprogramma | 26 |
 
 | GitHub team | repos |
@@ -58,15 +58,15 @@ Automatisch bijgewerkt op 2026-07-06.
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 101 |
+| zonder GitHub team | 100 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
-| Repos stiler dan 1 jaar | 34 | 18% |
+| Repos stiler dan 1 jaar | 33 | 17% |
 | Repos stiler dan 2 jaar | 0 | 0% |
 | Niet-ReSpec repos zonder SECURITY.md | 44 | 100% |
 | Niet-ReSpec repos zonder publiccode.yml | 43 | 98% |
-| ReSpec documenten met migratie-aandacht | 227 | 61% |
+| ReSpec documenten met migratie-aandacht | 226 | 61% |
 
 ## Actielijsten
 
@@ -80,11 +80,11 @@ Repos met de meeste open pull requests en issues.
 | Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-03 | [architolk](https://github.com/architolk) (commit) | 66 | 6 |
 | Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | 178 | 5 |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-03 | [fterpstra](https://github.com/fterpstra) (commit) | 107 | 5 |
+| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-25 | [joostfarla](https://github.com/joostfarla) (commit) | 11 | 5 |
 | Geonovum | [gitcursus](https://github.com/Geonovum/gitcursus) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-08 | [SilvyGEONOVUM](https://github.com/SilvyGEONOVUM) (commit) | 0 | 5 |
 | Geonovum | [TransparantieApp](https://github.com/Geonovum/TransparantieApp) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [KlaasvanVeelen](https://github.com/KlaasvanVeelen) (commit) | 0 | 5 |
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
-| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-26 | [fterpstra](https://github.com/fterpstra) (commit) | 45 | 4 |
-| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-25 | [joostfarla](https://github.com/joostfarla) (commit) | 11 | 4 |
+| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-06 | [fterpstra](https://github.com/fterpstra) (commit) | 45 | 4 |
 | BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-24 | [jacobvosimpronotion](https://github.com/jacobvosimpronotion) (commit) | 10 | 4 |
 | Geonovum | [mim-fbm](https://github.com/Geonovum/mim-fbm) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-08-25 | [architolk](https://github.com/architolk) (commit) | 0 | 4 |
 | Geonovum | [word2werkversie-handleiding-1](https://github.com/Geonovum/word2werkversie-handleiding-1) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-03-30 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 4 |
