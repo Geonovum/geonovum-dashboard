@@ -1,10 +1,10 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-08.
+Automatisch bijgewerkt op 2026-07-09.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
-| respec-nlgov | 152 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov | 153 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | tools.geostandaarden | 147 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
@@ -14,7 +14,7 @@ Automatisch bijgewerkt op 2026-07-08.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 347 |
+| Geonovum | 348 |
 | BROprogramma | 26 |
 
 | organisatie | repo | file | respecversie |
@@ -293,6 +293,7 @@ Automatisch bijgewerkt op 2026-07-08.
 | Geonovum | KP-APIs | https://github.com/Geonovum/KP-APIs/tree/master/API-strategie-modules/signing-jades | respec-nlgov |
 | Geonovum | KP-APIs | https://github.com/Geonovum/KP-APIs/tree/master/overleggen/Werkgroep%20API%20beveiliging/archief | tools.geostandaarden |
 | Geonovum | KP-APIs | https://github.com/Geonovum/KP-APIs/tree/master/overleggen/Werkgroep%20API%20beveiliging/archief/NL%20GOV%20Assurance%20Profile%20OAuth | tools.geostandaarden |
+| Geonovum | ldt-citiverse-edic-ba | https://github.com/Geonovum/ldt-citiverse-edic-ba | respec-nlgov |
 | Geonovum | ldt-citiverse-edic-ra | https://github.com/Geonovum/ldt-citiverse-edic-ra | respec-nlgov |
 | Geonovum | logboek-dataverwerkingen-voor-objecten | https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten | respec-nlgov |
 | Geonovum | logboek-dataverwerkingen-voor-objecten | https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/logboek_objecten_extensie | respec-nlgov |

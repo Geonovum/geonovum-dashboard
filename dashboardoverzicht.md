@@ -1,19 +1,19 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-08.
+Automatisch bijgewerkt op 2026-07-09.
 
 <div class="dashboard-kpis">
-<div><strong>193</strong><span>repos</span></div>
-<div><strong>373</strong><span>ReSpec documenten</span></div>
-<div><strong>1252</strong><span>open issues</span></div>
-<div><strong>288</strong><span>open PR's</span></div>
-<div><strong>164 / 193 (85%)</strong><span>Pages repos</span></div>
-<div><strong>111 / 193 (58%)</strong><span>met workflow</span></div>
+<div><strong>194</strong><span>repos</span></div>
+<div><strong>374</strong><span>ReSpec documenten</span></div>
+<div><strong>1253</strong><span>open issues</span></div>
+<div><strong>285</strong><span>open PR's</span></div>
+<div><strong>165 / 194 (85%)</strong><span>Pages repos</span></div>
+<div><strong>111 / 194 (57%)</strong><span>met workflow</span></div>
 </div>
 
 | Organisatie | repos |
 | ----------- | ----- |
-| Geonovum | 167 |
+| Geonovum | 168 |
 | BROprogramma | 26 |
 
 | GitHub team | repos |
@@ -58,7 +58,7 @@ Automatisch bijgewerkt op 2026-07-08.
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 101 |
+| zonder GitHub team | 102 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
@@ -66,7 +66,7 @@ Automatisch bijgewerkt op 2026-07-08.
 | Repos stiler dan 2 jaar | 0 | 0% |
 | Niet-ReSpec repos zonder SECURITY.md | 45 | 100% |
 | Niet-ReSpec repos zonder publiccode.yml | 44 | 98% |
-| ReSpec documenten met migratie-aandacht | 226 | 61% |
+| ReSpec documenten met migratie-aandacht | 227 | 61% |
 
 ## Actielijsten
 

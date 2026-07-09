@@ -121,6 +121,7 @@ https://geonovum.github.io/kl-PMKL30rc-intern/
 https://geonovum.github.io/kl-PMKL30rc/
 https://geonovum.github.io/kl-pmkl30/
 https://geonovum.github.io/kl-pmkl30rc2/
+https://geonovum.github.io/ldt-citiverse-edic-ba/
 https://geonovum.github.io/ldt-citiverse-edic-ra/
 https://geonovum.github.io/logboek-dataverwerkingen-voor-objecten/
 https://geonovum.github.io/md-test/
