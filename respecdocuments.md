@@ -1,6 +1,6 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-13.
+Automatisch bijgewerkt op 2026-07-16.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
