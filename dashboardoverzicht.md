@@ -1,19 +1,19 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-16.
+Automatisch bijgewerkt op 2026-07-17.
 
 <div class="dashboard-kpis">
-<div><strong>194</strong><span>repos</span></div>
-<div><strong>374</strong><span>ReSpec documenten</span></div>
+<div><strong>195</strong><span>repos</span></div>
+<div><strong>376</strong><span>ReSpec documenten</span></div>
 <div><strong>1255</strong><span>open issues</span></div>
-<div><strong>289</strong><span>open PR's</span></div>
-<div><strong>165 / 194 (85%)</strong><span>Pages repos</span></div>
-<div><strong>111 / 194 (57%)</strong><span>met workflow</span></div>
+<div><strong>296</strong><span>open PR's</span></div>
+<div><strong>166 / 195 (85%)</strong><span>Pages repos</span></div>
+<div><strong>112 / 195 (57%)</strong><span>met workflow</span></div>
 </div>
 
 | Organisatie | repos |
 | ----------- | ----- |
-| Geonovum | 168 |
+| Geonovum | 169 |
 | BROprogramma | 26 |
 
 | GitHub team | repos |
@@ -58,7 +58,7 @@ Automatisch bijgewerkt op 2026-07-16.
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 102 |
+| zonder GitHub team | 103 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
@@ -66,7 +66,7 @@ Automatisch bijgewerkt op 2026-07-16.
 | Repos stiler dan 2 jaar | 0 | 0% |
 | Niet-ReSpec repos zonder SECURITY.md | 45 | 100% |
 | Niet-ReSpec repos zonder publiccode.yml | 43 | 96% |
-| ReSpec documenten met migratie-aandacht | 227 | 61% |
+| ReSpec documenten met migratie-aandacht | 229 | 61% |
 
 ## Actielijsten
 
@@ -121,8 +121,8 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 | Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | 5 | respec-nlgov, https://www.w3.org/Tools/respec/respec-w3c, js/modeldesk-respec.js?v=3 |
 | Geonovum | [bestuurlijke-gebieden-cm](https://github.com/Geonovum/bestuurlijke-gebieden-cm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
 | Geonovum | [bestuurlijke-gebieden-lm](https://github.com/Geonovum/bestuurlijke-gebieden-lm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
+| Geonovum | [CIM-Funderingen](https://github.com/Geonovum/CIM-Funderingen) | 2 | respec-nlgov, js/modeldesk-respec.js?v=3 |
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | 2 | respec-nlgov |
 | Geonovum | [ibro-cm](https://github.com/Geonovum/ibro-cm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
 | Geonovum | [ibro-lm](https://github.com/Geonovum/ibro-lm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
 | Geonovum | [logboek-dataverwerkingen-voor-objecten](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten) | 2 | respec-nlgov |
-| Geonovum | [MIM-Werkomgeving](https://github.com/Geonovum/MIM-Werkomgeving) | 2 | respec-nlgov |

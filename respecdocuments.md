@@ -1,20 +1,20 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-16.
+Automatisch bijgewerkt op 2026-07-17.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
-| respec-nlgov | 153 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov | 154 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | tools.geostandaarden | 147 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
-| js/modeldesk-respec.js?v=3 | 14 | js/modeldesk-respec.js?v=3 |
+| js/modeldesk-respec.js?v=3 | 15 | js/modeldesk-respec.js?v=3 |
 | https://www.w3.org/Tools/respec/respec-w3c | 3 | https://www.w3.org/Tools/respec/respec-w3c |
 | js/modeldesk-respec.js | 1 | js/modeldesk-respec.js |
 | respec-logius | 1 | https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js |
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 348 |
+| Geonovum | 350 |
 | BROprogramma | 26 |
 
 | organisatie | repo | file | respecversie |
@@ -54,6 +54,8 @@ Automatisch bijgewerkt op 2026-07-16.
 | Geonovum | bestuurlijke-gebieden-lm | https://github.com/Geonovum/bestuurlijke-gebieden-lm | js/modeldesk-respec.js?v=3 |
 | Geonovum | bestuurlijke-gebieden-lm | https://github.com/Geonovum/bestuurlijke-gebieden-lm | respec-nlgov |
 | Geonovum | checks-and-deploy | https://github.com/Geonovum/checks-and-deploy | respec-nlgov |
+| Geonovum | CIM-Funderingen | https://github.com/Geonovum/CIM-Funderingen | respec-nlgov |
+| Geonovum | CIM-Funderingen | https://github.com/Geonovum/CIM-Funderingen | js/modeldesk-respec.js?v=3 |
 | Geonovum | dcat-ap-nl-wijzigingsprotocol | https://github.com/Geonovum/dcat-ap-nl-wijzigingsprotocol | respec-nlgov |
 | Geonovum | DCAT-AP-NL30 | https://github.com/Geonovum/DCAT-AP-NL30 | respec-nlgov |
 | Geonovum | disgeo-imsor | https://github.com/Geonovum/disgeo-imsor/tree/master/casus/imboom | tools.geostandaarden |
