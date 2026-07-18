@@ -1,12 +1,12 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-17.
+Automatisch bijgewerkt op 2026-07-18.
 
 <div class="dashboard-kpis">
 <div><strong>195</strong><span>repos</span></div>
 <div><strong>376</strong><span>ReSpec documenten</span></div>
-<div><strong>1255</strong><span>open issues</span></div>
-<div><strong>296</strong><span>open PR's</span></div>
+<div><strong>1256</strong><span>open issues</span></div>
+<div><strong>299</strong><span>open PR's</span></div>
 <div><strong>166 / 195 (85%)</strong><span>Pages repos</span></div>
 <div><strong>112 / 195 (57%)</strong><span>met workflow</span></div>
 </div>
@@ -85,9 +85,9 @@ Repos met de meeste open pull requests en issues.
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
 | Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-15 | [fterpstra](https://github.com/fterpstra) (commit) | 45 | 4 |
 | BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-24 | [jacobvosimpronotion](https://github.com/jacobvosimpronotion) (commit) | 10 | 4 |
+| Geonovum | [GeoBIM_Georefereren](https://github.com/Geonovum/GeoBIM_Georefereren) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-09 | [RolfJonker](https://github.com/RolfJonker) (commit) | 1 | 4 |
 | Geonovum | [dso-validatiematrix](https://github.com/Geonovum/dso-validatiematrix) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | 0 | 4 |
 | Geonovum | [mim-fbm](https://github.com/Geonovum/mim-fbm) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-08-25 | [architolk](https://github.com/architolk) (commit) | 0 | 4 |
-| Geonovum | [word2werkversie-handleiding-1](https://github.com/Geonovum/word2werkversie-handleiding-1) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-03-30 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 4 |
 
 **Actieve repos met ontbrekende beheerbestanden**
 
