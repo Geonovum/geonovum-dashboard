@@ -1,11 +1,11 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-07-20.
+Automatisch bijgewerkt op 2026-07-21.
 
 | respec versie | aantal | locatie |
 | ------------- | ------ | ------- |
-| respec-nlgov | 154 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| tools.geostandaarden | 147 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| respec-nlgov | 155 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| tools.geostandaarden | 148 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup | 55 | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 | 15 | js/modeldesk-respec.js?v=3 |
 | https://www.w3.org/Tools/respec/respec-w3c | 3 | https://www.w3.org/Tools/respec/respec-w3c |
@@ -14,7 +14,7 @@ Automatisch bijgewerkt op 2026-07-20.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 350 |
+| Geonovum | 352 |
 | BROprogramma | 26 |
 
 | organisatie | repo | file | respecversie |
@@ -221,6 +221,7 @@ Automatisch bijgewerkt op 2026-07-20.
 | Geonovum | geonovum-datatypen | https://github.com/Geonovum/geonovum-datatypen | respec-nlgov |
 | Geonovum | geooptijd | https://github.com/Geonovum/geooptijd | respec-nlgov |
 | Geonovum | geox | https://github.com/Geonovum/geox | tools.geostandaarden |
+| Geonovum | gimeg | https://github.com/Geonovum/gimeg | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/catalogus/bgt | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/catalogus/imgeo | tools.geostandaarden |
 | Geonovum | gitcursus | https://github.com/Geonovum/gitcursus/tree/main/implementatieplan | tools.geostandaarden |
@@ -275,6 +276,7 @@ Automatisch bijgewerkt op 2026-07-20.
 | Geonovum | IMMOB | https://github.com/Geonovum/IMMOB | respec-nlgov |
 | Geonovum | imro | https://github.com/Geonovum/imro | respec-nlgov |
 | Geonovum | IMROI | https://github.com/Geonovum/IMROI | respec-nlgov |
+| Geonovum | IMX-Geo | https://github.com/Geonovum/IMX-Geo | respec-nlgov |
 | Geonovum | IMX-ModelMapping | https://github.com/Geonovum/IMX-ModelMapping | respec-nlgov |
 | Geonovum | iso-19107-datatypen | https://github.com/Geonovum/iso-19107-datatypen | respec-nlgov |
 | Geonovum | KBI-WOZ-advies | https://github.com/Geonovum/KBI-WOZ-advies | respec-nlgov |
