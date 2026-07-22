@@ -1,12 +1,12 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-21.
+Automatisch bijgewerkt op 2026-07-22.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
 <div><strong>378</strong><span>ReSpec documenten</span></div>
-<div><strong>1263</strong><span>open issues</span></div>
-<div><strong>305</strong><span>open PR's</span></div>
+<div><strong>1264</strong><span>open issues</span></div>
+<div><strong>308</strong><span>open PR's</span></div>
 <div><strong>168 / 197 (85%)</strong><span>Pages repos</span></div>
 <div><strong>113 / 197 (57%)</strong><span>met workflow</span></div>
 </div>
@@ -80,14 +80,14 @@ Repos met de meeste open pull requests en issues.
 | Geonovum | [standards-checker](https://github.com/Geonovum/standards-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-15 | [joostfarla](https://github.com/joostfarla) (commit) | 0 | 6 |
 | Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | 175 | 5 |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-03 | [fterpstra](https://github.com/fterpstra) (commit) | 107 | 5 |
+| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-15 | [joostfarla](https://github.com/joostfarla) (commit) | 10 | 5 |
 | Geonovum | [NL-ReSpec-template](https://github.com/Geonovum/NL-ReSpec-template) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-04-20 | [wilkoquak](https://github.com/wilkoquak) (commit) | 4 | 5 |
 | Geonovum | [gitcursus](https://github.com/Geonovum/gitcursus) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-08 | [SilvyGEONOVUM](https://github.com/SilvyGEONOVUM) (commit) | 0 | 5 |
-| Geonovum | [TransparantieApp](https://github.com/Geonovum/TransparantieApp) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [KlaasvanVeelen](https://github.com/KlaasvanVeelen) (commit) | 0 | 5 |
+| Geonovum | [TransparantieApp](https://github.com/Geonovum/TransparantieApp) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-21 | [KlaasvanVeelen](https://github.com/KlaasvanVeelen) (commit) | 0 | 5 |
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
 | Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-20 | [fterpstra](https://github.com/fterpstra) (commit) | 33 | 4 |
 | BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-24 | [jacobvosimpronotion](https://github.com/jacobvosimpronotion) (commit) | 10 | 4 |
 | Geonovum | [GeoBIM_Georefereren](https://github.com/Geonovum/GeoBIM_Georefereren) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-09 | [RolfJonker](https://github.com/RolfJonker) (commit) | 1 | 4 |
-| Geonovum | [dso-validatiematrix](https://github.com/Geonovum/dso-validatiematrix) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | 0 | 4 |
 
 **Actieve repos met ontbrekende beheerbestanden**
 
