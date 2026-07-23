@@ -17,6 +17,7 @@ import urllib.request
 
 ORGS = ["Geonovum", "BROprogramma"]
 TREE_CACHE = {}
+RESPEC_VERSION_CACHE = {}
 TODAY = date.today()
 CHECK_DIR = os.environ.get("CHECK_DIR", ".checks")
 IGNORED_ACTIVITY_LOGINS = {"pasibun", "github-actions[bot]", "github-action[bot]"}
@@ -355,6 +356,54 @@ def respec_label(build_url):
     return build_url
 
 
+def respec_source(build_url):
+    parsed = urllib.parse.urlparse(build_url)
+    if parsed.netloc:
+        return parsed.netloc.lower()
+    return "lokaal"
+
+
+def extract_respec_version(script_text):
+    match = re.search(r"\brespecVersion\b\s*(?:=|:)\s*[\"']([^\"']+)[\"']", script_text)
+    if match:
+        return match.group(1)
+
+    return ""
+
+
+def respec_build_version(build_url):
+    if build_url in RESPEC_VERSION_CACHE:
+        return RESPEC_VERSION_CACHE[build_url]
+
+    parsed = urllib.parse.urlparse(build_url)
+    if parsed.scheme not in ("http", "https") or not parsed.netloc:
+        RESPEC_VERSION_CACHE[build_url] = ""
+        return ""
+
+    try:
+        version = extract_respec_version(http_text(build_url))
+    except (OSError, TimeoutError, urllib.error.URLError):
+        version = ""
+
+    RESPEC_VERSION_CACHE[build_url] = version
+    return version
+
+
+def respec_variant(document):
+    label = document.get("label") or document.get("build_url", "")
+    source = document.get("source") or ""
+    version = document.get("respec_version") or ""
+
+    if source and version:
+        return "{} @ {} ({})".format(label, source, version)
+    if source:
+        return "{} @ {}".format(label, source)
+    if version:
+        return "{} ({})".format(label, version)
+
+    return label
+
+
 def repository_tree(repo):
     if repo["full_name"] in TREE_CACHE:
         return TREE_CACHE[repo["full_name"]]
@@ -580,6 +629,8 @@ def respec_documents_for_blob(index_blob):
 
     html = raw_file_text(repo, path)
     for build_url in extract_respec_build_urls(html):
+        source = respec_source(build_url)
+        version = respec_build_version(build_url)
         documents.append(
             {
                 "organization": repo["owner"]["login"],
@@ -587,6 +638,8 @@ def respec_documents_for_blob(index_blob):
                 "location": github_file_location(repo, path),
                 "build_url": build_url,
                 "label": respec_label(build_url),
+                "source": source,
+                "respec_version": version,
             }
         )
 
@@ -598,7 +651,7 @@ def respec_documents(repos):
     seen = set()
 
     def append_document(document):
-        key = (document["location"], document["label"])
+        key = (document["location"], document.get("build_url") or document["label"])
         if key in seen:
             return
         seen.add(key)
@@ -872,7 +925,7 @@ def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents, t
         old_respec_by_repo[key]["repo"] = document["repository"]
         old_respec_by_repo[key]["url"] = "https://github.com/{}/{}".format(document["organization"], document["repository"])
         old_respec_by_repo[key]["count"] += 1
-        old_respec_by_repo[key]["labels"][document["label"]] += 1
+        old_respec_by_repo[key]["labels"][respec_variant(document)] += 1
     respec_attention = sorted(old_respec_by_repo.values(), key=lambda item: item["count"], reverse=True)[:12]
 
     with open("dashboardoverzicht.md", "w") as f:
@@ -1112,11 +1165,11 @@ De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scan
 
 
 def write_respec_documents(documents):
-    counts = Counter(document["label"] for document in documents)
+    counts = Counter(respec_variant(document) for document in documents)
     counts_by_org = Counter(document["location"].split("/")[3] for document in documents if document["location"].startswith("https://github.com/"))
-    locations_by_label = defaultdict(Counter)
+    documents_by_variant = {}
     for document in documents:
-        locations_by_label[document["label"]][document["build_url"]] += 1
+        documents_by_variant.setdefault(respec_variant(document), document)
 
     with open("respecdocuments.md", "w") as f:
         f.write(
@@ -1124,14 +1177,22 @@ def write_respec_documents(documents):
 
 Automatisch bijgewerkt op {}.
 
-| respec versie | aantal | locatie |
-| ------------- | ------ | ------- |
+| respec variant | aantal | bron | onderliggende ReSpec versie | script |
+| -------------- | ------ | ---- | --------------------------- | ------ |
 """.format(date.today().isoformat())
         )
 
-        for label, count in counts.most_common():
-            build_url = locations_by_label[label].most_common(1)[0][0]
-            f.write("| {} | {} | {} |\n".format(table_text(label), count, table_text(build_url)))
+        for variant, count in counts.most_common():
+            document = documents_by_variant[variant]
+            f.write(
+                "| {} | {} | {} | {} | {} |\n".format(
+                    table_text(variant),
+                    count,
+                    table_text(document.get("source", "")),
+                    table_text(document.get("respec_version", "")),
+                    table_text(document.get("build_url", "")),
+                )
+            )
 
         f.write(
             """
@@ -1144,18 +1205,21 @@ Automatisch bijgewerkt op {}.
 
         f.write(
             """
-| organisatie | repo | file | respecversie |
-| ----------- | ---- | ---- | ------------ |
+| organisatie | repo | file | respecvariant | bron | onderliggende ReSpec versie | script |
+| ----------- | ---- | ---- | ------------- | ---- | --------------------------- | ------ |
 """
         )
 
         for document in documents:
             f.write(
-                "| {} | {} | {} | {} |\n".format(
+                "| {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(document["organization"]),
                     table_text(document["repository"]),
                     table_text(document["location"]),
-                    table_text(document["label"]),
+                    table_text(respec_variant(document)),
+                    table_text(document.get("source", "")),
+                    table_text(document.get("respec_version", "")),
+                    table_text(document.get("build_url", "")),
                 )
             )
 

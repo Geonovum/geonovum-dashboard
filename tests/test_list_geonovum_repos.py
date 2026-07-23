@@ -349,6 +349,104 @@ class MeaningfulActivityTest(unittest.TestCase):
         self.assertIn("| Niet-ReSpec repos zonder SECURITY.md | 1 | 100% |", summary)
         self.assertIn("| Niet-ReSpec repos zonder publiccode.yml | 1 | 100% |", summary)
 
+    def test_respec_variant_distinguishes_nlgov_build_sources_and_versions(self):
+        logius = {
+            "label": "respec-nlgov",
+            "build_url": "https://logius-standaarden.github.io/publicatie/respec/builds/respec-nlgov.js",
+            "source": "logius-standaarden.github.io",
+            "respec_version": "37.2.0",
+        }
+        gitdocumentatie = {
+            "label": "respec-nlgov",
+            "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js",
+            "source": "gitdocumentatie.logius.nl",
+            "respec_version": "37.0.0",
+        }
+
+        self.assertEqual(
+            dashboard.respec_variant(logius),
+            "respec-nlgov @ logius-standaarden.github.io (37.2.0)",
+        )
+        self.assertEqual(
+            dashboard.respec_variant(gitdocumentatie),
+            "respec-nlgov @ gitdocumentatie.logius.nl (37.0.0)",
+        )
+
+    def test_respec_documents_for_blob_keeps_same_label_from_different_sources(self):
+        repo = {
+            "owner": {"login": "Geonovum"},
+            "name": "example",
+            "html_url": "https://github.com/Geonovum/example",
+            "default_branch": "main",
+        }
+        html = """
+<script src="https://logius-standaarden.github.io/publicatie/respec/builds/respec-nlgov.js"></script>
+<script src="https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js"></script>
+"""
+
+        def version_for(build_url):
+            return {
+                "https://logius-standaarden.github.io/publicatie/respec/builds/respec-nlgov.js": "37.2.0",
+                "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js": "37.0.0",
+            }[build_url]
+
+        with patch.object(dashboard, "raw_file_text", return_value=html), patch.object(
+            dashboard, "respec_build_version", side_effect=version_for
+        ):
+            documents = dashboard.respec_documents_for_blob((repo, "index.html"))
+
+        variants = [dashboard.respec_variant(document) for document in documents]
+        self.assertEqual(
+            variants,
+            [
+                "respec-nlgov @ logius-standaarden.github.io (37.2.0)",
+                "respec-nlgov @ gitdocumentatie.logius.nl (37.0.0)",
+            ],
+        )
+
+    def test_write_respec_documents_outputs_source_version_and_script(self):
+        documents = [
+            {
+                "organization": "Geonovum",
+                "repository": "example",
+                "location": "https://github.com/Geonovum/example",
+                "build_url": "https://logius-standaarden.github.io/publicatie/respec/builds/respec-nlgov.js",
+                "label": "respec-nlgov",
+                "source": "logius-standaarden.github.io",
+                "respec_version": "37.2.0",
+            },
+            {
+                "organization": "Geonovum",
+                "repository": "example",
+                "location": "https://github.com/Geonovum/example",
+                "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js",
+                "label": "respec-nlgov",
+                "source": "gitdocumentatie.logius.nl",
+                "respec_version": "37.0.0",
+            },
+        ]
+
+        with TemporaryDirectory() as tmpdir, patch.object(dashboard, "TODAY", date(2026, 7, 23)):
+            cwd = Path.cwd()
+            try:
+                import os
+
+                os.chdir(tmpdir)
+                dashboard.write_respec_documents(documents)
+                overview = Path("respecdocuments.md").read_text()
+            finally:
+                os.chdir(cwd)
+
+        self.assertIn("| respec variant | aantal | bron | onderliggende ReSpec versie | script |", overview)
+        self.assertIn(
+            "| respec-nlgov @ logius-standaarden.github.io (37.2.0) | 1 | logius-standaarden.github.io | 37.2.0 | https://logius-standaarden.github.io/publicatie/respec/builds/respec-nlgov.js |",
+            overview,
+        )
+        self.assertIn(
+            "| Geonovum | example | https://github.com/Geonovum/example | respec-nlgov @ gitdocumentatie.logius.nl (37.0.0) | gitdocumentatie.logius.nl | 37.0.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |",
+            overview,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
