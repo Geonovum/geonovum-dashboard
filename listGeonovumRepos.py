@@ -77,23 +77,23 @@ def github_json(path):
             time.sleep(2 * (attempt + 1))
 
 
-def http_text(url):
+def http_text(url, timeout=30, attempts=5):
     request = urllib.request.Request(url, headers={"User-Agent": "geonovum-dashboard"})
-    for attempt in range(5):
+    for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 return response.read().decode("utf-8", errors="replace")
         except urllib.error.HTTPError as error:
             if error.code == 404:
                 return ""
-            if error.code in (403, 429) and attempt < 4:
+            if error.code in (403, 429) and attempt < attempts - 1:
                 retry_after = error.headers.get("Retry-After")
                 wait_seconds = int(retry_after) if retry_after and retry_after.isdigit() else 8 * (attempt + 1)
                 time.sleep(wait_seconds)
                 continue
             raise
         except (TimeoutError, socket.timeout, urllib.error.URLError):
-            if attempt == 4:
+            if attempt == attempts - 1:
                 raise
             time.sleep(2 * (attempt + 1))
 
@@ -381,7 +381,7 @@ def respec_build_version(build_url):
         return ""
 
     try:
-        version = extract_respec_version(http_text(build_url))
+        version = extract_respec_version(http_text(build_url, timeout=8, attempts=1))
     except (OSError, TimeoutError, urllib.error.URLError):
         version = ""
 

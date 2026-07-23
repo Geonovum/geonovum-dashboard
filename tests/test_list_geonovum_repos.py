@@ -372,6 +372,16 @@ class MeaningfulActivityTest(unittest.TestCase):
             "respec-nlgov @ gitdocumentatie.logius.nl (37.0.0)",
         )
 
+    def test_respec_build_version_uses_short_single_fetch_and_caches(self):
+        dashboard.RESPEC_VERSION_CACHE.clear()
+        build_url = "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js"
+
+        with patch.object(dashboard, "http_text", return_value='respecVersion="37.2.0"') as http_text:
+            self.assertEqual(dashboard.respec_build_version(build_url), "37.2.0")
+            self.assertEqual(dashboard.respec_build_version(build_url), "37.2.0")
+
+        http_text.assert_called_once_with(build_url, timeout=8, attempts=1)
+
     def test_respec_documents_for_blob_keeps_same_label_from_different_sources(self):
         repo = {
             "owner": {"login": "Geonovum"},
