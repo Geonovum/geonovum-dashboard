@@ -1,12 +1,12 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-24.
+Automatisch bijgewerkt op 2026-07-25.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
-<div><strong>378</strong><span>ReSpec documenten</span></div>
-<div><strong>1264</strong><span>open issues</span></div>
-<div><strong>295</strong><span>open PR's</span></div>
+<div><strong>380</strong><span>ReSpec documenten</span></div>
+<div><strong>1262</strong><span>open issues</span></div>
+<div><strong>294</strong><span>open PR's</span></div>
 <div><strong>168 / 197 (85%)</strong><span>Pages repos</span></div>
 <div><strong>113 / 197 (57%)</strong><span>met workflow</span></div>
 </div>
@@ -66,7 +66,7 @@ Automatisch bijgewerkt op 2026-07-24.
 | Repos stiler dan 2 jaar | 1 | 1% |
 | Niet-ReSpec repos zonder SECURITY.md | 45 | 100% |
 | Niet-ReSpec repos zonder publiccode.yml | 43 | 96% |
-| ReSpec documenten met migratie-aandacht | 230 | 61% |
+| ReSpec documenten met migratie-aandacht | 232 | 61% |
 
 ## Actielijsten
 
@@ -76,7 +76,7 @@ Repos met de meeste open pull requests en issues.
 
 | Organisatie | repo | gezondheid | laatste wijziging | contact | open issues | open PR's |
 | ----------- | ---- | ---------- | ----------------- | ------- | ----------- | --------- |
-| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-24 | [architolk](https://github.com/architolk) (commit) | 63 | 8 |
+| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-24 | [architolk](https://github.com/architolk) (commit) | 61 | 6 |
 | Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | 175 | 5 |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-03 | [fterpstra](https://github.com/fterpstra) (commit) | 107 | 5 |
 | Geonovum | [gitcursus](https://github.com/Geonovum/gitcursus) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-08 | [SilvyGEONOVUM](https://github.com/SilvyGEONOVUM) (commit) | 0 | 5 |
@@ -114,7 +114,7 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 
 | Organisatie | repo | documenten | gevonden ReSpec-versies |
 | ----------- | ---- | ---------- | ----------------------- |
-| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 70 | fixup @ gitdocumentatie.logius.nl, js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), js/modeldesk-respec.js @ lokaal |
+| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 72 | fixup @ gitdocumentatie.logius.nl, js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), js/modeldesk-respec.js @ lokaal |
 | Geonovum | [ROST](https://github.com/Geonovum/ROST) | 11 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | 8 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [IMGeo](https://github.com/Geonovum/IMGeo) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
