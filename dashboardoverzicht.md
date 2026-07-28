@@ -1,11 +1,11 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-27.
+Automatisch bijgewerkt op 2026-07-28.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
 <div><strong>380</strong><span>ReSpec documenten</span></div>
-<div><strong>1262</strong><span>open issues</span></div>
+<div><strong>1265</strong><span>open issues</span></div>
 <div><strong>297</strong><span>open PR's</span></div>
 <div><strong>168 / 197 (85%)</strong><span>Pages repos</span></div>
 <div><strong>113 / 197 (57%)</strong><span>met workflow</span></div>
