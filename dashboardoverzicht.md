@@ -1,6 +1,6 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-29.
+Automatisch bijgewerkt op 2026-07-30.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
@@ -100,7 +100,7 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
 | Geonovum | [IoT-Workshop](https://github.com/Geonovum/IoT-Workshop) | 2025-09-06 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [word2werkversie-handleiding](https://github.com/Geonovum/word2werkversie-handleiding) | 2026-04-08 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [word2werkversie-handleiding-1](https://github.com/Geonovum/word2werkversie-handleiding-1) | 2026-03-30 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
-| BROprogramma | [generiek](https://github.com/BROprogramma/generiek) | 2026-07-24 | [jacobvosimpronotion](https://github.com/jacobvosimpronotion) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| BROprogramma | [generiek](https://github.com/BROprogramma/generiek) | 2026-07-29 | [theunissenr](https://github.com/theunissenr) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [TPOD](https://github.com/Geonovum/TPOD) | 2026-06-16 | [RubenvanHarn](https://github.com/RubenvanHarn) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [TPOD-waardelijsten](https://github.com/Geonovum/TPOD-waardelijsten) | 2026-07-13 | [RubenvanHarn](https://github.com/RubenvanHarn) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [ogc-api-kennissessie](https://github.com/Geonovum/ogc-api-kennissessie) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
