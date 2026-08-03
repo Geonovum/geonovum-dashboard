@@ -1,12 +1,12 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-08-02.
+Automatisch bijgewerkt op 2026-08-03.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
 <div><strong>380</strong><span>ReSpec documenten</span></div>
 <div><strong>1268</strong><span>open issues</span></div>
-<div><strong>305</strong><span>open PR's</span></div>
+<div><strong>306</strong><span>open PR's</span></div>
 <div><strong>168 / 197 (85%)</strong><span>Pages repos</span></div>
 <div><strong>113 / 197 (57%)</strong><span>met workflow</span></div>
 </div>
@@ -63,7 +63,7 @@ Automatisch bijgewerkt op 2026-08-02.
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
 | Repos stiler dan 1 jaar | 36 | 18% |
-| Repos stiler dan 2 jaar | 1 | 1% |
+| Repos stiler dan 2 jaar | 3 | 2% |
 | Niet-ReSpec repos zonder SECURITY.md | 45 | 100% |
 | Niet-ReSpec repos zonder publiccode.yml | 43 | 96% |
 | ReSpec documenten met migratie-aandacht | 232 | 61% |
