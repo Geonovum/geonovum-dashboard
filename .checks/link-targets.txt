@@ -36,7 +36,6 @@ https://geonovum.github.io/Geen-/
 https://geonovum.github.io/Geo-standaarden-beheerplan/
 https://geonovum.github.io/Geo-standaarden-wijzigingsprotocol/
 https://geonovum.github.io/GeoBIM_BIM_naar_Geo/
-https://geonovum.github.io/GeoBIM_Georefereren/
 https://geonovum.github.io/HR-CRS-Gebruik/
 https://geonovum.github.io/HTML-validatie/
 https://geonovum.github.io/IMEV-wijzigingsprotocol/

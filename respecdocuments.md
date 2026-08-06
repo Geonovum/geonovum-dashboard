@@ -1,10 +1,10 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-08-05.
+Automatisch bijgewerkt op 2026-08-06.
 
 | respec variant | aantal | bron | onderliggende ReSpec versie | script |
 | -------------- | ------ | ---- | --------------------------- | ------ |
-| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 155 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 154 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | 148 | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup @ gitdocumentatie.logius.nl | 57 | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 @ lokaal | 15 | lokaal |  | js/modeldesk-respec.js?v=3 |
@@ -14,7 +14,7 @@ Automatisch bijgewerkt op 2026-08-05.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 354 |
+| Geonovum | 353 |
 | BROprogramma | 26 |
 
 | organisatie | repo | file | respecvariant | bron | onderliggende ReSpec versie | script |
@@ -217,7 +217,6 @@ Automatisch bijgewerkt op 2026-08-05.
 | Geonovum | Geo-standaarden-beheerplan | https://github.com/Geonovum/Geo-standaarden-beheerplan | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | Geo-standaarden-wijzigingsprotocol | https://github.com/Geonovum/Geo-standaarden-wijzigingsprotocol | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | GeoBIM_BIM_naar_Geo | https://github.com/Geonovum/GeoBIM_BIM_naar_Geo | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| Geonovum | GeoBIM_Georefereren | https://github.com/Geonovum/GeoBIM_Georefereren | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | geonovum-allemodellen | https://github.com/Geonovum/geonovum-allemodellen | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | geonovum-dashboard | https://github.com/Geonovum/geonovum-dashboard | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | geonovum-datatypen | https://github.com/Geonovum/geonovum-datatypen | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
