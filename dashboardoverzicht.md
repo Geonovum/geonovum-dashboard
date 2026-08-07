@@ -1,12 +1,12 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-08-06.
+Automatisch bijgewerkt op 2026-08-07.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
 <div><strong>379</strong><span>ReSpec documenten</span></div>
-<div><strong>1265</strong><span>open issues</span></div>
-<div><strong>303</strong><span>open PR's</span></div>
+<div><strong>1266</strong><span>open issues</span></div>
+<div><strong>304</strong><span>open PR's</span></div>
 <div><strong>167 / 197 (85%)</strong><span>Pages repos</span></div>
 <div><strong>112 / 197 (57%)</strong><span>met workflow</span></div>
 </div>
@@ -29,12 +29,12 @@ Automatisch bijgewerkt op 2026-08-06.
 | [ro-beheerteam](https://github.com/orgs/Geonovum/teams/ro-beheerteam) | 4 |
 | [disgeo-implementatie](https://github.com/orgs/Geonovum/teams/disgeo-implementatie) | 3 |
 | [IBRO team](https://github.com/orgs/Geonovum/teams/ibro-team) | 3 |
-| [IMEV team](https://github.com/orgs/Geonovum/teams/imev-team) | 3 |
 | [IMKL Team](https://github.com/orgs/Geonovum/teams/imkl-team) | 3 |
 | [RaamwerkGeostandaarden](https://github.com/orgs/Geonovum/teams/raamwerkgeostandaarden) | 3 |
 | [technisch register](https://github.com/orgs/Geonovum/teams/technisch-register) | 3 |
 | [TransparantieApp](https://github.com/orgs/Geonovum/teams/transparantieapp) | 3 |
 | [EU team](https://github.com/orgs/Geonovum/teams/eu-team) | 2 |
+| [IMEV team](https://github.com/orgs/Geonovum/teams/imev-team) | 2 |
 | [IMG team](https://github.com/orgs/Geonovum/teams/img-team) | 2 |
 | [IMGeo team](https://github.com/orgs/Geonovum/teams/imgeo-team) | 2 |
 | [Metadata team](https://github.com/orgs/Geonovum/teams/metadata-team) | 2 |
@@ -58,7 +58,7 @@ Automatisch bijgewerkt op 2026-08-06.
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 104 |
+| zonder GitHub team | 105 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
@@ -84,7 +84,7 @@ Repos met de meeste open pull requests en issues.
 | Geonovum | [standards-checker](https://github.com/Geonovum/standards-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 0 | 5 |
 | Geonovum | [TransparantieApp](https://github.com/Geonovum/TransparantieApp) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-21 | [KlaasvanVeelen](https://github.com/KlaasvanVeelen) (commit) | 0 | 5 |
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
-| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-20 | [fterpstra](https://github.com/fterpstra) (commit) | 34 | 4 |
+| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-20 | [fterpstra](https://github.com/fterpstra) (commit) | 35 | 4 |
 | BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-05 | [theunissenr](https://github.com/theunissenr) (commit) | 10 | 4 |
 | Geonovum | [dso-validatiematrix](https://github.com/Geonovum/dso-validatiematrix) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | 0 | 4 |
 | Geonovum | [mim-fbm](https://github.com/Geonovum/mim-fbm) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-08-25 | [architolk](https://github.com/architolk) (commit) | 0 | 4 |
@@ -95,7 +95,7 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
 
 | Organisatie | repo | laatste wijziging | contact | beheerbestanden |
 | ----------- | ---- | ----------------- | ------- | --------------- |
-| Geonovum | [imev-WijzigingsprotocolInformatiemodelExterneVeiligheid](https://github.com/Geonovum/imev-WijzigingsprotocolInformatiemodelExterneVeiligheid) | 2026-08-05 |  | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
+| Geonovum | [imev-WijzigingsprotocolInformatiemodelExterneVeiligheid](https://github.com/Geonovum/imev-WijzigingsprotocolInformatiemodelExterneVeiligheid) | 2026-08-06 |  | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [TPOD-wegwijzer](https://github.com/Geonovum/TPOD-wegwijzer) | 2025-12-01 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [validatie.geostandaarden.nl](https://github.com/Geonovum/validatie.geostandaarden.nl) | 2025-11-24 |  | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [IoT-Workshop](https://github.com/Geonovum/IoT-Workshop) | 2025-09-06 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |

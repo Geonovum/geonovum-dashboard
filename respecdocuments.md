@@ -1,6 +1,6 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-08-06.
+Automatisch bijgewerkt op 2026-08-07.
 
 | respec variant | aantal | bron | onderliggende ReSpec versie | script |
 | -------------- | ------ | ---- | --------------------------- | ------ |
@@ -242,7 +242,7 @@ Automatisch bijgewerkt op 2026-08-06.
 | Geonovum | imev-werkafspraken | https://github.com/Geonovum/imev-werkafspraken/tree/main/WARestInsluit | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | imev-werkomgeving | https://github.com/Geonovum/imev-werkomgeving | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | Geonovum | imev-werkomgeving | https://github.com/Geonovum/imev-werkomgeving | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| Geonovum | IMEV-wijzigingsprotocol | https://github.com/Geonovum/IMEV-wijzigingsprotocol | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| Geonovum | imev-wijzigingsprotocol | https://github.com/Geonovum/imev-wijzigingsprotocol | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | IMG | https://github.com/Geonovum/IMG | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | IMG-wijzigingsprotocol | https://github.com/Geonovum/IMG-wijzigingsprotocol | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | IMG | https://github.com/Geonovum/IMG/tree/main/cr | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |

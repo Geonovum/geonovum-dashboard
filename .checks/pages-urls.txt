@@ -37,7 +37,6 @@ https://geonovum.github.io/Geo-standaarden-wijzigingsprotocol/
 https://geonovum.github.io/GeoBIM_BIM_naar_Geo/
 https://geonovum.github.io/HR-CRS-Gebruik/
 https://geonovum.github.io/HTML-validatie/
-https://geonovum.github.io/IMEV-wijzigingsprotocol/
 https://geonovum.github.io/IMG-wijzigingsprotocol/
 https://geonovum.github.io/IMG/
 https://geonovum.github.io/IMGeo-dev/
@@ -113,6 +112,7 @@ https://geonovum.github.io/ibro-scope/
 https://geonovum.github.io/imev-beheerplan/
 https://geonovum.github.io/imev-werkafspraken/
 https://geonovum.github.io/imev-werkomgeving/
+https://geonovum.github.io/imev-wijzigingsprotocol/
 https://geonovum.github.io/imgolf-werkomgeving/
 https://geonovum.github.io/imkl-werkomgeving/
 https://geonovum.github.io/imkl2015-review/
