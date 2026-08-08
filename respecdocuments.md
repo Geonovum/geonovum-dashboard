@@ -1,11 +1,11 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-08-07.
+Automatisch bijgewerkt op 2026-08-08.
 
 | respec variant | aantal | bron | onderliggende ReSpec versie | script |
 | -------------- | ------ | ---- | --------------------------- | ------ |
-| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 154 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | 148 | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 156 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | 146 | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup @ gitdocumentatie.logius.nl | 57 | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 @ lokaal | 15 | lokaal |  | js/modeldesk-respec.js?v=3 |
 | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.1.0) | 3 | www.w3.org | 37.1.0 | https://www.w3.org/Tools/respec/respec-w3c |
@@ -26,7 +26,7 @@ Automatisch bijgewerkt op 2026-08-07.
 | BROprogramma | CPT | https://github.com/BROprogramma/CPT | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | DGM | https://github.com/BROprogramma/DGM | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | BROprogramma | EPC | https://github.com/BROprogramma/EPC | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| BROprogramma | EPL | https://github.com/BROprogramma/EPL | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| BROprogramma | EPL | https://github.com/BROprogramma/EPL | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | FRD | https://github.com/BROprogramma/FRD | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | GAR | https://github.com/BROprogramma/GAR | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | GLD | https://github.com/BROprogramma/GLD | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
@@ -41,7 +41,7 @@ Automatisch bijgewerkt op 2026-08-07.
 | BROprogramma | SAD | https://github.com/BROprogramma/SAD | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | SAMPLE | https://github.com/BROprogramma/SAMPLE | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | BROprogramma | SAMPLE1 | https://github.com/BROprogramma/SAMPLE1 | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| BROprogramma | SFR | https://github.com/BROprogramma/SFR | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| BROprogramma | SFR | https://github.com/BROprogramma/SFR | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | SGM | https://github.com/BROprogramma/SGM | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | BROprogramma | SLD | https://github.com/BROprogramma/SLD | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | WDM | https://github.com/BROprogramma/WDM | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
