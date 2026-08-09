@@ -1,6 +1,6 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-08-08.
+Automatisch bijgewerkt op 2026-08-09.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
@@ -62,7 +62,7 @@ Automatisch bijgewerkt op 2026-08-08.
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
-| Repos stiler dan 1 jaar | 37 | 19% |
+| Repos stiler dan 1 jaar | 38 | 19% |
 | Repos stiler dan 2 jaar | 3 | 2% |
 | Niet-ReSpec repos zonder SECURITY.md | 46 | 100% |
 | Niet-ReSpec repos zonder publiccode.yml | 44 | 96% |
