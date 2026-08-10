@@ -1,6 +1,6 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-08-09.
+Automatisch bijgewerkt op 2026-08-10.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
