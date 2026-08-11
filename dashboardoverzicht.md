@@ -1,12 +1,12 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-08-10.
+Automatisch bijgewerkt op 2026-08-11.
 
 <div class="dashboard-kpis">
 <div><strong>197</strong><span>repos</span></div>
 <div><strong>379</strong><span>ReSpec documenten</span></div>
-<div><strong>1267</strong><span>open issues</span></div>
-<div><strong>304</strong><span>open PR's</span></div>
+<div><strong>1266</strong><span>open issues</span></div>
+<div><strong>305</strong><span>open PR's</span></div>
 <div><strong>167 / 197 (85%)</strong><span>Pages repos</span></div>
 <div><strong>112 / 197 (57%)</strong><span>met workflow</span></div>
 </div>
@@ -86,8 +86,8 @@ Repos met de meeste open pull requests en issues.
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
 | Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-20 | [fterpstra](https://github.com/fterpstra) (commit) | 35 | 4 |
 | BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-05 | [theunissenr](https://github.com/theunissenr) (commit) | 10 | 4 |
+| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 9 | 4 |
 | Geonovum | [dso-validatiematrix](https://github.com/Geonovum/dso-validatiematrix) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | 0 | 4 |
-| Geonovum | [mim-fbm](https://github.com/Geonovum/mim-fbm) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-08-25 | [architolk](https://github.com/architolk) (commit) | 0 | 4 |
 
 **Actieve repos met ontbrekende beheerbestanden**
 
