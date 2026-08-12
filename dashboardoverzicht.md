@@ -1,19 +1,19 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-08-11.
+Automatisch bijgewerkt op 2026-08-12.
 
 <div class="dashboard-kpis">
-<div><strong>197</strong><span>repos</span></div>
+<div><strong>196</strong><span>repos</span></div>
 <div><strong>379</strong><span>ReSpec documenten</span></div>
 <div><strong>1266</strong><span>open issues</span></div>
-<div><strong>305</strong><span>open PR's</span></div>
-<div><strong>167 / 197 (85%)</strong><span>Pages repos</span></div>
-<div><strong>112 / 197 (57%)</strong><span>met workflow</span></div>
+<div><strong>306</strong><span>open PR's</span></div>
+<div><strong>167 / 196 (85%)</strong><span>Pages repos</span></div>
+<div><strong>112 / 196 (57%)</strong><span>met workflow</span></div>
 </div>
 
 | Organisatie | repos |
 | ----------- | ----- |
-| Geonovum | 171 |
+| Geonovum | 170 |
 | BROprogramma | 26 |
 
 | GitHub team | repos |
@@ -58,14 +58,14 @@ Automatisch bijgewerkt op 2026-08-11.
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 105 |
+| zonder GitHub team | 104 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
 | Repos stiler dan 1 jaar | 38 | 19% |
 | Repos stiler dan 2 jaar | 3 | 2% |
-| Niet-ReSpec repos zonder SECURITY.md | 46 | 100% |
-| Niet-ReSpec repos zonder publiccode.yml | 44 | 96% |
+| Niet-ReSpec repos zonder SECURITY.md | 45 | 100% |
+| Niet-ReSpec repos zonder publiccode.yml | 43 | 96% |
 | ReSpec documenten met migratie-aandacht | 233 | 61% |
 
 ## Actielijsten
@@ -80,13 +80,13 @@ Repos met de meeste open pull requests en issues.
 | Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-05 | [architolk](https://github.com/architolk) (commit) | 55 | 6 |
 | Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | 175 | 5 |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-31 | [joostfarla](https://github.com/joostfarla) (commit) | 107 | 5 |
+| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 9 | 5 |
 | Geonovum | [gitcursus](https://github.com/Geonovum/gitcursus) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-08 | [SilvyGEONOVUM](https://github.com/SilvyGEONOVUM) (commit) | 0 | 5 |
 | Geonovum | [standards-checker](https://github.com/Geonovum/standards-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 0 | 5 |
 | Geonovum | [TransparantieApp](https://github.com/Geonovum/TransparantieApp) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-21 | [KlaasvanVeelen](https://github.com/KlaasvanVeelen) (commit) | 0 | 5 |
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
 | Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-20 | [fterpstra](https://github.com/fterpstra) (commit) | 35 | 4 |
 | BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-05 | [theunissenr](https://github.com/theunissenr) (commit) | 10 | 4 |
-| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 9 | 4 |
 | Geonovum | [dso-validatiematrix](https://github.com/Geonovum/dso-validatiematrix) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | 0 | 4 |
 
 **Actieve repos met ontbrekende beheerbestanden**
@@ -95,7 +95,6 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
 
 | Organisatie | repo | laatste wijziging | contact | beheerbestanden |
 | ----------- | ---- | ----------------- | ------- | --------------- |
-| Geonovum | [imev-WijzigingsprotocolInformatiemodelExterneVeiligheid](https://github.com/Geonovum/imev-WijzigingsprotocolInformatiemodelExterneVeiligheid) | 2026-08-06 |  | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [TPOD-wegwijzer](https://github.com/Geonovum/TPOD-wegwijzer) | 2025-12-01 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [validatie.geostandaarden.nl](https://github.com/Geonovum/validatie.geostandaarden.nl) | 2025-11-24 |  | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [IoT-Workshop](https://github.com/Geonovum/IoT-Workshop) | 2025-09-06 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
@@ -107,6 +106,7 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
 | Geonovum | [ogc-api-kennissessie](https://github.com/Geonovum/ogc-api-kennissessie) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [ogc-api-workshops](https://github.com/Geonovum/ogc-api-workshops) | 2026-06-30 | [PB-GNM](https://github.com/PB-GNM) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [nLDT-Cook](https://github.com/Geonovum/nLDT-Cook) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [nLDT-CookBook](https://github.com/Geonovum/nLDT-CookBook) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 
 **ReSpec migratie-aandacht**
 
@@ -118,7 +118,7 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 | Geonovum | [ROST](https://github.com/Geonovum/ROST) | 11 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | 8 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [IMGeo](https://github.com/Geonovum/IMGeo) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
-| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.1.0), js/modeldesk-respec.js?v=3 @ lokaal |
+| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.2.0), js/modeldesk-respec.js?v=3 @ lokaal |
 | Geonovum | [bestuurlijke-gebieden-cm](https://github.com/Geonovum/bestuurlijke-gebieden-cm) | 2 | js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [bestuurlijke-gebieden-lm](https://github.com/Geonovum/bestuurlijke-gebieden-lm) | 2 | js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [CIM-Funderingen](https://github.com/Geonovum/CIM-Funderingen) | 2 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), js/modeldesk-respec.js?v=3 @ lokaal |

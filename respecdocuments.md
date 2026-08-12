@@ -1,6 +1,6 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-08-11.
+Automatisch bijgewerkt op 2026-08-12.
 
 | respec variant | aantal | bron | onderliggende ReSpec versie | script |
 | -------------- | ------ | ---- | --------------------------- | ------ |
@@ -8,7 +8,7 @@ Automatisch bijgewerkt op 2026-08-11.
 | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | 146 | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup @ gitdocumentatie.logius.nl | 57 | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 @ lokaal | 15 | lokaal |  | js/modeldesk-respec.js?v=3 |
-| https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.1.0) | 3 | www.w3.org | 37.1.0 | https://www.w3.org/Tools/respec/respec-w3c |
+| https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.2.0) | 3 | www.w3.org | 37.2.0 | https://www.w3.org/Tools/respec/respec-w3c |
 | js/modeldesk-respec.js @ lokaal | 1 | lokaal |  | js/modeldesk-respec.js |
 | respec-logius @ publicatie.centrumvoorstandaarden.nl | 1 | publicatie.centrumvoorstandaarden.nl |  | https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js |
 
@@ -316,8 +316,8 @@ Automatisch bijgewerkt op 2026-08-11.
 | Geonovum | mim-lineage | https://github.com/Geonovum/mim-lineage | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | mim-logisch | https://github.com/Geonovum/mim-logisch | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/modellen/dienstbetrekking | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.1.0) | www.w3.org | 37.1.0 | https://www.w3.org/Tools/respec/respec-w3c |
-| Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/modellen/fietsenwinkel | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.1.0) | www.w3.org | 37.1.0 | https://www.w3.org/Tools/respec/respec-w3c |
+| Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/modellen/dienstbetrekking | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.2.0) | www.w3.org | 37.2.0 | https://www.w3.org/Tools/respec/respec-w3c |
+| Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/modellen/fietsenwinkel | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.2.0) | www.w3.org | 37.2.0 | https://www.w3.org/Tools/respec/respec-w3c |
 | Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/werkomgeving/voorbeeldmodel/doc | js/modeldesk-respec.js?v=3 @ lokaal | lokaal |  | js/modeldesk-respec.js?v=3 |
 | Geonovum | mim-metamodel | https://github.com/Geonovum/mim-metamodel/tree/main/werkomgeving/voorbeeldmodel/doc | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | mim-ontouml | https://github.com/Geonovum/mim-ontouml | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
@@ -327,7 +327,7 @@ Automatisch bijgewerkt op 2026-08-11.
 | Geonovum | MIM-Werkomgeving | https://github.com/Geonovum/MIM-Werkomgeving/tree/master/Werkversie/rdf/model | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving/tree/main/model/respec | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving/tree/main/model/respec | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.1.0) | www.w3.org | 37.1.0 | https://www.w3.org/Tools/respec/respec-w3c |
+| Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving/tree/main/model/respec | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.2.0) | www.w3.org | 37.2.0 | https://www.w3.org/Tools/respec/respec-w3c |
 | Geonovum | nen3610-werkomgeving | https://github.com/Geonovum/nen3610-werkomgeving/tree/main/model/respec | respec-logius @ publicatie.centrumvoorstandaarden.nl | publicatie.centrumvoorstandaarden.nl |  | https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js |
 | Geonovum | NL-ReSpec-template | https://github.com/Geonovum/NL-ReSpec-template | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | NL-SBB | https://github.com/Geonovum/NL-SBB | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
