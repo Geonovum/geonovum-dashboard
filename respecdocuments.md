@@ -1,11 +1,11 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-08-12.
+Automatisch bijgewerkt op 2026-08-13.
 
 | respec variant | aantal | bron | onderliggende ReSpec versie | script |
 | -------------- | ------ | ---- | --------------------------- | ------ |
-| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 156 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
-| tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | 146 | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 157 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | 145 | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | fixup @ gitdocumentatie.logius.nl | 57 | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 @ lokaal | 15 | lokaal |  | js/modeldesk-respec.js?v=3 |
 | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.2.0) | 3 | www.w3.org | 37.2.0 | https://www.w3.org/Tools/respec/respec-w3c |
@@ -25,7 +25,7 @@ Automatisch bijgewerkt op 2026-08-12.
 | BROprogramma | BHR-P | https://github.com/BROprogramma/BHR-P | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | CPT | https://github.com/BROprogramma/CPT | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | DGM | https://github.com/BROprogramma/DGM | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| BROprogramma | EPC | https://github.com/BROprogramma/EPC | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
+| BROprogramma | EPC | https://github.com/BROprogramma/EPC | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | EPL | https://github.com/BROprogramma/EPL | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | FRD | https://github.com/BROprogramma/FRD | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | BROprogramma | GAR | https://github.com/BROprogramma/GAR | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
