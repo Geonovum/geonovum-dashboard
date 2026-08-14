@@ -1,19 +1,19 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-08-13.
+Automatisch bijgewerkt op 2026-08-14.
 
 <div class="dashboard-kpis">
-<div><strong>196</strong><span>repos</span></div>
+<div><strong>197</strong><span>repos</span></div>
 <div><strong>379</strong><span>ReSpec documenten</span></div>
 <div><strong>1270</strong><span>open issues</span></div>
-<div><strong>307</strong><span>open PR's</span></div>
-<div><strong>167 / 196 (85%)</strong><span>Pages repos</span></div>
-<div><strong>112 / 196 (57%)</strong><span>met workflow</span></div>
+<div><strong>309</strong><span>open PR's</span></div>
+<div><strong>167 / 197 (85%)</strong><span>Pages repos</span></div>
+<div><strong>113 / 197 (57%)</strong><span>met workflow</span></div>
 </div>
 
 | Organisatie | repos |
 | ----------- | ----- |
-| Geonovum | 170 |
+| Geonovum | 171 |
 | BROprogramma | 26 |
 
 | GitHub team | repos |
@@ -58,7 +58,7 @@ Automatisch bijgewerkt op 2026-08-13.
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 104 |
+| zonder GitHub team | 105 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
@@ -77,7 +77,7 @@ Repos met de meeste open pull requests en issues.
 | Organisatie | repo | gezondheid | laatste wijziging | contact | open issues | open PR's |
 | ----------- | ---- | ---------- | ----------------- | ------- | ----------- | --------- |
 | Geonovum | [mim-begrippenkader](https://github.com/Geonovum/mim-begrippenkader) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-24 | [architolk](https://github.com/architolk) (commit) | 0 | 7 |
-| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-12 | [PalmJanssen](https://github.com/PalmJanssen) (commit) | 55 | 6 |
+| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-13 | [PalmJanssen](https://github.com/PalmJanssen) (commit) | 55 | 6 |
 | Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | 175 | 5 |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-31 | [joostfarla](https://github.com/joostfarla) (commit) | 107 | 5 |
 | Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 9 | 5 |
