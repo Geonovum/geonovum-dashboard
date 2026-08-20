@@ -1,12 +1,12 @@
 # Welke versie van respec zit in welk repo
 
-Automatisch bijgewerkt op 2026-08-18.
+Automatisch bijgewerkt op 2026-08-20.
 
 | respec variant | aantal | bron | onderliggende ReSpec versie | script |
 | -------------- | ------ | ---- | --------------------------- | ------ |
-| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 157 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | 158 | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | 145 | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
-| fixup @ gitdocumentatie.logius.nl | 57 | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
+| fixup @ gitdocumentatie.logius.nl | 59 | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | js/modeldesk-respec.js?v=3 @ lokaal | 15 | lokaal |  | js/modeldesk-respec.js?v=3 |
 | https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.3.1) | 3 | www.w3.org | 37.3.1 | https://www.w3.org/Tools/respec/respec-w3c |
 | js/modeldesk-respec.js @ lokaal | 1 | lokaal |  | js/modeldesk-respec.js |
@@ -14,7 +14,7 @@ Automatisch bijgewerkt op 2026-08-18.
 
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
-| Geonovum | 353 |
+| Geonovum | 356 |
 | BROprogramma | 26 |
 
 | organisatie | repo | file | respecvariant | bron | onderliggende ReSpec versie | script |
@@ -76,6 +76,8 @@ Automatisch bijgewerkt op 2026-08-18.
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bg/vv-im-cim-bg-20260204 | js/modeldesk-respec.js?v=3 @ lokaal | lokaal |  | js/modeldesk-respec.js?v=3 |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bg/vv-im-cim-bg-20260204 | fixup @ gitdocumentatie.logius.nl | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bro/cv-st-bhr-gt-20260424 | fixup @ gitdocumentatie.logius.nl | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
+| Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bro/cv-st-sad-20260819 | fixup @ gitdocumentatie.logius.nl | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
+| Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bro/cv-st-sld-20260819 | fixup @ gitdocumentatie.logius.nl | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bro/def-st-bhr-g-20260513 | fixup @ gitdocumentatie.logius.nl | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bro/vv-st-bhr-g-20251002 | fixup @ gitdocumentatie.logius.nl | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
 | Geonovum | docs.geostandaarden.nl | https://github.com/Geonovum/docs.geostandaarden.nl/tree/main/bro/vv-st-bhr-gt-20260724 | fixup @ gitdocumentatie.logius.nl | gitdocumentatie.logius.nl |  | https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js |
@@ -207,6 +209,7 @@ Automatisch bijgewerkt op 2026-08-18.
 | Geonovum | dso-cim-tr | https://github.com/Geonovum/dso-cim-tr | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | dso-validatiematrix | https://github.com/Geonovum/dso-validatiematrix | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | DTaaS-Testbed2 | https://github.com/Geonovum/DTaaS-Testbed2/tree/main/docs | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
+| Geonovum | DTaaS-Testbed2026-Phase2 | https://github.com/Geonovum/DTaaS-Testbed2026-Phase2/tree/main/docs | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | eu-DataspaceProtocolconnectorexperiment | https://github.com/Geonovum/eu-DataspaceProtocolconnectorexperiment | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |
 | Geonovum | eu_regelingen_datastrategie | https://github.com/Geonovum/eu_regelingen_datastrategie | tools.geostandaarden @ tools.geostandaarden.nl (24.5.2) | tools.geostandaarden.nl | 24.5.2 | https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js |
 | Geonovum | Geen- | https://github.com/Geonovum/Geen- | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js |

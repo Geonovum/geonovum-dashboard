@@ -31,6 +31,7 @@ https://geonovum.github.io/3d-tiling/
 https://geonovum.github.io/CIM-Funderingen/
 https://geonovum.github.io/DCAT-AP-NL30/
 https://geonovum.github.io/DTaaS-Testbed2/
+https://geonovum.github.io/DTaaS-Testbed2026-Phase2/
 https://geonovum.github.io/Geen-/
 https://geonovum.github.io/Geo-standaarden-beheerplan/
 https://geonovum.github.io/Geo-standaarden-wijzigingsprotocol/
