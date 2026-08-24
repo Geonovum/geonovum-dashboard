@@ -4,7 +4,7 @@ Automatisch bijgewerkt op 2026-08-24.
 
 <div class="dashboard-kpis">
 <div><strong>198</strong><span>repos</span></div>
-<div><strong>382</strong><span>ReSpec documenten</span></div>
+<div><strong>313</strong><span>ReSpec documenten</span></div>
 <div><strong>1271</strong><span>open issues</span></div>
 <div><strong>302</strong><span>open PR's</span></div>
 <div><strong>169 / 198 (85%)</strong><span>Pages repos</span></div>
@@ -64,9 +64,9 @@ Automatisch bijgewerkt op 2026-08-24.
 | --------- | ------ | ------- |
 | Repos stiler dan 1 jaar | 46 | 23% |
 | Repos stiler dan 2 jaar | 3 | 2% |
-| Niet-ReSpec repos zonder SECURITY.md | 45 | 100% |
-| Niet-ReSpec repos zonder publiccode.yml | 43 | 96% |
-| ReSpec documenten met migratie-aandacht | 237 | 62% |
+| Niet-ReSpec repos zonder SECURITY.md | 46 | 100% |
+| Niet-ReSpec repos zonder publiccode.yml | 44 | 96% |
+| ReSpec documenten met migratie-aandacht | 171 | 55% |
 
 ## Actielijsten
 
@@ -114,8 +114,8 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 
 | Organisatie | repo | documenten | gevonden ReSpec-versies |
 | ----------- | ---- | ---------- | ----------------------- |
-| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 74 | fixup @ gitdocumentatie.logius.nl, js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), js/modeldesk-respec.js @ lokaal |
 | Geonovum | [ROST](https://github.com/Geonovum/ROST) | 11 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 10 | js/modeldesk-respec.js?v=3 @ lokaal, js/modeldesk-respec.js @ lokaal |
 | Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | 8 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [IMGeo](https://github.com/Geonovum/IMGeo) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
 | Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.3.1), js/modeldesk-respec.js?v=3 @ lokaal |
