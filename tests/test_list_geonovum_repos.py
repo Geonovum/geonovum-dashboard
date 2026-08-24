@@ -372,6 +372,57 @@ class MeaningfulActivityTest(unittest.TestCase):
             "respec-nlgov @ gitdocumentatie.logius.nl (37.0.0)",
         )
 
+    def test_extract_respec_build_urls_ignores_scripts_inside_html_comments(self):
+        html = """
+<!-- <script src="https://tools.geostandaarden.nl/respec/builds/respec-geonovum.js"></script> -->
+<!--
+<script src="https://www.w3.org/Tools/respec/respec-w3c"></script>
+-->
+<script src="https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js"></script>
+"""
+
+        self.assertEqual(
+            dashboard.extract_respec_build_urls(html),
+            ["https://publicatie.centrumvoorstandaarden.nl/respec/builds/respec-logius.js"],
+        )
+
+    def test_extract_respec_build_urls_excludes_fixup_script(self):
+        html = """
+<script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script>
+<script src="https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js"></script>
+"""
+
+        self.assertEqual(
+            dashboard.extract_respec_build_urls(html),
+            ["https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js"],
+        )
+
+    def test_extract_respec_organisation_config_urls_only_returns_active_organisation_configs(self):
+        html = """
+<!-- <script src="./respec/organisatie-config.js"></script> -->
+<script src="https://tools.geostandaarden.nl/respec/config/geonovum-config.js"></script>
+<script src="js/config.js"></script>
+<script src="js/document-config.js"></script>
+"""
+
+        self.assertEqual(
+            dashboard.extract_respec_organisation_config_urls(html),
+            ["https://tools.geostandaarden.nl/respec/config/geonovum-config.js"],
+        )
+
+    def test_extract_respec_config_domain_path_returns_publication_domain_base(self):
+        script = """
+var organisationConfig = {
+  nl_organisationStylesURL: "https://tools.geostandaarden.nl/publication/domain/ro/",
+  logos: [{src: "https://tools.geostandaarden.nl/publication/domain/ro/Geonovum.svg"}]
+};
+"""
+
+        self.assertEqual(
+            dashboard.extract_respec_config_domain_path(script),
+            "https://tools.geostandaarden.nl/publication/domain/ro/",
+        )
+
     def test_respec_build_version_uses_short_single_fetch_and_caches(self):
         dashboard.RESPEC_VERSION_CACHE.clear()
         build_url = "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js"
@@ -412,6 +463,128 @@ class MeaningfulActivityTest(unittest.TestCase):
                 "respec-nlgov @ logius-standaarden.github.io (37.2.0)",
                 "respec-nlgov @ gitdocumentatie.logius.nl (37.0.0)",
             ],
+        )
+
+    def test_respec_documents_for_blob_resolves_local_organisation_config_domain(self):
+        repo = {
+            "owner": {"login": "Geonovum"},
+            "name": "example",
+            "html_url": "https://github.com/Geonovum/example",
+            "default_branch": "main",
+        }
+        files = {
+            "PRSV/index.html": """
+<script src="js/organisation-config.js"></script>
+<script src="js/document-config.js"></script>
+<script src="https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js"></script>
+""",
+            "PRSV/js/organisation-config.js": """
+var organisationConfig = {
+  nl_organisationStylesURL: "https://tools.geostandaarden.nl/publication/domain/ro/"
+};
+""",
+        }
+
+        with patch.object(dashboard, "raw_file_text", side_effect=lambda _repo, file_path: files[file_path]), patch.object(
+            dashboard, "respec_build_version", return_value="37.2.0"
+        ):
+            documents = dashboard.respec_documents_for_blob((repo, "PRSV/index.html"))
+
+        self.assertEqual(
+            documents[0]["organisation_configs"],
+            [
+                {
+                    "script": "js/organisation-config.js",
+                    "domain": "https://tools.geostandaarden.nl/publication/domain/ro/",
+                }
+            ],
+        )
+
+    def test_write_respec_documents_counts_organisation_config_per_document_once(self):
+        organisation_configs = [
+            {
+                "script": "js/organisation-config.js",
+                "domain": "https://tools.geostandaarden.nl/publication/domain/ro/",
+            }
+        ]
+        documents = [
+            {
+                "organization": "Geonovum",
+                "repository": "example",
+                "location": "https://github.com/Geonovum/example",
+                "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js",
+                "label": "respec-nlgov",
+                "source": "gitdocumentatie.logius.nl",
+                "respec_version": "37.2.0",
+                "organisation_configs": organisation_configs,
+            },
+            {
+                "organization": "Geonovum",
+                "repository": "example",
+                "location": "https://github.com/Geonovum/example",
+                "build_url": "https://www.w3.org/Tools/respec/respec-w3c",
+                "label": "respec-w3c",
+                "source": "www.w3.org",
+                "respec_version": "37.1.0",
+                "organisation_configs": organisation_configs,
+            },
+        ]
+
+        with TemporaryDirectory() as tmpdir:
+            cwd = Path.cwd()
+            try:
+                import os
+
+                os.chdir(tmpdir)
+                dashboard.write_respec_documents(documents)
+                overview = Path("respecdocuments.md").read_text()
+            finally:
+                os.chdir(cwd)
+
+        self.assertIn("## Organisatieconfiguraties", overview)
+        self.assertIn("| organisatieconfiguratie | domeinpad | documenten |", overview)
+        self.assertIn(
+            "| js/organisation-config.js | https://tools.geostandaarden.nl/publication/domain/ro/ | 1 |",
+            overview,
+        )
+
+    def test_write_respec_documents_lists_organisation_config_per_document(self):
+        documents = [
+            {
+                "organization": "Geonovum",
+                "repository": "example",
+                "location": "https://github.com/Geonovum/example/tree/main/PRSV",
+                "build_url": "https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js",
+                "label": "respec-nlgov",
+                "source": "gitdocumentatie.logius.nl",
+                "respec_version": "37.2.0",
+                "organisation_configs": [
+                    {
+                        "script": "js/organisation-config.js",
+                        "domain": "https://tools.geostandaarden.nl/publication/domain/ro/",
+                    }
+                ],
+            }
+        ]
+
+        with TemporaryDirectory() as tmpdir:
+            cwd = Path.cwd()
+            try:
+                import os
+
+                os.chdir(tmpdir)
+                dashboard.write_respec_documents(documents)
+                overview = Path("respecdocuments.md").read_text()
+            finally:
+                os.chdir(cwd)
+
+        self.assertIn(
+            "| organisatie | repo | file | respecvariant | bron | onderliggende ReSpec versie | script | organisatieconfiguratie | domeinpad |",
+            overview,
+        )
+        self.assertIn(
+            "| Geonovum | example | https://github.com/Geonovum/example/tree/main/PRSV | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) | gitdocumentatie.logius.nl | 37.2.0 | https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js | js/organisation-config.js | https://tools.geostandaarden.nl/publication/domain/ro/ |",
+            overview,
         )
 
     def test_write_respec_documents_outputs_source_version_and_script(self):

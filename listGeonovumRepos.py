@@ -5,8 +5,10 @@
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timezone
+from html.parser import HTMLParser
 import json
 import os
+import posixpath
 import re
 import socket
 import subprocess
@@ -37,6 +39,21 @@ MANAGEMENT_LABELS = {
 
 class GitHubTeamAccessDenied(Exception):
     pass
+
+
+class ScriptSourceParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.sources = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "script":
+            return
+
+        for name, value in attrs:
+            if name.lower() == "src" and value:
+                self.sources.append(value)
+                return
 
 
 def should_retry_github_error(error):
@@ -318,12 +335,18 @@ def github_file_location(repo, path):
     return "{}/tree/{}/{}".format(repo["html_url"], repo["default_branch"], encoded_directory)
 
 
+def extract_script_sources(html):
+    parser = ScriptSourceParser()
+    parser.feed(html)
+    return parser.sources
+
+
 def extract_respec_build_urls(html):
     build_urls = []
 
-    for match in re.finditer(r"<script\b[^>]*\bsrc=[\"']([^\"']+)[\"']", html, re.IGNORECASE):
-        candidate = match.group(1)
+    for candidate in extract_script_sources(html):
         lower_candidate = candidate.lower()
+        script_name = urllib.parse.urlparse(lower_candidate).path.rsplit("/", 1)[-1]
 
         if "respec" not in lower_candidate:
             continue
@@ -333,12 +356,74 @@ def extract_respec_build_urls(html):
             continue
         if lower_candidate.endswith("config.js"):
             continue
+        if script_name == "fixup.js":
+            continue
         if lower_candidate.endswith(("easy-button.js", "leaflet.js", "rules.js")):
             continue
 
         build_urls.append(candidate)
 
     return build_urls
+
+
+def extract_respec_organisation_config_urls(html):
+    config_urls = []
+
+    for candidate in extract_script_sources(html):
+        config_path = urllib.parse.urlparse(candidate).path.lower()
+        script_name = config_path.rsplit("/", 1)[-1]
+        if script_name in ("organisation-config.js", "organisatie-config.js", "geonovum-config.js"):
+            config_urls.append(candidate)
+            continue
+        if "/respec/config/" in config_path and script_name.endswith("config.js"):
+            config_urls.append(candidate)
+
+    return config_urls
+
+
+def extract_respec_config_domain_path(script_text):
+    match = re.search(
+        r"https://tools\.geostandaarden\.nl/publication/domain/([^/\"'\s]+)/?",
+        script_text,
+        re.IGNORECASE,
+    )
+    if not match:
+        return ""
+
+    return "https://tools.geostandaarden.nl/publication/domain/{}/".format(match.group(1))
+
+
+def respec_config_domain_for_url(repo, index_path, config_url):
+    domain_path = extract_respec_config_domain_path(config_url)
+    if domain_path:
+        return domain_path
+
+    parsed = urllib.parse.urlparse(config_url)
+    if parsed.scheme or parsed.netloc:
+        return ""
+
+    config_path = urllib.parse.unquote(parsed.path)
+    if config_path.startswith("/"):
+        config_path = config_path.lstrip("/")
+    else:
+        config_path = posixpath.normpath(posixpath.join(posixpath.dirname(index_path), config_path))
+
+    try:
+        config_text = raw_file_text(repo, config_path)
+    except (OSError, TimeoutError, urllib.error.URLError):
+        return ""
+
+    return extract_respec_config_domain_path(config_text)
+
+
+def respec_organisation_configs(repo, index_path, html):
+    return [
+        {
+            "script": config_url,
+            "domain": respec_config_domain_for_url(repo, index_path, config_url),
+        }
+        for config_url in extract_respec_organisation_config_urls(html)
+    ]
 
 
 def respec_label(build_url):
@@ -628,6 +713,7 @@ def respec_documents_for_blob(index_blob):
     documents = []
 
     html = raw_file_text(repo, path)
+    organisation_configs = respec_organisation_configs(repo, path, html)
     for build_url in extract_respec_build_urls(html):
         source = respec_source(build_url)
         version = respec_build_version(build_url)
@@ -640,6 +726,7 @@ def respec_documents_for_blob(index_blob):
                 "label": respec_label(build_url),
                 "source": source,
                 "respec_version": version,
+                "organisation_configs": organisation_configs,
             }
         )
 
@@ -1168,8 +1255,12 @@ def write_respec_documents(documents):
     counts = Counter(respec_variant(document) for document in documents)
     counts_by_org = Counter(document["location"].split("/")[3] for document in documents if document["location"].startswith("https://github.com/"))
     documents_by_variant = {}
+    documents_by_organisation_config = defaultdict(set)
     for document in documents:
         documents_by_variant.setdefault(respec_variant(document), document)
+        for config in document.get("organisation_configs", []):
+            key = (config.get("script", ""), config.get("domain", ""))
+            documents_by_organisation_config[key].add(document["location"])
 
     with open("respecdocuments.md", "w") as f:
         f.write(
@@ -1196,6 +1287,27 @@ Automatisch bijgewerkt op {}.
 
         f.write(
             """
+## Organisatieconfiguraties
+
+| organisatieconfiguratie | domeinpad | documenten |
+| ----------------------- | --------- | ---------- |
+"""
+        )
+        organisation_config_rows = sorted(
+            documents_by_organisation_config.items(),
+            key=lambda item: (-len(item[1]), item[0][0].lower(), item[0][1].lower()),
+        )
+        for (config_script, domain_path), locations in organisation_config_rows:
+            f.write(
+                "| {} | {} | {} |\n".format(
+                    table_text(config_script),
+                    table_text(domain_path),
+                    len(locations),
+                )
+            )
+
+        f.write(
+            """
 | organisatie | aantal documenten |
 | ----------- | ----------------- |
 """
@@ -1205,14 +1317,17 @@ Automatisch bijgewerkt op {}.
 
         f.write(
             """
-| organisatie | repo | file | respecvariant | bron | onderliggende ReSpec versie | script |
-| ----------- | ---- | ---- | ------------- | ---- | --------------------------- | ------ |
+| organisatie | repo | file | respecvariant | bron | onderliggende ReSpec versie | script | organisatieconfiguratie | domeinpad |
+| ----------- | ---- | ---- | ------------- | ---- | --------------------------- | ------ | ----------------------- | --------- |
 """
         )
 
         for document in documents:
+            organisation_configs = document.get("organisation_configs", [])
+            config_scripts = "<br>".join(config.get("script", "") for config in organisation_configs)
+            domain_paths = "<br>".join(config.get("domain", "") for config in organisation_configs)
             f.write(
-                "| {} | {} | {} | {} | {} | {} | {} |\n".format(
+                "| {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(document["organization"]),
                     table_text(document["repository"]),
                     table_text(document["location"]),
@@ -1220,6 +1335,8 @@ Automatisch bijgewerkt op {}.
                     table_text(document.get("source", "")),
                     table_text(document.get("respec_version", "")),
                     table_text(document.get("build_url", "")),
+                    table_text(config_scripts),
+                    table_text(domain_paths),
                 )
             )
 
