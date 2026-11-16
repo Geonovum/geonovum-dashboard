@@ -1,33 +1,25 @@
 let respecConfig = {
   useLogo: true,
   useLabel: true,
-  // TODO: title is verplicht! Neem hieronder de titel van het document op
+  // title is verplicht! Neem hieronder de titel van het document op
   title: "Dashboard Geonovum informatiemodellen",
   //-- specStatus is verplicht! (activeer 1 van de volgende) --------------------------
   //specStatus: "wv",                   // Werkversie
   //specStatus: "cv",               // Consultatieversie
   //specStatus: "vv",               // Versie ter vaststelling
   //specStatus: "def",              // Vastgestelde versie
-  specStatus: "basis",            // Basis Document
+  specStatus: "ld",            // Levend Document
   //-- specType is verplicht bij alle andere dan BASIS ---------------------------------
-  //specType: "NO",                 // Norm
-  //specType: "ST",                 // Standaard
-  //specType: "IM",                 // Informatie Model
-  //specType: "PR",                 // Praktijkrichtlijn
-  //specType: "HR",                     // HandReiking
-  //specType: "WA",                 // Werkafspraak
-  //specType: "BD",                 // Beheer Documentatie
   specType: "AL",                 // Algemeen document
-  //specType: "BP",                 // Best Practice
+
   //-- pubDomain is verplicht! (komt in de URL) -------------------------------------
   //-- zie: https://geonovum.github.io/handleiding-tooling/ReSpec/#pubdomain
-  //-- TODO: vul pubDomain in
   pubDomain: "geonovum",
   //-- license: voor de geldende gebruiksvoorwaarden. Default is cc-by.
   //license: "cc-by-nd",            // bronvermelding, geen afgeleide werken (default)
   //license: "cc0",                 // Public Domain Dedication
   license: "cc-by",                 // Attribution, met bronvermelding
-  //-- TODO shortName is verplicht! (komt in de URL: kies logische afkorting)--------------
+  //-- shortName is verplicht! (komt in de URL: kies logische afkorting)--------------
   shortName: "dashboard-geonovum",
   
   //edDraftURI = De URI van de draft version. Deze wordt automatisch afgeleid van de github URI; maar kan hier overschreven worden. 
@@ -42,7 +34,7 @@ let respecConfig = {
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beiden aan/uit! 
   //previousPublishDate: "2014-05-01",
   //previousMaturity: "CV",
-  //-- TODO: de namen van de Editor(s) / Redacteur(en)---------------------------------------
+  //-- de namen van de Editor(s) / Redacteur(en)---------------------------------------
   //-- vul in: per Editor: name:, company:, companyURL: -------------------------------
   editors:
     [
