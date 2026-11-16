@@ -1,19 +1,19 @@
 # Dashboard overzicht
 
-Automatisch bijgewerkt op 2026-07-09.
+Automatisch bijgewerkt op 2026-08-24.
 
 <div class="dashboard-kpis">
-<div><strong>194</strong><span>repos</span></div>
-<div><strong>374</strong><span>ReSpec documenten</span></div>
-<div><strong>1253</strong><span>open issues</span></div>
-<div><strong>285</strong><span>open PR's</span></div>
-<div><strong>165 / 194 (85%)</strong><span>Pages repos</span></div>
-<div><strong>111 / 194 (57%)</strong><span>met workflow</span></div>
+<div><strong>198</strong><span>repos</span></div>
+<div><strong>313</strong><span>ReSpec documenten</span></div>
+<div><strong>1271</strong><span>open issues</span></div>
+<div><strong>302</strong><span>open PR's</span></div>
+<div><strong>169 / 198 (85%)</strong><span>Pages repos</span></div>
+<div><strong>113 / 198 (57%)</strong><span>met workflow</span></div>
 </div>
 
 | Organisatie | repos |
 | ----------- | ----- |
-| Geonovum | 168 |
+| Geonovum | 172 |
 | BROprogramma | 26 |
 
 | GitHub team | repos |
@@ -29,16 +29,17 @@ Automatisch bijgewerkt op 2026-07-09.
 | [ro-beheerteam](https://github.com/orgs/Geonovum/teams/ro-beheerteam) | 4 |
 | [disgeo-implementatie](https://github.com/orgs/Geonovum/teams/disgeo-implementatie) | 3 |
 | [IBRO team](https://github.com/orgs/Geonovum/teams/ibro-team) | 3 |
-| [IMEV team](https://github.com/orgs/Geonovum/teams/imev-team) | 3 |
 | [IMKL Team](https://github.com/orgs/Geonovum/teams/imkl-team) | 3 |
 | [RaamwerkGeostandaarden](https://github.com/orgs/Geonovum/teams/raamwerkgeostandaarden) | 3 |
 | [technisch register](https://github.com/orgs/Geonovum/teams/technisch-register) | 3 |
 | [TransparantieApp](https://github.com/orgs/Geonovum/teams/transparantieapp) | 3 |
 | [EU team](https://github.com/orgs/Geonovum/teams/eu-team) | 2 |
+| [IMEV team](https://github.com/orgs/Geonovum/teams/imev-team) | 2 |
 | [IMG team](https://github.com/orgs/Geonovum/teams/img-team) | 2 |
 | [IMGeo team](https://github.com/orgs/Geonovum/teams/imgeo-team) | 2 |
 | [Metadata team](https://github.com/orgs/Geonovum/teams/metadata-team) | 2 |
 | [NLDT-Architectuur](https://github.com/orgs/Geonovum/teams/nldt-architectuur) | 2 |
+| [ReSpec team](https://github.com/orgs/Geonovum/teams/respec-team) | 2 |
 | [Standaardenbeheerplanteam](https://github.com/orgs/Geonovum/teams/standaardenbeheerplanteam) | 2 |
 | [VTH team](https://github.com/orgs/Geonovum/teams/vth-team) | 2 |
 | [3d-standaard team](https://github.com/orgs/Geonovum/teams/3d-standaard-team) | 1 |
@@ -53,20 +54,19 @@ Automatisch bijgewerkt op 2026-07-09.
 | [MIM team](https://github.com/orgs/Geonovum/teams/mim-team) | 1 |
 | [NL-SBB](https://github.com/orgs/Geonovum/teams/nl-sbb) | 1 |
 | [ogc-api-testbed-admins](https://github.com/orgs/Geonovum/teams/ogc-api-testbed-admins) | 1 |
-| [ReSpec beheer](https://github.com/orgs/Geonovum/teams/respec-beheer) | 1 |
 | [visiedocumentteam](https://github.com/orgs/Geonovum/teams/visiedocumentteam) | 1 |
 | [WaU](https://github.com/orgs/Geonovum/teams/wau) | 1 |
 | [ZoN team](https://github.com/orgs/Geonovum/teams/zon-team) | 1 |
 | [ZON-DA](https://github.com/orgs/Geonovum/teams/zon-da) | 1 |
-| zonder GitHub team | 102 |
+| zonder GitHub team | 106 |
 
 | Indicator | aantal | aandeel |
 | --------- | ------ | ------- |
-| Repos stiler dan 1 jaar | 33 | 17% |
-| Repos stiler dan 2 jaar | 0 | 0% |
-| Niet-ReSpec repos zonder SECURITY.md | 45 | 100% |
-| Niet-ReSpec repos zonder publiccode.yml | 44 | 98% |
-| ReSpec documenten met migratie-aandacht | 227 | 61% |
+| Repos stiler dan 1 jaar | 46 | 23% |
+| Repos stiler dan 2 jaar | 3 | 2% |
+| Niet-ReSpec repos zonder SECURITY.md | 46 | 100% |
+| Niet-ReSpec repos zonder publiccode.yml | 44 | 96% |
+| ReSpec documenten met migratie-aandacht | 171 | 55% |
 
 ## Actielijsten
 
@@ -76,18 +76,18 @@ Repos met de meeste open pull requests en issues.
 
 | Organisatie | repo | gezondheid | laatste wijziging | contact | open issues | open PR's |
 | ----------- | ---- | ---------- | ----------------- | ------- | ----------- | --------- |
-| Geonovum | [standards-checker](https://github.com/Geonovum/standards-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-18 | [joostfarla](https://github.com/joostfarla) (commit) | 1 | 7 |
-| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-03 | [architolk](https://github.com/architolk) (commit) | 66 | 6 |
-| Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | 178 | 5 |
-| Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-03 | [fterpstra](https://github.com/fterpstra) (commit) | 107 | 5 |
-| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-25 | [joostfarla](https://github.com/joostfarla) (commit) | 11 | 5 |
+| Geonovum | [mim-begrippenkader](https://github.com/Geonovum/mim-begrippenkader) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-24 | [architolk](https://github.com/architolk) (commit) | 0 | 7 |
+| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-21 | [PalmJanssen](https://github.com/PalmJanssen) (commit) | 55 | 6 |
+| Geonovum | [ogc-checker](https://github.com/Geonovum/ogc-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 9 | 6 |
+| Geonovum | [IMGeo-dev](https://github.com/Geonovum/IMGeo-dev) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-06 | [WimLooijen](https://github.com/WimLooijen) (commit) | 175 | 5 |
+| Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-31 | [joostfarla](https://github.com/joostfarla) (commit) | 107 | 5 |
 | Geonovum | [gitcursus](https://github.com/Geonovum/gitcursus) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-10-08 | [SilvyGEONOVUM](https://github.com/SilvyGEONOVUM) (commit) | 0 | 5 |
-| Geonovum | [TransparantieApp](https://github.com/Geonovum/TransparantieApp) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [KlaasvanVeelen](https://github.com/KlaasvanVeelen) (commit) | 0 | 5 |
+| Geonovum | [standards-checker](https://github.com/Geonovum/standards-checker) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-30 | [joostfarla](https://github.com/joostfarla) (commit) | 0 | 5 |
 | Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-05-29 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 5 |
-| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-06 | [fterpstra](https://github.com/fterpstra) (commit) | 45 | 4 |
-| BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-24 | [jacobvosimpronotion](https://github.com/jacobvosimpronotion) (commit) | 10 | 4 |
-| Geonovum | [mim-fbm](https://github.com/Geonovum/mim-fbm) | <span class="dashboard-badge dashboard-badge--attention">rustig</span> | 2025-08-25 | [architolk](https://github.com/architolk) (commit) | 0 | 4 |
-| Geonovum | [word2werkversie-handleiding-1](https://github.com/Geonovum/word2werkversie-handleiding-1) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-03-30 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | 0 | 4 |
+| Geonovum | [NL-SBB](https://github.com/Geonovum/NL-SBB) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-07-20 | [fterpstra](https://github.com/fterpstra) (commit) | 35 | 4 |
+| BROprogramma | [BHR-G](https://github.com/BROprogramma/BHR-G) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-05 | [theunissenr](https://github.com/theunissenr) (commit) | 10 | 4 |
+| Geonovum | [workflow-build-runner](https://github.com/Geonovum/workflow-build-runner) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-08-22 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | 2 | 4 |
+| Geonovum | [dso-validatiematrix](https://github.com/Geonovum/dso-validatiematrix) | <span class="dashboard-badge dashboard-badge--success">actief</span> | 2026-06-30 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | 0 | 4 |
 
 **Actieve repos met ontbrekende beheerbestanden**
 
@@ -97,14 +97,14 @@ Repos die afgelopen jaar zijn bijgewerkt, maar nog beheerbestanden missen.
 | ----------- | ---- | ----------------- | ------- | --------------- |
 | Geonovum | [TPOD-wegwijzer](https://github.com/Geonovum/TPOD-wegwijzer) | 2025-12-01 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [validatie.geostandaarden.nl](https://github.com/Geonovum/validatie.geostandaarden.nl) | 2025-11-24 |  | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
-| Geonovum | [SEO-test](https://github.com/Geonovum/SEO-test) | 2025-07-23 | [gwolbers](https://github.com/gwolbers) (commit) | <span class="dashboard-badge dashboard-badge--warning">0/7</span> mist README, LICENSE, CONTRIBUTING ... |
 | Geonovum | [IoT-Workshop](https://github.com/Geonovum/IoT-Workshop) | 2025-09-06 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [word2werkversie-handleiding](https://github.com/Geonovum/word2werkversie-handleiding) | 2026-04-08 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [word2werkversie-handleiding-1](https://github.com/Geonovum/word2werkversie-handleiding-1) | 2026-03-30 | [GN-BOT-WORKFLOW](https://github.com/GN-BOT-WORKFLOW) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
-| BROprogramma | [generiek](https://github.com/BROprogramma/generiek) | 2026-07-01 | [BertDarwinkel](https://github.com/BertDarwinkel) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
-| Geonovum | [TPOD](https://github.com/Geonovum/TPOD) | 2026-06-16 | [RubenvanHarn](https://github.com/RubenvanHarn) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [TPOD](https://github.com/Geonovum/TPOD) | 2026-08-21 | [ArjanDorrepaal](https://github.com/ArjanDorrepaal) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| BROprogramma | [generiek](https://github.com/BROprogramma/generiek) | 2026-08-05 | [theunissenr](https://github.com/theunissenr) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [ogc-api-workshops](https://github.com/Geonovum/ogc-api-workshops) | 2026-08-14 | [RolfJonker](https://github.com/RolfJonker) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
+| Geonovum | [TPOD-waardelijsten](https://github.com/Geonovum/TPOD-waardelijsten) | 2026-07-13 | [RubenvanHarn](https://github.com/RubenvanHarn) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [ogc-api-kennissessie](https://github.com/Geonovum/ogc-api-kennissessie) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
-| Geonovum | [ogc-api-workshops](https://github.com/Geonovum/ogc-api-workshops) | 2026-06-30 | [PB-GNM](https://github.com/PB-GNM) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [nLDT-Cook](https://github.com/Geonovum/nLDT-Cook) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 | Geonovum | [nLDT-CookBook](https://github.com/Geonovum/nLDT-CookBook) | 2026-06-30 | [lathoub](https://github.com/lathoub) (commit) | <span class="dashboard-badge dashboard-badge--warning">1/7</span> mist LICENSE, CONTRIBUTING, SECURITY ... |
 
@@ -114,15 +114,15 @@ Repos met ReSpec-documenten die niet op `tools.geostandaarden` staan.
 
 | Organisatie | repo | documenten | gevonden ReSpec-versies |
 | ----------- | ---- | ---------- | ----------------------- |
-| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 70 | fixup, js/modeldesk-respec.js?v=3, respec-nlgov, js/modeldesk-respec.js |
-| Geonovum | [ROST](https://github.com/Geonovum/ROST) | 11 | respec-nlgov |
-| Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | 8 | respec-nlgov |
-| Geonovum | [IMGeo](https://github.com/Geonovum/IMGeo) | 5 | respec-nlgov |
-| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | 5 | respec-nlgov, https://www.w3.org/Tools/respec/respec-w3c, js/modeldesk-respec.js?v=3 |
-| Geonovum | [bestuurlijke-gebieden-cm](https://github.com/Geonovum/bestuurlijke-gebieden-cm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
-| Geonovum | [bestuurlijke-gebieden-lm](https://github.com/Geonovum/bestuurlijke-gebieden-lm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
-| Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | 2 | respec-nlgov |
-| Geonovum | [ibro-cm](https://github.com/Geonovum/ibro-cm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
-| Geonovum | [ibro-lm](https://github.com/Geonovum/ibro-lm) | 2 | js/modeldesk-respec.js?v=3, respec-nlgov |
-| Geonovum | [logboek-dataverwerkingen-voor-objecten](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten) | 2 | respec-nlgov |
-| Geonovum | [MIM-Werkomgeving](https://github.com/Geonovum/MIM-Werkomgeving) | 2 | respec-nlgov |
+| Geonovum | [ROST](https://github.com/Geonovum/ROST) | 11 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [docs.geostandaarden.nl](https://github.com/Geonovum/docs.geostandaarden.nl) | 10 | js/modeldesk-respec.js?v=3 @ lokaal, js/modeldesk-respec.js @ lokaal |
+| Geonovum | [KP-APIs](https://github.com/Geonovum/KP-APIs) | 8 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [IMGeo](https://github.com/Geonovum/IMGeo) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [mim-metamodel](https://github.com/Geonovum/mim-metamodel) | 5 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), https://www.w3.org/Tools/respec/respec-w3c @ www.w3.org (37.3.1), js/modeldesk-respec.js?v=3 @ lokaal |
+| Geonovum | [bestuurlijke-gebieden-cm](https://github.com/Geonovum/bestuurlijke-gebieden-cm) | 2 | js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [bestuurlijke-gebieden-lm](https://github.com/Geonovum/bestuurlijke-gebieden-lm) | 2 | js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [CIM-Funderingen](https://github.com/Geonovum/CIM-Funderingen) | 2 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0), js/modeldesk-respec.js?v=3 @ lokaal |
+| Geonovum | [geen-respec](https://github.com/Geonovum/geen-respec) | 2 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [ibro-cm](https://github.com/Geonovum/ibro-cm) | 2 | js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [ibro-lm](https://github.com/Geonovum/ibro-lm) | 2 | js/modeldesk-respec.js?v=3 @ lokaal, respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |
+| Geonovum | [logboek-dataverwerkingen-voor-objecten](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten) | 2 | respec-nlgov @ gitdocumentatie.logius.nl (37.2.0) |

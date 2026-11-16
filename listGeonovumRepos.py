@@ -5,8 +5,10 @@
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timezone
+from html.parser import HTMLParser
 import json
 import os
+import posixpath
 import re
 import socket
 import subprocess
@@ -17,6 +19,7 @@ import urllib.request
 
 ORGS = ["Geonovum", "BROprogramma"]
 TREE_CACHE = {}
+RESPEC_VERSION_CACHE = {}
 TODAY = date.today()
 CHECK_DIR = os.environ.get("CHECK_DIR", ".checks")
 IGNORED_ACTIVITY_LOGINS = {"pasibun", "github-actions[bot]", "github-action[bot]"}
@@ -36,6 +39,21 @@ MANAGEMENT_LABELS = {
 
 class GitHubTeamAccessDenied(Exception):
     pass
+
+
+class ScriptSourceParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.sources = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag.lower() != "script":
+            return
+
+        for name, value in attrs:
+            if name.lower() == "src" and value:
+                self.sources.append(value)
+                return
 
 
 def should_retry_github_error(error):
@@ -76,23 +94,23 @@ def github_json(path):
             time.sleep(2 * (attempt + 1))
 
 
-def http_text(url):
+def http_text(url, timeout=30, attempts=5):
     request = urllib.request.Request(url, headers={"User-Agent": "geonovum-dashboard"})
-    for attempt in range(5):
+    for attempt in range(attempts):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
                 return response.read().decode("utf-8", errors="replace")
         except urllib.error.HTTPError as error:
             if error.code == 404:
                 return ""
-            if error.code in (403, 429) and attempt < 4:
+            if error.code in (403, 429) and attempt < attempts - 1:
                 retry_after = error.headers.get("Retry-After")
                 wait_seconds = int(retry_after) if retry_after and retry_after.isdigit() else 8 * (attempt + 1)
                 time.sleep(wait_seconds)
                 continue
             raise
         except (TimeoutError, socket.timeout, urllib.error.URLError):
-            if attempt == 4:
+            if attempt == attempts - 1:
                 raise
             time.sleep(2 * (attempt + 1))
 
@@ -317,12 +335,18 @@ def github_file_location(repo, path):
     return "{}/tree/{}/{}".format(repo["html_url"], repo["default_branch"], encoded_directory)
 
 
+def extract_script_sources(html):
+    parser = ScriptSourceParser()
+    parser.feed(html)
+    return parser.sources
+
+
 def extract_respec_build_urls(html):
     build_urls = []
 
-    for match in re.finditer(r"<script\b[^>]*\bsrc=[\"']([^\"']+)[\"']", html, re.IGNORECASE):
-        candidate = match.group(1)
+    for candidate in extract_script_sources(html):
         lower_candidate = candidate.lower()
+        script_name = urllib.parse.urlparse(lower_candidate).path.rsplit("/", 1)[-1]
 
         if "respec" not in lower_candidate:
             continue
@@ -332,12 +356,74 @@ def extract_respec_build_urls(html):
             continue
         if lower_candidate.endswith("config.js"):
             continue
+        if script_name == "fixup.js":
+            continue
         if lower_candidate.endswith(("easy-button.js", "leaflet.js", "rules.js")):
             continue
 
         build_urls.append(candidate)
 
     return build_urls
+
+
+def extract_respec_organisation_config_urls(html):
+    config_urls = []
+
+    for candidate in extract_script_sources(html):
+        config_path = urllib.parse.urlparse(candidate).path.lower()
+        script_name = config_path.rsplit("/", 1)[-1]
+        if script_name in ("organisation-config.js", "organisatie-config.js", "geonovum-config.js"):
+            config_urls.append(candidate)
+            continue
+        if "/respec/config/" in config_path and script_name.endswith("config.js"):
+            config_urls.append(candidate)
+
+    return config_urls
+
+
+def extract_respec_config_domain_path(script_text):
+    match = re.search(
+        r"https://tools\.geostandaarden\.nl/publication/domain/([^/\"'\s]+)/?",
+        script_text,
+        re.IGNORECASE,
+    )
+    if not match:
+        return ""
+
+    return "https://tools.geostandaarden.nl/publication/domain/{}/".format(match.group(1))
+
+
+def respec_config_domain_for_url(repo, index_path, config_url):
+    domain_path = extract_respec_config_domain_path(config_url)
+    if domain_path:
+        return domain_path
+
+    parsed = urllib.parse.urlparse(config_url)
+    if parsed.scheme or parsed.netloc:
+        return ""
+
+    config_path = urllib.parse.unquote(parsed.path)
+    if config_path.startswith("/"):
+        config_path = config_path.lstrip("/")
+    else:
+        config_path = posixpath.normpath(posixpath.join(posixpath.dirname(index_path), config_path))
+
+    try:
+        config_text = raw_file_text(repo, config_path)
+    except (OSError, TimeoutError, urllib.error.URLError):
+        return ""
+
+    return extract_respec_config_domain_path(config_text)
+
+
+def respec_organisation_configs(repo, index_path, html):
+    return [
+        {
+            "script": config_url,
+            "domain": respec_config_domain_for_url(repo, index_path, config_url),
+        }
+        for config_url in extract_respec_organisation_config_urls(html)
+    ]
 
 
 def respec_label(build_url):
@@ -353,6 +439,54 @@ def respec_label(build_url):
         return "respec-logius"
 
     return build_url
+
+
+def respec_source(build_url):
+    parsed = urllib.parse.urlparse(build_url)
+    if parsed.netloc:
+        return parsed.netloc.lower()
+    return "lokaal"
+
+
+def extract_respec_version(script_text):
+    match = re.search(r"\brespecVersion\b\s*(?:=|:)\s*[\"']([^\"']+)[\"']", script_text)
+    if match:
+        return match.group(1)
+
+    return ""
+
+
+def respec_build_version(build_url):
+    if build_url in RESPEC_VERSION_CACHE:
+        return RESPEC_VERSION_CACHE[build_url]
+
+    parsed = urllib.parse.urlparse(build_url)
+    if parsed.scheme not in ("http", "https") or not parsed.netloc:
+        RESPEC_VERSION_CACHE[build_url] = ""
+        return ""
+
+    try:
+        version = extract_respec_version(http_text(build_url, timeout=8, attempts=1))
+    except (OSError, TimeoutError, urllib.error.URLError):
+        version = ""
+
+    RESPEC_VERSION_CACHE[build_url] = version
+    return version
+
+
+def respec_variant(document):
+    label = document.get("label") or document.get("build_url", "")
+    source = document.get("source") or ""
+    version = document.get("respec_version") or ""
+
+    if source and version:
+        return "{} @ {} ({})".format(label, source, version)
+    if source:
+        return "{} @ {}".format(label, source)
+    if version:
+        return "{} ({})".format(label, version)
+
+    return label
 
 
 def repository_tree(repo):
@@ -579,7 +713,10 @@ def respec_documents_for_blob(index_blob):
     documents = []
 
     html = raw_file_text(repo, path)
+    organisation_configs = respec_organisation_configs(repo, path, html)
     for build_url in extract_respec_build_urls(html):
+        source = respec_source(build_url)
+        version = respec_build_version(build_url)
         documents.append(
             {
                 "organization": repo["owner"]["login"],
@@ -587,6 +724,9 @@ def respec_documents_for_blob(index_blob):
                 "location": github_file_location(repo, path),
                 "build_url": build_url,
                 "label": respec_label(build_url),
+                "source": source,
+                "respec_version": version,
+                "organisation_configs": organisation_configs,
             }
         )
 
@@ -598,7 +738,7 @@ def respec_documents(repos):
     seen = set()
 
     def append_document(document):
-        key = (document["location"], document["label"])
+        key = (document["location"], document.get("build_url") or document["label"])
         if key in seen:
             return
         seen.add(key)
@@ -872,7 +1012,7 @@ def write_dashboard_summary(repos, metadata_by_repo, flags_by_repo, documents, t
         old_respec_by_repo[key]["repo"] = document["repository"]
         old_respec_by_repo[key]["url"] = "https://github.com/{}/{}".format(document["organization"], document["repository"])
         old_respec_by_repo[key]["count"] += 1
-        old_respec_by_repo[key]["labels"][document["label"]] += 1
+        old_respec_by_repo[key]["labels"][respec_variant(document)] += 1
     respec_attention = sorted(old_respec_by_repo.values(), key=lambda item: item["count"], reverse=True)[:12]
 
     with open("dashboardoverzicht.md", "w") as f:
@@ -1112,11 +1252,15 @@ De tabellen zijn opgesplitst, zodat beheer, publicatie en releases apart te scan
 
 
 def write_respec_documents(documents):
-    counts = Counter(document["label"] for document in documents)
+    counts = Counter(respec_variant(document) for document in documents)
     counts_by_org = Counter(document["location"].split("/")[3] for document in documents if document["location"].startswith("https://github.com/"))
-    locations_by_label = defaultdict(Counter)
+    documents_by_variant = {}
+    documents_by_organisation_config = defaultdict(set)
     for document in documents:
-        locations_by_label[document["label"]][document["build_url"]] += 1
+        documents_by_variant.setdefault(respec_variant(document), document)
+        for config in document.get("organisation_configs", []):
+            key = (config.get("script", ""), config.get("domain", ""))
+            documents_by_organisation_config[key].add(document["location"])
 
     with open("respecdocuments.md", "w") as f:
         f.write(
@@ -1124,14 +1268,43 @@ def write_respec_documents(documents):
 
 Automatisch bijgewerkt op {}.
 
-| respec versie | aantal | locatie |
-| ------------- | ------ | ------- |
+| respec variant | aantal | bron | onderliggende ReSpec versie | script |
+| -------------- | ------ | ---- | --------------------------- | ------ |
 """.format(date.today().isoformat())
         )
 
-        for label, count in counts.most_common():
-            build_url = locations_by_label[label].most_common(1)[0][0]
-            f.write("| {} | {} | {} |\n".format(table_text(label), count, table_text(build_url)))
+        for variant, count in counts.most_common():
+            document = documents_by_variant[variant]
+            f.write(
+                "| {} | {} | {} | {} | {} |\n".format(
+                    table_text(variant),
+                    count,
+                    table_text(document.get("source", "")),
+                    table_text(document.get("respec_version", "")),
+                    table_text(document.get("build_url", "")),
+                )
+            )
+
+        f.write(
+            """
+## Organisatieconfiguraties
+
+| organisatieconfiguratie | domeinpad | documenten |
+| ----------------------- | --------- | ---------- |
+"""
+        )
+        organisation_config_rows = sorted(
+            documents_by_organisation_config.items(),
+            key=lambda item: (-len(item[1]), item[0][0].lower(), item[0][1].lower()),
+        )
+        for (config_script, domain_path), locations in organisation_config_rows:
+            f.write(
+                "| {} | {} | {} |\n".format(
+                    table_text(config_script),
+                    table_text(domain_path),
+                    len(locations),
+                )
+            )
 
         f.write(
             """
@@ -1144,18 +1317,26 @@ Automatisch bijgewerkt op {}.
 
         f.write(
             """
-| organisatie | repo | file | respecversie |
-| ----------- | ---- | ---- | ------------ |
+| organisatie | repo | file | respecvariant | bron | onderliggende ReSpec versie | script | organisatieconfiguratie | domeinpad |
+| ----------- | ---- | ---- | ------------- | ---- | --------------------------- | ------ | ----------------------- | --------- |
 """
         )
 
         for document in documents:
+            organisation_configs = document.get("organisation_configs", [])
+            config_scripts = "<br>".join(config.get("script", "") for config in organisation_configs)
+            domain_paths = "<br>".join(config.get("domain", "") for config in organisation_configs)
             f.write(
-                "| {} | {} | {} | {} |\n".format(
+                "| {} | {} | {} | {} | {} | {} | {} | {} | {} |\n".format(
                     table_text(document["organization"]),
                     table_text(document["repository"]),
                     table_text(document["location"]),
-                    table_text(document["label"]),
+                    table_text(respec_variant(document)),
+                    table_text(document.get("source", "")),
+                    table_text(document.get("respec_version", "")),
+                    table_text(document.get("build_url", "")),
+                    table_text(config_scripts),
+                    table_text(domain_paths),
                 )
             )
 
